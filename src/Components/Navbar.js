@@ -10,7 +10,7 @@ function Navbar(){
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link>
-                    HEllo {element}
+                    Hi!
 
                     </Link>
                 </div>
