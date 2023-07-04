@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import './Navbar.css';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons'
+import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
+
 
 
 function Navbar(){
@@ -16,47 +18,35 @@ function Navbar(){
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="logo">
-                    init-logo
+                    <img src="/Images/initiare-logo-final-centered.png" />
                     </Link>
                 </div>
-                <div className="menu-icons" onClick={handleClick }>
+                <div className="menu-icons" onClick={handleClick}>
                     {click ? x : bars}
                 </div>
-                <ul className={click ? "nav-menu active" : "nav-menu"}>
-                    <li className="nav-pages" onClick={closeMenu}>
-                        <Link to="/" className="nav-links" >
-                            Home
-                        </Link>
-                    </li>
-                    <li className="nav-pages" onClick={closeMenu}>
-                        <Link to="/about" className="nav-links" >
-                            About
-                        </Link>
-                    </li>
-                    <li className="nav-pages" onClick={closeMenu}>
-                        <Link to="/" className="nav-links" >
-                            Archive
-                        </Link>
-                    </li>
-                    <li className="nav-pages" onClick={closeMenu}>
-                        <Link to="/upload" className="nav-links" >
-                            Upload
-                        </Link>
-                    </li>
-                    <li className="nav-pages" onClick={closeMenu}>
-                        <Link to="/blog" className="nav-links" >
-                            Blog
-                        </Link>
-                    </li>
-                    <li className="nav-pages" onClick={closeMenu}>
-                        <Link to="/ixsjournal" className="nav-links" >
-                            InitiaRe x Scholar Journal
-                        </Link>
-                    </li>
+                <ul className={click ? "nav-menu active" : "nav-menu inactive"}>
+                    <DropdownItem title="Home" link ="/" />
+                    <DropdownItem title="About" link ="/about" />
+                    <DropdownItem title="Archive" link ="/archive" />
+                    <DropdownItem title="Upload" link ="/upload" />
+                    <DropdownItem title="Blog" link ="/blog" />
+                    <DropdownItem title="InitiaRe x Scholar Journal" link ="/ixsjournal" />
                 </ul>
             </nav>
         </>
     );
+};
+
+function DropdownItem(props){
+    return(
+        <li className="nav-pages" /*onClick={closeMenu}*/>
+            <Link to={props.link} className="nav-links">
+                {props.title}
+            </Link>
+        </li>
+    );
 }
+
+
 
 export default Navbar;
