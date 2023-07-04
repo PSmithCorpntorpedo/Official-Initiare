@@ -1,0 +1,7 @@
+@import "universal.css";
+.navbar{
+    display: flex;
+    background-color: black;
+}
+
+
