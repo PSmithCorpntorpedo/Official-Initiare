@@ -11,7 +11,6 @@ function Navbar(){
                 <div className="navbar-container">
                     <Link>
                     Hi!
-
                     </Link>
                 </div>
             </nav>
