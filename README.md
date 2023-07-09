@@ -1,2 +1,3 @@
-# Official-Initiare
-This is where Eng1 Front-End Programmers create the website for Initiare
+# I am Ky (Silver). This my contribution
+
+Phúc trẻ trâu vãi
