@@ -16,14 +16,17 @@ function Navbar(){
     return(
         <>
             <nav className="navbar">
-                <div className="navbar-container">
-                    <Link to="/" className="logo">
-                    <img src="/Images/initiare-logo-final-centered.png" />
+                <div className="logo-container">
+                    <Link to="/" >
+                    <img src="/Images/initiare-logo-final-centered.png" className="logo"/>
                     </Link>
                 </div>
-                <div className="menu-icons" onClick={handleClick}>
+                <div className="menu-container">
+                    <div className="menu-icons" onClick={handleClick}>
                     {click ? x : bars}
+                    </div>
                 </div>
+                
                 <ul className={click ? "nav-menu active" : "nav-menu inactive"}>
                     <DropdownItem title="Home" link ="/" />
                     <DropdownItem title="About" link ="/about" />
