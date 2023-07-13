@@ -1,13 +1,18 @@
 @import "./universal.css";
 
 @font-face {
-  font-family: 'GeoticaW01-FourOpen';
-  src: url('../assets/geotica.ttf') format('truetype');
+  font-family: "GeoticaW01-FourOpen";
+  src: url("../assets/geotica.ttf") format("truetype");
 }
-
-.main {
+/*introduction*/
+.intro {
+  display: flex;
   width: 1440px;
   height: 2000px;
+  padding: 50px 0px 400px 0px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .video-background {
@@ -20,15 +25,6 @@
   object-fit: cover;
 }
 
-.h {
-  position: relative;
-  top: 240px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .h-sm {
   top: 0px;
   color: #fff;
@@ -39,18 +35,17 @@
 }
 
 .h-sm:nth-child(1) {
-  margin-bottom:72px;
+  margin-bottom: 72px;
 }
-
 
 .h-big {
   color: #b5ac7f;
-  font-family: 'GeoticaW01-FourOpen', sans-serif;
+  font-family: "GeoticaW01-FourOpen", sans-serif;
   font-size: 80px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom:67px;
+  margin-bottom: 67px;
 }
 
 .word {
@@ -59,16 +54,17 @@
   font-style: normal;
   font-weight: 100;
   line-height: normal;
-  margin-top:245px;
+  margin-top: 245px;
 }
 
-h1 {
+.h1-intro {
   color: #fff;
   font-size: 80px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   margin-top: 389.95px;
+  margin-bottom: 0px;
 }
 
 hr {
@@ -89,4 +85,36 @@ hr {
   font-weight: 400;
   line-height: normal;
   margin-top: 54.05px;
+}
+
+/*articles*/
+
+.articles{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.h1-articles {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.yellow {
+  color: #ffbc00;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.blue {
+  color: #2b52b7;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
