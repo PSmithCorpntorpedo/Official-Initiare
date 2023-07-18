@@ -31,6 +31,7 @@ const Homepage = () => {
           <span className="yellow">REVIEWED</span>
           <span className="blue">ARTICLES</span>
         </h1>
+        <hr />
       </div>
     </div>
   );

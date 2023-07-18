@@ -89,18 +89,18 @@ hr {
 
 /*articles*/
 
-.articles{
+.articles {
   width: 100%;
-  height: 100vh;
+  height: 1856px;
   background-color: white;
-  display: flex;
-  justify-content: center;
 }
 
 .h1-articles {
-  display: flex;
+  display:flex;
   justify-content: center;
   gap: 30px;
+  margin-bottom: 0px;
+  padding-top:100px;
 }
 
 .yellow {
@@ -118,3 +118,4 @@ hr {
   font-weight: 700;
   line-height: normal;
 }
+
