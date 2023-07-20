@@ -1,0 +1,59 @@
+.article-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.big-card {
+  width: 1120px;
+  height: 500px;
+}
+
+.small-card {
+  width: 350px;
+  height: 456px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.article-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content-small {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-content h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.card-content p {
+  font-size: 14px;
+}
+
+.section-bigcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-smallcontainer {
+  margin-top:50px;
+  display: flex;
+  width: 1120px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  row-gap: 50px;
+  flex-wrap: wrap;
+}

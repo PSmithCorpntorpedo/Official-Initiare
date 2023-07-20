@@ -1,6 +1,7 @@
 import React from "react";
 import videoBg from "../assets/blurred_bokeh_video (720p).mp4";
 import arrow from "../assets/Arrow.svg";
+import ArticleSection from "./ArticleSection";
 import "./Homepage.css";
 
 const Homepage = () => {
@@ -32,6 +33,7 @@ const Homepage = () => {
           <span className="blue">ARTICLES</span>
         </h1>
         <hr />
+        <ArticleSection />
       </div>
     </div>
   );
