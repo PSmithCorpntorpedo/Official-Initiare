@@ -12,13 +12,13 @@ function Navbar(){
 
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
-    const closeMenu = () => setClick(false);
     return(
         <>
             <nav className="navbar">
                 <div className="logo-container">
                     <Link to="/" >
-                    <img src="/Images/initiare-logo-final-centered.png" className="logo"/>
+                    <img src="/Images/initiare-logo-final-centered.png" className="logo"/> 
+                    <span className="logo-words">InitiaRe</span>
                     </Link>
                 </div>
                 <div className="menu-container">
