@@ -1,13 +1,13 @@
 @import './universal.css';
 .navbar {
-        height: 27vh;
+        height: 20vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 1.2rem;
         position: sticky;
         top: 0;
-        z-index: 999;
+        z-index: 998;
         background-color: black;
 }
 .logo-container {
@@ -15,6 +15,7 @@
     height: 35%;
     color: white;
     display: flex;
+    margin-left: 1%;
 }
 .logo{
     width: auto;
@@ -35,14 +36,30 @@
 
 .nav-menu.active{
     visibility: visible;
+    position: absolute;
+    width: 20%;
+    right: 0;
+    top: 12%;
+    background-color: black;
+    z-index: 999;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .nav-menu.inactive{
     visibility: hidden;
+    position: absolute;
 }
 
+.nav-pages{
+    margin: 7%;
+    
+}
 .nav-links{
     text-decoration: none;
     color: white;
+    font-size: 22px;
 }
 
 

@@ -1,7 +1,14 @@
+:root{
+    --primary: #2B52B7;
+    --secondary: #FFBC00;
+    --special: #FF0000; 
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 };
 
 ul{
