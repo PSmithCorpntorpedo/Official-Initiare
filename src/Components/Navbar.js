@@ -18,7 +18,6 @@ function Navbar(){
                 <div className="logo-container">
                     <Link to="/" >
                     <img src="/Images/initiare-logo-final-centered.png" className="logo"/> 
-                    <span className="logo-words">InitiaRe</span>
                     </Link>
                 </div>
                 <div className="menu-container">
