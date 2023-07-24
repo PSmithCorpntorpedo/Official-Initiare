@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Navbar.css';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
 
@@ -42,11 +42,14 @@ function Navbar(){
 
 function DropdownItem(props){
     return(
-        <li className="nav-pages" /*onClick={closeMenu}*/>
-            <Link to={props.link} className="nav-links">
+        <>
+            <li className="nav-pages" /*onClick={closeMenu}*/>
+                <Link to={props.link} className="nav-links">
                 {props.title}
-            </Link>
-        </li>
+                </Link>
+            </li>
+            
+        </>
     );
 }
 
