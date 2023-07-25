@@ -1,0 +1,36 @@
+.blogcard {
+  width: 340px;
+  height: 134px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bloghr {
+  width: 100%;
+  color: #2b52b7;
+}
+
+.blogdate {
+  color: #2b52b7;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.blogdes {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.blog-container {
+  display: flex;
+  width: 1120px;
+  height: 450px;
+  justify-content: space-between;
+  row-gap: 50px;
+  flex-wrap: wrap;
+}

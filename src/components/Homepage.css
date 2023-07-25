@@ -4,12 +4,12 @@
   font-family: "GeoticaW01-FourOpen";
   src: url("../assets/geotica.ttf") format("truetype");
 }
+
 /*introduction*/
 .intro {
   display: flex;
   width: 1440px;
   height: 2000px;
-  padding: 50px 0px 400px 0px;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
@@ -91,21 +91,21 @@ hr {
 
 .articles {
   width: 100%;
-  height: 1856px;
+  height: 1808px;
   background-color: white;
 }
 
 .h1-articles {
-  display:flex;
+  display: flex;
   justify-content: center;
   gap: 30px;
   margin-bottom: 0px;
-  padding-top:100px;
+  padding-top: 100px;
+  font-size: 80px;
 }
 
 .yellow {
   color: #ffbc00;
-  font-size: 80px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -113,9 +113,112 @@ hr {
 
 .blue {
   color: #2b52b7;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/*scholar1*/
+
+.scholar1 {
+  width: 100%;
+  height: 1375px;
+  background-color: white;
+}
+
+.h1-scholar1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+  padding-top: 100px;
+  font-size: 80px;
+}
+
+.yellow2::first-letter {
+  color: #ffbc00;
+  font-style: normal;
+  line-height: normal;
+}
+
+.black {
+  margin-left: 30px;
+}
+
+.scholarcontainer1 {
+  display: flex;
+  flex-direction: space-between;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.scholarsubcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 420px;
+}
+
+.h2-scholar {
+  color: #ffbc00;
+  text-align: justify;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.scholarcontent {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/*blog*/
+.blog1 {
+  width: 100%;
+  height: 1065px;
+  background: white;
+}
+
+.h1-blog1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+  padding-top: 100px;
   font-size: 80px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
+.h2-scholar1-blog1 {
+  color: #2b52b7;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-left: 160px;
+}
+
+.container-blog {
+  display: flex;
+}
+
+.blogsection {
+  display: flex;
+  justify-content: center;
+}
+
+/*footer*/
+
+.footer-container {
+  background-image: url("../assets/footerimg.jpg"); /* Set the footer background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%; 
+  height: 300px;
+  margin-top:250px;
+}

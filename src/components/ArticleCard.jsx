@@ -1,20 +1,21 @@
 import React from "react";
 import "./ArticleCard.css";
 
-const ArticleCard = ({ title, description, image, isBigCard }) => {
+const ArticleCard = ({ title, researchfield, status, author, image, isBigCard }) => {
   return (
     <div className={`article-card ${isBigCard ? "big-card" : "small-card"}`}>
       <img src={image} alt={title} />
       {isBigCard && (
         <div className="card-content">
-          <h2>{title}</h2>
-          <p>{description}</p>
+          <p>{title}</p>
         </div>
       )}
       {!isBigCard && (
         <div className="card-content-small">
-          <h2>{title}</h2>
-          <p>{description}</p>
+          <span className="researchfield">{researchfield}</span>
+          <span className="status">{status}</span>
+          <p>{title}</p>
+          <span className="author">{author}</span>
         </div>
       )}
     </div>

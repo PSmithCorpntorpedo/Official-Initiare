@@ -1,3 +1,5 @@
+@import "./universal.css";
+
 .article-card {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -27,14 +29,41 @@
   padding: 10px;
 }
 
-.card-content-small {
-  padding: 10px;
-  text-align: center;
+.card-content-small p {
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
 }
 
-.card-content h2 {
-  margin-top: 0;
-  font-size: 18px;
+.card-content-small .researchfield {
+  color: #2b52b7;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-left: 20px;
+}
+
+.card-content-small .status {
+  color: #2b52b7;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 120px;
+}
+
+.card-content-small .author {
+  color:  #2b52b7;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .card-content p {
@@ -48,7 +77,7 @@
 }
 
 .section-smallcontainer {
-  margin-top:50px;
+  margin-top: 50px;
   display: flex;
   width: 1120px;
   justify-content: space-between;

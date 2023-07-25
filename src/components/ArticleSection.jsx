@@ -1,47 +1,59 @@
-import React from 'react';
-import ArticleCard from './ArticleCard';
+import React from "react";
+import ArticleCard from "./ArticleCard";
 import image from "../assets/Image.png";
 
 const ArticleSection = () => {
   return (
     <div className="section-bigcontainer">
       <div>
-      <ArticleCard
-        title="Big Article"
-        description="This is a big article."
-        image={image}
-        isBigCard
-      />
+        <ArticleCard
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          image={image}
+          isBigCard
+        />
       </div>
       <div className="section-smallcontainer">
         <ArticleCard
-          title="Small Article 1"
-          description="This is a small article."
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          researchfield="Research field"
+          status="non-reviewed"
+          author="Author Author Author"
           image={image}
         />
         <ArticleCard
-          title="Small Article 2"
-          description="This is another small article."
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          researchfield="Research field"
+          status="non-reviewed"
+          author="Author Author Author"
+
           image={image}
         />
         <ArticleCard
-          title="Small Article 3"
-          description="This is a third small article."
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          researchfield="Research field"
+          status="non-reviewed"
+          author="Author Author Author"
           image={image}
         />
         <ArticleCard
-          title="Small Article 4"
-          description="This is a small article."
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          researchfield="Research field"
+          status="non-reviewed"
+          author="Author Author Author"
           image={image}
         />
         <ArticleCard
-          title="Small Article 5"
-          description="This is another small article."
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          researchfield="Research field"
+          status="non-reviewed"
+          author="Author Author Author"
           image={image}
         />
         <ArticleCard
-          title="Small Article 6"
-          description="This is a third small article."
+          title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          researchfield="Research field"
+          status="non-reviewed"
+          author="Author Author Author"
           image={image}
         />
       </div>
