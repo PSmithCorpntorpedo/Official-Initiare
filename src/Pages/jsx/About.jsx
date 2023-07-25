@@ -4,19 +4,19 @@ import banner from "./../assets/banner.png";
 const About = () => {
   return (
     <div className="about">
-      <img className="banner-icon" alt="" src={banner} />
+      <div><img className="banner-icon" alt="" src={banner} /></div>
       <div className="main-layout">
         <div className="container-content">
           <div className="reason-why">
-            <b className="About-big-questions" id="why-are-we-here">WHY ARE WE HERE?</b>
-            <div className="within-the-esteemed-container">
-              <span>{`Within the esteemed walls of VNUHCM High School for the Gifted, there dwelled a certain individual, consumed by a thirst for knowledge. He would make numerous attempts to publish his research papers, only to find himself at a crossroads. Then, on the fateful evening of April 30th, inspiration struck: why not create his own platform? Gathering like-minded individuals, Initiare came to life. Initially comprised of only three members—the president, the programming chair, and the PR chair—the team grows exponentially with the help of professors, and students eager to be part of something greater. Initiare becomes a vibrant and effective platform, a welcoming home for science enthusiasts. And now, this extraordinary community seeks new members, extending a hopeful invitation to you. `}</span>
-              <b className="will-you-answer">Will you answer our call?</b>
+            <div className="About-big-questions" id="why-are-we-here">WHY ARE WE HERE?</div>
+            <div className="answer">
+              Within the esteemed walls of VNUHCM High School for the Gifted, there dwelled a certain individual, consumed by a thirst for knowledge. He would make numerous attempts to publish his research papers, only to find himself at a crossroads. Then, on the fateful evening of April 30th, inspiration struck: why not create his own platform? Gathering like-minded individuals, Initiare came to life. Initially comprised of only three members—the president, the programming chair, and the PR chair—the team grows exponentially with the help of professors, and students eager to be part of something greater. Initiare becomes a vibrant and effective platform, a welcoming home for science enthusiasts. And now, this extraordinary community seeks new members, extending a hopeful invitation to you. 
+              <a className="will-you-answer">Will you answer our call?</a>
             </div>
           </div>
           <div className="reason-why">
-            <b className="About-big-questions" id="what-are-we-doing">WHAT ARE WE DOING?</b>
-            <div className="within-the-esteemed-container">
+            <div className="About-big-questions" id="what-are-we-doing">WHAT ARE WE DOING?</div>
+            <div className="answer">
               We are InitiaRe, your gateway to a world of research excellence!
               Our mission is to revolutionize the academic landscape by
               providing an accessible and dynamic platform designed specifically
@@ -34,8 +34,8 @@ const About = () => {
             </div>
           </div>
           <div className="reason-why">
-            <b className="About-big-questions" id="terms-of-use">TERMS OF USE</b>
-            <div className="within-the-esteemed-container">
+            <div className="About-big-questions" id="terms-of-use">TERMS OF USE</div>
+            <div className="answer">
               <p className="terms-of-use-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Et
@@ -85,9 +85,9 @@ const About = () => {
         <div className="sections">
           <div className="line" />
           <div className="container1">
-            <a className="point" href="#why-are-we-here">Why are we here?</a>
-            <a className="point" href="#what-are-we-doing">What are we doing?</a>
-            <a className="point" href="#terms-of-use">Terms of use</a>
+            <div className="point-div"><a className="point" href="#why-are-we-here">Why are we here?</a></div>
+            <div className="point-div"><a className="point" href="#what-are-we-doing">What are we doing?</a></div>
+            <div className="point-div"><a className="point" href="#terms-of-use">Terms of use</a></div>
           </div>
         </div>
       </div>

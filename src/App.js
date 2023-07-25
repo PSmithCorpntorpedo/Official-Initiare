@@ -13,7 +13,6 @@ function App(){
     return(
     <div className="App">
         <BrowserRouter>
-            <Navbar/>
             <Routes>
                 <Route path='/' index element={<Home/>} ></Route>
                 <Route path='/about' element={<About/>} ></Route>
