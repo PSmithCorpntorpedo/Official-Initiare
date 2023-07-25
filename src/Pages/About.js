@@ -1,7 +1,13 @@
-export default function About(){
-    return(
-        <>
-            <h1>This is my mock About page</h1>
-        </>
-    )
+import React from "react";
+
+import About from "./jsx/About.jsx";
+
+function App() {
+  return (
+    <div>
+      <About />
+    </div>
+  );
 }
+
+export default App;

@@ -1,0 +1,135 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-roboto: "Roboto", sans-serif;
+
+  /* font sizes */
+  --font-size-lg: 18px;
+  --font-size-31xl: 50px;
+
+  /* Colors */
+  --color-black: #000;
+  --palette-1: #ffbc00;
+  --palette-2: #2b52b7;
+
+  /* Gaps */
+  --gap-31xl: 50px;
+  --gap-xl: 20px;
+}
+.banner-icon {
+  width: 1120px;
+  height: 250px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner-icon,
+.About-big-questions {
+  position: relative;
+}
+
+.will-you-answer {
+  color: var(--palette-2);
+}
+.within-the-esteemed-container {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-lg);
+  line-height: 30px;
+  color: var(--color-black);
+}
+
+.reason-why {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.terms-of-use-content {
+  margin: 0;
+}
+.container-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-31xl);
+}
+.line, .point {
+  position: relative;
+}
+.line {
+  align-self: stretch;
+  border-right: 5px solid var(--palette-1);
+  box-sizing: border-box;
+  width: 5px;
+}
+.point {
+  line-height: 26.8px;
+  border: none;
+  background-color: #0000;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+}
+.container1 {
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.sections {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-xl);
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+}
+.about,
+.sections,
+.main-layout {
+  display: flex;
+  justify-content: flex-start;
+}
+.main-layout {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 200px;
+}
+.about {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 100px 160px;
+  box-sizing: border-box;
+  align-items: center;
+  gap: var(--gap-31xl);
+  text-align: left;
+  font-size: var(--font-size-31xl);
+  color: var(--palette-2);
+  font-family: var(--font-roboto);
+}
