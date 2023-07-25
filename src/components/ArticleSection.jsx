@@ -7,7 +7,10 @@ const ArticleSection = () => {
     <div className="section-bigcontainer">
       <div>
         <ArticleCard
+          researchfield="Research field"
           title="Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim"
+          author="Author Author Author"
+          status="Specialist-reviewed"
           image={image}
           isBigCard
         />

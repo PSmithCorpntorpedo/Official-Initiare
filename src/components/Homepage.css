@@ -212,13 +212,46 @@ hr {
   justify-content: center;
 }
 
+.blog1 button {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #2b52b7;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.button-container {
+  margin-top: 68px;
+  margin-left: 160px;
+}
+
 /*footer*/
 
 .footer-container {
   background-image: url("../assets/footerimg.jpg"); /* Set the footer background image */
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%; 
-  height: 300px;
-  margin-top:250px;
+  width: 100%;
+  height: 20.625rem;
 }
+
+.footer-container p {
+  color: #fff;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-top: 4.281rem;
+}
+
+.footer-container button {
+  display: flex;
+  width: 200px;
+  padding: 11px 28px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #ffbc00;
+}
+

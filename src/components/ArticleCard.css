@@ -1,14 +1,15 @@
 @import "./universal.css";
 
-.article-card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
 .big-card {
   width: 1120px;
   height: 500px;
+}
+
+.bigcard-container {
+  background-image: url(../assets/Image.png);
+  height: 500px;
+  position: relative;
+  background-size: cover;
 }
 
 .small-card {
@@ -25,8 +26,46 @@
   border-radius: 5px 5px 0 0;
 }
 
-.card-content {
-  padding: 10px;
+.card-content p {
+  top: 313px;
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: absolute;
+}
+
+.card-content .researchfield {
+  top: 277px;
+  position: absolute;
+  color: #ffbc00;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.card-content .author {
+  bottom: 35px;
+  position: absolute;
+  color: #ffbc00;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.card-content .status {
+  bottom: 35px;
+  right:35px;
+  position: absolute;
+  color: #ffbc00;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .card-content-small p {
@@ -59,15 +98,11 @@
 }
 
 .card-content-small .author {
-  color:  #2b52b7;
+  color: #2b52b7;
   font-size: 14px;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
-}
-
-.card-content p {
-  font-size: 14px;
 }
 
 .section-bigcontainer {

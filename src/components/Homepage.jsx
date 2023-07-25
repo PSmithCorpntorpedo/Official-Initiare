@@ -65,8 +65,14 @@ const Homepage = () => {
         <div className="blogsection">
           <BlogSection />
         </div>
-        <footer className="footer-container"></footer>
+        <div className="button-container">
+        <button>ALL BLOG POSTS</button>
+        </div>
       </div>
+      <footer className="footer-container">
+        <p>Want to be a part of the InitiaRe Team?</p>
+        <div className="button-container2"><button>Learn more</button></div>
+      </footer>
     </div>
   );
 };

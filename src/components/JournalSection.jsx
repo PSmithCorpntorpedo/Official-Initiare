@@ -1,18 +1,16 @@
 import React from "react";
-import ArticleCard from "./ArticleCard";
+import JournalCard from "./JournalCard";
 import image from "../assets/Image.png";
 
 const JournalSection = () => {
   return (
     <div>
-      <ArticleCard
-        title="Small Article 1"
-        description="This is a small article."
+      <JournalCard
+        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         image={image}
       />
-      <ArticleCard
-        title="Small Article 2"
-        description="This is another small article."
+      <JournalCard
+        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         image={image}
       />
     </div>
