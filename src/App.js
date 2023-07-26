@@ -3,7 +3,7 @@ import Navbar from './Components/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import Archive from './Pages/Archive';
+import Articles from './Pages/Articles';
 import Upload from './Pages/Upload';
 import Blog from './Pages/Blog';
 import IxS_Journal from './Pages/IxS_Journal';
@@ -17,7 +17,7 @@ function App(){
             <Routes>
                 <Route path='/' index element={<Home/>} ></Route>
                 <Route path='/about' element={<About/>} ></Route>
-                <Route path='/archive' element={<Archive/>} ></Route>
+                <Route path='/articles' element={<Articles/>} ></Route>
                 <Route path='/upload' element={<Upload/>} ></Route>
                 <Route path='/blog' element={<Blog/>} ></Route>
                 <Route path='/ixsjournal' element={<IxS_Journal/>} ></Route>

@@ -31,7 +31,7 @@ function Navbar(){
             <ul className={click ? "nav-menu active" : "nav-menu inactive"}>
                     <DropdownItem title="Home" link ="/" closeMenu={handleClick}/>
                     <DropdownItem title="About" link ="/about" closeMenu={handleClick}/>
-                    <DropdownItem title="Archive" link ="/archive" closeMenu={handleClick}/>
+                    <DropdownItem title="Articles" link ="/articles" closeMenu={handleClick}/>
                     <DropdownItem title="Upload" link ="/upload" closeMenu={handleClick}/>
                     <DropdownItem title="Blog" link ="/blog" closeMenu={handleClick}/>
                     <DropdownItem title="InitiaRe x Scholar Journal" link ="/ixsjournal" closeMenu={handleClick}/>
