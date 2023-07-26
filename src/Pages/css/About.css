@@ -221,9 +221,20 @@ html {
   line-height: 2rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1280px) {
+  .container-content {
+    width: 65%;
+  }
+
+  .sections {
+    width: 25%;
+  }
+}
+
+@media (max-width: 1000px) {
   .about {
     margin: 0;
+    margin-top: 2%;
   }
 
   .banner-icon {
@@ -260,6 +271,7 @@ html {
     margin-top: 0;
   }
 }
+
 
 @media (max-aspect-ratio: 1/1) {
   .about {
