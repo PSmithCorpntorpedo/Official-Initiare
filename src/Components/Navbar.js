@@ -29,12 +29,12 @@ function Navbar(){
                 
             </nav>
             <ul className={click ? "nav-menu active" : "nav-menu inactive"}>
-                    <DropdownItem title="Home" link ="/" stateChanger={setClick}/>
-                    <DropdownItem title="About" link ="/about" stateChanger={setClick}/>
-                    <DropdownItem title="Archive" link ="/archive" stateChanger={setClick}/>
-                    <DropdownItem title="Upload" link ="/upload" stateChanger={setClick}/>
-                    <DropdownItem title="Blog" link ="/blog" stateChanger={setClick}/>
-                    <DropdownItem title="InitiaRe x Scholar Journal" link ="/ixsjournal" stateChanger={setClick}/>
+                    <DropdownItem title="Home" link ="/" stateChanger={handleClick}/>
+                    <DropdownItem title="About" link ="/about" stateChanger={handleClick}/>
+                    <DropdownItem title="Archive" link ="/archive" stateChanger={handleClick}/>
+                    <DropdownItem title="Upload" link ="/upload" stateChanger={handleClick}/>
+                    <DropdownItem title="Blog" link ="/blog" stateChanger={handleClick}/>
+                    <DropdownItem title="InitiaRe x Scholar Journal" link ="/ixsjournal" stateChanger={handleClick}/>
                 </ul>
         </>
     );
