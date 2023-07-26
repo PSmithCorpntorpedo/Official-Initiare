@@ -29,12 +29,12 @@ function Navbar(){
                 
             </nav>
             <ul className={click ? "nav-menu active" : "nav-menu inactive"}>
-                    <DropdownItem title="Home" link ="/" stateChanger={handleClick}/>
-                    <DropdownItem title="About" link ="/about" stateChanger={handleClick}/>
-                    <DropdownItem title="Archive" link ="/archive" stateChanger={handleClick}/>
-                    <DropdownItem title="Upload" link ="/upload" stateChanger={handleClick}/>
-                    <DropdownItem title="Blog" link ="/blog" stateChanger={handleClick}/>
-                    <DropdownItem title="InitiaRe x Scholar Journal" link ="/ixsjournal" stateChanger={handleClick}/>
+                    <DropdownItem title="Home" link ="/" closeMenu={handleClick}/>
+                    <DropdownItem title="About" link ="/about" closeMenu={handleClick}/>
+                    <DropdownItem title="Archive" link ="/archive" closeMenu={handleClick}/>
+                    <DropdownItem title="Upload" link ="/upload" closeMenu={handleClick}/>
+                    <DropdownItem title="Blog" link ="/blog" closeMenu={handleClick}/>
+                    <DropdownItem title="InitiaRe x Scholar Journal" link ="/ixsjournal" closeMenu={handleClick}/>
                 </ul>
         </>
     );
@@ -43,7 +43,7 @@ function Navbar(){
 function DropdownItem(props){
     return(
         <>
-            <li className="nav-pages" onClick={props.stateChanger}>
+            <li className="nav-pages" onClick={props.closeMenu}>
                 <Link to={props.link} className="nav-links">
                 {props.title}
                 </Link>
