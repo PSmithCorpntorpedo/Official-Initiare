@@ -36,7 +36,7 @@
 
 .nav-menu.active{
     visibility: visible;
-    position: absolute;
+    position: fixed;
     width: 20%;
     right: 0;
     top: 12%;

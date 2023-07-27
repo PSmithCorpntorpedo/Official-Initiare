@@ -13,7 +13,7 @@ export default function Archive(){
                     <div className="fields">
                         <h2>Research Area</h2>
                         <div className="natural-sciences" >
-                            <FilterItem name="Natural Sciences" style={{fontWeight:"bold", fontSize: "1em"}} />
+                            <FilterItem name="Natural Sciences" style={{fontWeight:"700", fontSize: "1.25em"}} />
                             <ul className="sublist1">
                                 <FilterItem name="Life Sciences" />
                                 <FilterItem name="Physical Sciences" />
@@ -25,7 +25,7 @@ export default function Archive(){
 
                         </div>
                         <div className="social-sciences">
-                            <FilterItem name="Social Sciences" style={{fontWeight:"bold", fontSize: "1em"}} />
+                            <FilterItem name="Social Sciences" style={{fontWeight:"700", fontSize: "1.25em"}} />
                                 <ul className="sublist1">
                                     <FilterItem name="Social Studies" />
                                     <FilterItem name="Humanities" />
@@ -42,7 +42,13 @@ export default function Archive(){
                         </ul>
                         
                     </div>
-                    <div className="header date-published"></div>
+                    <div className="header date-published">
+                        <h2>Date Published</h2>
+                        <ul className="sublist2">
+                            <FilterItem name="2023" />
+                            <FilterItem name="2022" />
+                        </ul>
+                    </div>
                     <div className="header language"></div>
                 </div>
             </div>
@@ -60,8 +66,10 @@ export default function Archive(){
 function FilterItem(props){
     return (
         <li className="no-list-style sub-list-items" style={props.style} >
-            <input type="checkbox" id={props.name}/> 
-            <label for={props.name}><span> {props.name}</span></label>
+            <label for={props.name}>
+                <input type="checkbox" id={props.name}/> 
+                {props.name}
+            </label>
         </li>
     )
 }
