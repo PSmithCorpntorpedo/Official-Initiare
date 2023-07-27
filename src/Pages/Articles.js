@@ -14,7 +14,7 @@ export default function Archive(){
                         <h2>Research Area</h2>
                         <div className="natural-sciences" >
                             <FilterItem name="Natural Sciences" style={{fontWeight:"bold", fontSize: "1em"}} />
-                            <ul className="sublist">
+                            <ul className="sublist1">
                                 <FilterItem name="Life Sciences" />
                                 <FilterItem name="Physical Sciences" />
                                 <FilterItem name="Earth Sciences" />
@@ -26,16 +26,24 @@ export default function Archive(){
                         </div>
                         <div className="social-sciences">
                             <FilterItem name="Social Sciences" style={{fontWeight:"bold", fontSize: "1em"}} />
-                                <ul className="sublist">
+                                <ul className="sublist1">
                                     <FilterItem name="Social Studies" />
                                     <FilterItem name="Humanities" />
                                 
                                 </ul>
                         </div>
                     </div>
-                    <div className="status"></div>
-                    <div className="date-published"></div>
-                    <div className="language"></div>
+                    <div className="header status">
+                        <h2>Status</h2>
+                        <ul className="sublist2">
+                            <FilterItem name="Non-reviewed"/>
+                            <FilterItem name="Peer-reviewed"/>
+                            <FilterItem name="Specialist-reviewed"/>
+                        </ul>
+                        
+                    </div>
+                    <div className="header date-published"></div>
+                    <div className="header language"></div>
                 </div>
             </div>
 
@@ -51,9 +59,9 @@ export default function Archive(){
 
 function FilterItem(props){
     return (
-        <li className="no-list-style sub-list-items" style={props.style}>
-            <input type="checkbox"/> 
-            <span> {props.name}</span>
+        <li className="no-list-style sub-list-items" style={props.style} >
+            <input type="checkbox" id={props.name}/> 
+            <label for={props.name}><span> {props.name}</span></label>
         </li>
     )
 }

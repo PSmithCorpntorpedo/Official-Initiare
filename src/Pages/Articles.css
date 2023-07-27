@@ -18,6 +18,26 @@
     .filter-caption{
         font-size: 1.3em;
     }
+    .sublist1{
+        
+        border-left: 2px black solid;
+        padding-left: 4%;
+        
+    }
+    .sub-list-items{
+        margin-top: 4%;
+        font-size: 0.8em; 
+    }
+    .header{
+        margin-top: 3%;
+    }
+    .sublist2{
+        margin-top: 3%;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+
 }
 
 .filter-box{
@@ -45,7 +65,7 @@
     list-style: none;
 }
 
-.sublist{
+.sublist1{
     margin-left: 2%;
     border-left: 2px black solid;
     padding-left: 4%;
@@ -54,4 +74,10 @@
 .sub-list-items{
     margin-top: 4%;
     font-size: 0.8em; 
+}
+.header{
+    margin-top: 4%;
+}
+.sublist2{
+    margin-top: 4%;
 }
