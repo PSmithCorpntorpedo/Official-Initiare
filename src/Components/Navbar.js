@@ -13,8 +13,37 @@ function Navbar() {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
 
+    const [show, setShow] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const controlNavbar = () => {
+        if (typeof window !== 'undefined') {
+            if (window.scrollY > lastScrollY && click === false) { // if scroll down and the dropdown isn't active hide the navbar
+                setShow(false);
+            } else { // if scroll up show the navbar
+                setShow(true);
+            }
+
+            // remember current page location to use in the next move
+            setLastScrollY(window.scrollY);
+        }
+    };
+
+    // event listener to get scroll position
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          window.addEventListener('scroll', controlNavbar);
+    
+          // cleanup function
+          return () => {
+            window.removeEventListener('scroll', controlNavbar);
+          };
+        }
+      }, [lastScrollY]);
+
+
     return (
-        <div className="nav-wrap">
+        <div className={`nav-wrap ${show ? 'shown' : 'hidden'}`}>
             <nav className="navbar">
                 <div className="logo-container">
                     <Link to="/" >
@@ -29,7 +58,7 @@ function Navbar() {
 
 
             </nav>
-            <ul className={click ? "nav-menu active" : "nav-menu inactive"}>
+            <ul className={`nav-menu ${click ? 'active' : 'inactive'}`}>
                 <DropdownItem title="Home" link="/" closeMenu={handleClick} />
                 <DropdownItem title="About" link="/about" closeMenu={handleClick} />
                 <DropdownItem title="Archive" link="/archive" closeMenu={handleClick} />
