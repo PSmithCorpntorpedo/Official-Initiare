@@ -177,7 +177,6 @@ html {
 .container-content {
   width: 70%;
   margin-right: 10%;
-  margin-bottom: calc(5% / 0.8);
 }
 
 .About-big-questions {
@@ -254,7 +253,7 @@ html {
 
   .container-content {
     width: auto;
-    margin: 5% 5%;
+    margin: 0 5%;
   }
 
 
@@ -295,7 +294,7 @@ html {
 
   .container-content {
     width: auto;
-    margin: 5% 5%;
+    margin: 0 5%;
   }
 
 

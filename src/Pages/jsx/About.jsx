@@ -11,7 +11,7 @@ const About = () => {
             <div className="About-big-questions" id="why-are-we-here">WHY ARE WE HERE?</div>
             <div className="answer">
               Within the esteemed walls of VNUHCM High School for the Gifted, there dwelled a certain individual, consumed by a thirst for knowledge. He would make numerous attempts to publish his research papers, only to find himself at a crossroads. Then, on the fateful evening of April 30th, inspiration struck: why not create his own platform? Gathering like-minded individuals, Initiare came to life. Initially comprised of only three members—the president, the programming chair, and the PR chair—the team grows exponentially with the help of professors, and students eager to be part of something greater. Initiare becomes a vibrant and effective platform, a welcoming home for science enthusiasts. And now, this extraordinary community seeks new members, extending a hopeful invitation to you. 
-              <a className="will-you-answer">Will you answer our call?</a>
+              <b> Will you answer our call?</b>
             </div>
           </div>
           <div className="reason-why">
@@ -90,6 +90,38 @@ const About = () => {
             <div className="point-div"><a className="point" href="#terms-of-use">Terms of use</a></div>
           </div>
         </div>
+        <br style={{clear: 'both'}}/> {/* DO NOT DELETE THIS LINE-BREAK*/}
+        {/* WHY? TL:DR IT'D BREAK THE FOOTER */}
+        {/* I needed .content-container and .sections to be on different columns.
+         The modern way to do this is to use either Flexbox or CSS Grid. I thought
+          doing so would be far too complicated and likely overkill for such a 
+          simple implementation. I was wrong.
+          I used the old method - float. It looked like it worked, but turns out
+          a div does not expand to fit floated child elements, meaning the parent
+          div containing everything does not expand to fit .content-container and
+          .sections, and it would only be the size of div containing the image,
+          as that was not floated. I was aware of this since way before, but decided
+          that it was not an issue. I would later find that it was.
+          The first sign of trouble came when the Navbar would not remain in its
+          fixed position at the top of the screen when scrolling past the image.
+          This is because we were using position: sticky and putting it at the
+          top of the screen instead of the doing it the proper way and using
+          position: fixed, as that would cause other problems related to
+          scrolling. This entire debacle would eventually be sidestepped altogether
+          when I implemented the auto-hiding Navbar. 
+          But the actual issue had still not been addressed, and it would come up
+          again when I tried to implement a Footer. You see, the Footer has to be
+          below the entire page, so it has to clear (foreshadowing) everything on
+          the page. The problem was that the page was not expanding to fit
+          .content-container and .sections, meaning those elements were overflowing
+          and the wrapping div itself was only a few hundred pixels in height,
+          as it only expanded to fit the image's div. This meant the Footer would
+          sit right in the middle of the page.
+          But I would eventually find a solution, which is seen right above this
+          overly lengthy comment. Apparently you need to add an element - any
+          element - that does not float and make it go below (i.e. clear) the
+          floating ones, which is why I have added a line-break with some
+          inline styles, doing exactly that. */}
       </div>
     </div>
   );

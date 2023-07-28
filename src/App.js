@@ -1,12 +1,13 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Articles from './Pages/Articles';
 import Upload from './Pages/Upload';
 import Blog from './Pages/Blog';
-import IRScholar_Journal from './Pages/Journal';
+import IRScholarJournal from './Pages/Journal';
 
 
 function App(){
@@ -20,8 +21,9 @@ function App(){
                 <Route path='/articles' element={<Articles/>} ></Route>
                 <Route path='/upload' element={<Upload/>} ></Route>
                 <Route path='/blog' element={<Blog/>} ></Route>
-                <Route path='/journal' element={<IRScholar_Journal/>} ></Route>
+                <Route path='/journal' element={<IRScholarJournal/>} ></Route>
             </Routes>
+            <Footer />
         </BrowserRouter>
         
     </div>);

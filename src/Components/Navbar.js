@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -55,7 +55,7 @@ function Navbar() {
                 <nav className="navbar">
                     <div className="logo-container">
                         <Link to="/" >
-                            <img src="/Images/initiare-logo-final-centered.png" className="logo" />
+                            <img src="/Images/initiare-logo-final-centered.png" alt='logo' className="logo" />
                         </Link>
                     </div>
                     <div className="menu-container">

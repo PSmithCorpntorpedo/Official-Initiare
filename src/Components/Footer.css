@@ -1,0 +1,27 @@
+.footer {
+    height: 18rem;
+    width: 100%;
+    background-color: black;
+    color: white;  
+}
+
+.upper-footer {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: 0 5%;
+}
+
+.lower-footer {
+    
+}
+
+.main-link-wrap {
+
+}
+
+.main-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
