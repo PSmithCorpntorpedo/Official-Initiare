@@ -17,8 +17,13 @@ function Navbar() {
     const [lastScrollY, setLastScrollY] = useState(0);
 
     const controlNavbar = () => {
+        let navGutter = document.getElementById('nav-gutter');
         if (typeof window !== 'undefined') {
-            if (window.scrollY > lastScrollY && click === false) { // if scroll down and the dropdown isn't active hide the navbar
+            if (window.scrollY > lastScrollY && click === false && window.scrollY > (navGutter.offsetTop + navGutter.offsetHeight)) { 
+                /*  if:  1. the user scrolls down
+                        2. the dropdown isn't active
+                        3. the user has scrolled past where the navbar lives at the top of the screen
+                    then: hide the navbar.  */ 
                 setShow(false);
             } else { // if scroll up show the navbar
                 setShow(true);
@@ -31,42 +36,48 @@ function Navbar() {
 
     // event listener to get scroll position
     useEffect(() => {
+        // console.log(lastScrollY);
         if (typeof window !== 'undefined') {
-          window.addEventListener('scroll', controlNavbar);
-    
-          // cleanup function
-          return () => {
-            window.removeEventListener('scroll', controlNavbar);
-          };
+            window.addEventListener('scroll', controlNavbar);
+
+            // cleanup function
+            return () => {
+                window.removeEventListener('scroll', controlNavbar);
+            };
         }
-      }, [lastScrollY]);
+    }, [lastScrollY]);
 
 
     return (
-        <div className={`nav-wrap ${show ? 'shown' : 'hidden'}`}>
-            <nav className="navbar">
-                <div className="logo-container">
-                    <Link to="/" >
-                        <img src="/Images/initiare-logo-final-centered.png" className="logo" />
-                    </Link>
-                </div>
-                <div className="menu-container">
-                    <div className="menu-icons" onClick={handleClick}>
-                        {click ? x : bars}
+        <div>
+            {/* the navbar itself*/}
+            <div className={`nav-wrap ${show ? 'shown' : 'hidden'}`}>
+                <nav className="navbar">
+                    <div className="logo-container">
+                        <Link to="/" >
+                            <img src="/Images/initiare-logo-final-centered.png" className="logo" />
+                        </Link>
                     </div>
-                </div>
+                    <div className="menu-container">
+                        <div className="menu-icons" onClick={handleClick}>
+                            {click ? x : bars}
+                        </div>
+                    </div>
 
 
-            </nav>
-            <ul className={`nav-menu ${click ? 'active' : 'inactive'}`}>
-                <DropdownItem title="Home" link="/" closeMenu={handleClick} />
-                <DropdownItem title="About" link="/about" closeMenu={handleClick} />
-                <DropdownItem title="Archive" link="/archive" closeMenu={handleClick} />
-                <DropdownItem title="Upload" link="/upload" closeMenu={handleClick} />
-                <DropdownItem title="Blog" link="/blog" closeMenu={handleClick} />
-                <DropdownItem title="InitiaRe x Scholar Journal" link="/ixsjournal" closeMenu={handleClick} />
-            </ul>
+                </nav>
+                <ul className={`nav-menu ${click ? 'active' : 'inactive'}`}>
+                    <DropdownItem title="Home" link="/" closeMenu={handleClick} />
+                    <DropdownItem title="About" link="/about" closeMenu={handleClick} />
+                    <DropdownItem title="Archive" link="/archive" closeMenu={handleClick} />
+                    <DropdownItem title="Upload" link="/upload" closeMenu={handleClick} />
+                    <DropdownItem title="Blog" link="/blog" closeMenu={handleClick} />
+                    <DropdownItem title="InitiaRe x Scholar Journal" link="/ixsjournal" closeMenu={handleClick} />
+                </ul>
 
+            </div>
+            {/* the space (i.e. gutter) for the navbar when you scroll to the top of the page*/}
+            <div className='nav-gutter' id="nav-gutter"></div> 
         </div>
     );
 };
