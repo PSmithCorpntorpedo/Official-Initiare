@@ -36,7 +36,7 @@ function Footer() {
                     <span className='disclaimer-title'>Disclaimer:</span><span className='disclaimer-text'>The information on this site is not intended or implied to be a substitute for professional advice. InitiaRe's resources are for informational and educational purposes only.</span>
                 </div>
             </div>
-            <div className='lower-footer'>	&copy; 2023 InitiaRe Team</div>
+            <div className='lower-footer'>&copy; 2023 InitiaRe Team</div>
         </div>
     )
 };
