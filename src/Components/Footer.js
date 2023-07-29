@@ -15,7 +15,7 @@ function Footer() {
                     <Link className='main-link' to='/articles'>Articles</Link>
                     <Link className='main-link' to='/upload'>Upload your paper</Link>
                     <Link className='main-link' to='/about#terms-of-use'>Terms & Conditions</Link>
-                    <Link className='main-link' to='/journal'>IRScholar Jounal</Link>
+                    <Link className='main-link' to='/journal'>IRScholar Journal</Link>
                     <Link className='main-link' to='/blog'>Our blog</Link>
                     <Link className='main-link' to='/about'>About us</Link>
                 </div>
@@ -23,7 +23,7 @@ function Footer() {
                     <div className='follow-wrap'>
                         <div className='follow-text'>Follow us</div>
                         <div className='follow-icons'>
-                            <a>{facebookIcon}</a>
+                            <a href='https://www.facebook.com/people/InitiaRe/100092825321496/'>{facebookIcon}</a>
                             <a>{instagramIcon}</a>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className='disclaimer-wrap'>
-                    <span className='disclaimer-title'>Disclaimer:</span><span className='disclaimer-text'>The information on this site is not intended or implied to be a substitute for professional advice. InitiaRe's resources are for informational and educational purposes only.</span>
+                    <span className='disclaimer-title'>Disclaimer: </span><span className='disclaimer-text'>The information on this site is not intended or implied to be a substitute for professional advice. InitiaRe's resources are for informational and educational purposes only.</span>
                 </div>
             </div>
             <div className='lower-footer'>&copy; 2023 InitiaRe Team</div>

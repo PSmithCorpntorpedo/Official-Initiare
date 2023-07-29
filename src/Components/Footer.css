@@ -2,26 +2,174 @@
     height: 18rem;
     width: 100%;
     background-color: black;
-    color: white;  
+    color: white;
 }
 
 .upper-footer {
     box-sizing: border-box;
     width: 100%;
+    height: 14rem;
     display: flex;
-    padding: 0 5%;
+    justify-content: space-evenly;
+    padding: 2rem 10% 0 10%;
 }
 
 .lower-footer {
-    
+    width: 100%;
+    height: 4rem;
+    line-height: 3rem;
+    text-align: center;
+    /* horizontally centers text*/
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 .main-link-wrap {
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex: 2 1 1px;
+}
 
+.follow-contact {
+    flex: 1 1 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.follow-wrap,
+.contact-wrap {
+    height: 6rem;
+}
+
+.follow-text,
+.contact-text {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.follow-icons {
+    font-size: 1.75rem;
+}
+
+.follow-icons a {
+    margin-right: 20px
+}
+
+.disclaimer-wrap {
+    flex: 2 1 1px;
+    font-size: 1.125rem;
+    text-align: justify;
+}
+
+.disclaimer-title {
+    font-weight: bold;
 }
 
 .main-link {
     text-decoration: none;
     color: white;
     display: block;
+    font-size: 1.25rem;
+    flex: 1 1 4rem;
+}
+
+.follow-icons a {
+    color: white;
+}
+
+@media (max-width: 1300px) {
+    .upper-footer {
+        padding: 2rem 7% 0 7%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .upper-footer {
+        padding: 2rem 5% 0 5%;
+    }
+}
+
+@media (max-width: 1075px) {
+    .disclaimer-wrap {
+        flex: 1 1 1px;
+        text-align: initial;
+    }
+}
+
+@media (max-width: 950px) {
+    .main-link-wrap {
+        flex: 1 1 1px;
+    }
+
+    .main-link {
+        flex: 1 1 1.25rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        height: 32rem;
+        
+    }
+
+    .upper-footer {
+        height: 28rem;
+        flex-direction: column;
+        
+    }
+
+    .main-link-wrap {
+        height: 12rem;
+    }
+
+    .main-link {
+        flex: 1 1 4rem;
+        text-align: center;
+    }
+
+    .follow-contact {
+        flex-direction: row;
+        text-align: center;
+        height: 8rem;
+    }
+
+    .follow-wrap, .contact-wrap {
+        flex: 1 1 1px;
+    }
+}
+
+@media (max-aspect-ratio: 3/4) {
+    .footer {
+        height: 40rem;
+        
+    }
+
+    .upper-footer {
+        height: 36rem;
+        display: block;
+        
+    }
+
+    .main-link-wrap {
+        height: 18rem;
+    }
+
+    .main-link {
+        flex: 1 1 3rem;
+        text-align: initial;
+    }
+
+    .follow-contact {
+        flex-direction: column;
+        text-align: initial;
+        height: 9rem;
+    }
+
+    .follow-wrap, .contact-wrap {
+        flex: 1 1 1px;
+    }
 }
