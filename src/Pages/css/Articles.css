@@ -117,7 +117,7 @@ input[type="checkbox"]:checked{
     font-weight: 600
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
     .filter-caption{
         font-size: 1em;
     }
