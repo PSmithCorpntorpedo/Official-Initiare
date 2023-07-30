@@ -1,15 +1,30 @@
-ul {
-    list-style: none;
+:root{
+    --primary: #2B52B7;
+    --secondary: #FFBC00;
+    --special: #FF0000; 
 }
 
-.page-wrapper {
+
+ul{
+    list-style: none;
+};
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.page-wrapper{
     display: flex;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.filter-caption {
+.filter-caption{
     width: 100%;
     height: 10%;
     color: var(--primary);
@@ -18,7 +33,7 @@ ul {
 }
 
 
-.filter-box {
+.filter-box{
     height: 100%;
     width: 25vw;
     padding-left: 2%;
@@ -28,35 +43,29 @@ ul {
     margin: 1%;
     border-radius: 5px;
     border: 1px var(--primary) solid;
+    
 }
 
-.search-box {
-    margin: 1%;
-    height: auto;
-    width: 70vw;
-    background-color: #eee;
-    display: inline-block;
 
-}
 
-.no-list-style {
+.no-list-style{
     list-style: none;
 }
 
-.sublist1 {
-    margin-left: 2%;
+.sublist1{
+    margin-left: 3%;
     border-left: 2px black solid;
     padding-left: 4%;
-    font-weight: 600
+    font-weight: 600;
+    
 }
-
-.sub-list-items {
+.sub-list-items{
     margin-top: 4%;
-    font-size: 1em;
-
+    font-size: 1em; 
+    align-items: center;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"]{
     appearance: none;
     -webkit-appearance: none;
     height: 1.2em;
@@ -66,10 +75,11 @@ input[type="checkbox"] {
     border-radius: 5px;
     border: grey 2px solid;
     cursor: pointer;
+    
 }
-
-label {
+label{
     cursor: pointer;
+    width: 100%;
 }
 
 /* input[type="checkbox"]::after{
@@ -87,61 +97,85 @@ input[type="checkbox"]:checked::after{
     display: inline-block;
 } */
 
-input[type="checkbox"]:hover {
+input[type="checkbox"]:hover{
     background-color: gainsboro;
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"]:checked{
     background-color: var(--primary);
 }
 
-.header {
+.header{
     margin-top: 4%;
 }
-
-.sublist2 {
+.sublist2{
     margin-top: 4%;
-    font-weight: 600
+    font-weight: 600;
+    padding-left: 0;
 }
 
-@media (max-width: 600px) {
-    .filter-caption {
+@media (max-width: 500px){
+    .filter-caption{
         font-size: 1em;
     }
-
-    .sublist1 {
+    .sublist1{
         border-left: 2px black solid;
         padding-left: 4%;
-
+        
     }
-
-    .sub-list-items {
+    .sub-list-items{
         margin-top: 0%;
-        font-size: 0.7em;
+        font-size: 0.7em; 
     }
-
-    .header {
+    .header{
         margin-top: 3%;
     }
-
-    .sublist2 {
+    .sublist2{
         margin-top: 3%;
     }
-
-    h2 {
+    h2{
         font-size: 0.8em;
     }
-
-    .filter-box {
+    .filter-box{
         width: 90vw;
     }
-
+    
 }
 
 
 
 /* this is where the filter box stops */
-
-input[type="text"] {
-    width: 100%;
+.search-box{
+    margin: 1%;
+    height: 100%;
+    width: 70%;
+    display: inline-block;
+    
 }
+
+.search-bar{
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+.search{
+    width: 100%;
+    padding: 1%;
+    display:inline-block;
+    font-size: 1.1em
+}
+/* .search-button{
+    width: 5%;
+    height: 100%;
+    display: inline-block
+} */ /*currently, the search button does not work, so i shall omit it from the page temporarily */
+
+.search-results{
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+} 
