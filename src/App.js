@@ -8,7 +8,7 @@ import Articles from './Pages/Articles';
 import Upload from './Pages/Upload';
 import Blog from './Pages/Blog';
 import IRScholarJournal from './Pages/Journal';
-
+import './App.css';
 
 function App(){
     return(

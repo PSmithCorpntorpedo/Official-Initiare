@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Navbar.css';
+import navbarcss from './navbar.module.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -51,22 +51,22 @@ function Navbar() {
     return (
         <div>
             {/* the navbar itself*/}
-            <div className={`nav-wrap ${show ? 'shown' : 'hidden'}`}>
-                <nav className="navbar">
-                    <div className="logo-container">
+            <div className={`${navbarcss['nav-wrap']} ${show ? navbarcss.shown : navbarcss.hidden}`}>
+                <nav className={navbarcss['navbar']}>
+                    <div className={navbarcss['logo-container']}>
                         <Link to="/" >
-                            <img src="/Images/initiare-logo-final-centered.png" alt='logo' className="logo" />
+                            <img src="/Images/initiare-logo-final-centered.png" alt='logo' className={navbarcss['logo']} />
                         </Link>
                     </div>
-                    <div className="menu-container">
-                        <div className="menu-icons" onClick={handleClick}>
+                    <div className={navbarcss['menu-container']}>
+                        <div className={navbarcss['menu-icons']} onClick={handleClick}>
                             {click ? x : bars}
                         </div>
                     </div>
 
 
                 </nav>
-                <ul className={`nav-menu ${click ? 'active' : 'inactive'}`}>
+                <ul className={`${navbarcss['nav-menu']} ${click ? navbarcss['active'] : navbarcss['inactive']}`}>
                     <DropdownItem title="Home" link="/" closeMenu={handleClick} />
                     <DropdownItem title="About" link="/about" closeMenu={handleClick} />
                     <DropdownItem title="Articles" link="/articles" closeMenu={handleClick} />
@@ -77,7 +77,7 @@ function Navbar() {
 
             </div>
             {/* the space (i.e. gutter) for the navbar when you scroll to the top of the page*/}
-            <div className='nav-gutter' id="nav-gutter"></div> 
+            <div className={navbarcss['nav-gutter']} id="nav-gutter"></div> 
         </div>
     );
 };
@@ -85,8 +85,8 @@ function Navbar() {
 function DropdownItem(props) {
     return (
         <>
-            <li className="nav-pages" onClick={props.closeMenu}>
-                <Link to={props.link} className="nav-links">
+            <li className={navbarcss['nav-pages']} onClick={props.closeMenu}>
+                <Link to={props.link} className={navbarcss['nav-links']}>
                     {props.title}
                 </Link>
             </li>
