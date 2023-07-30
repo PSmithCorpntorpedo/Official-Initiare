@@ -1,0 +1,158 @@
+@import url(https://db.onlinewebfonts.com/c/f50deaf3f2e2c69311cebdafbf7561d2?family=Geotica+W01+Four+Open); 
+
+.home-header {
+  width: 100%;
+  height: 500vh;
+}
+
+.header-video {
+  width: 100%;
+  height: 500vh;
+  position: absolute;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.main-text-wrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.main-text {
+  position: absolute;
+  top: calc(50vh - 5vh);
+  font-family: 'Geotica W01 Four Open';
+  text-transform: uppercase;
+  color: #B5AC7F;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 600;
+  height: 10vh;
+  line-height: 10vh;
+  width: 100%;
+  z-index: 5;
+}
+
+.clock-wrap-wrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.clock-wrap {
+  position: absolute;
+  --clock-width-height: 90vh;
+  width: var(--clock-width-height);
+  height: var(--clock-width-height);
+  z-index: 3;
+}
+
+.hour-mark {
+  --hm-color: whitesmoke;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-right: 70px solid var(--hm-color);
+  border-left: 70px solid var(--hm-color);
+  top: calc(50% - 1px);
+  z-index: 4;
+  /* border-left and border-right 
+  values are controlled in media 
+  queries, these are just for backup*/
+}
+
+.hour-mark:nth-of-type(2) {
+  transform: rotate(30deg);
+}
+
+.hour-mark:nth-of-type(3) {
+  transform: rotate(60deg);
+}
+
+.hour-mark:nth-of-type(4) {
+  transform: rotate(90deg);
+}
+
+.hour-mark:nth-of-type(5) {
+  transform: rotate(120deg);
+}
+
+.hour-mark:nth-of-type(6) {
+  transform: rotate(150deg);
+}
+
+.long-hand {
+  --lh-color: whitesmoke;
+  --long-hand-length: calc(50% - 10vh);
+  --long-hand-offset: 0.1;
+  position: absolute;
+  width: var(--long-hand-length);
+  height: 2px;
+  background-color: var(--lh-color);
+  top: calc(50% - 1px);
+  right: calc(50% - (var(--long-hand-length) * var(--long-hand-offset)));
+  transform-origin: calc(100% - (100% * var(--long-hand-offset)));
+  animation: 12s steps(12) 0s infinite normal both running long-hand-animation;
+  
+}
+
+.short-hand {
+  --sh-color: whitesmoke;
+  --short-hand-length: calc((50% - 10vh) * 0.7);
+  --short-hand-offset: 0.1;
+  position: absolute;
+  width: var(--short-hand-length);
+  height: 2px;
+  background-color: var(--sh-color);
+  top: calc(50% - 1px);
+  right: calc(50% - (var(--short-hand-length) * ( var(--short-hand-offset))));
+  transform-origin: calc(100% - (100% * var(--short-hand-offset)));
+  transform: rotate(-32deg);
+}
+
+@keyframes long-hand-animation {
+  from {
+      transform: rotate(90deg);
+  }
+  to {
+      transform: rotate(450deg);
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .clock-wrap {
+    --clock-width-height: 90vh;
+  }
+  .hour-mark {
+    border-right: 10vh solid var(--hm-color);
+    border-left: 10vh solid var(--hm-color);
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .clock-wrap {
+    --clock-width-height: max(90%, 500px);
+  }
+  .hour-mark {
+    border-right: max(10vw, 60px) solid var(--hm-color);
+    border-left: max(10vw, 60px) solid var(--hm-color);
+  }
+}
+
+@media (max-width: 470px) {
+  .main-text {
+    font-size: 4.5rem;
+  }
+}
