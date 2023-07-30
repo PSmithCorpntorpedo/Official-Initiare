@@ -15,6 +15,11 @@ ul{
     list-style: none;
 };
 
+body{
+    height: 100%;
+    width: 100%;
+}
+
 .page-wrapper{
     display: flex;
     width: 100%;
@@ -26,9 +31,7 @@ ul{
     height: 10%;
     color: var(--primary);
     font-weight: 700;
-    
     font-size: 2em;
-
 }
 
 
@@ -45,14 +48,7 @@ ul{
     
 }
 
-.search-box{
-    margin: 1%;
-    height: auto;
-    width: 70vw;
-    background-color: #eee;
-    display: inline-block;
-    
-}
+
 
 .no-list-style{
     list-style: none;
@@ -62,7 +58,7 @@ ul{
     margin-left: 2%;
     border-left: 2px black solid;
     padding-left: 4%;
-    font-weight: 600
+    font-weight: 600;
     
 }
 .sub-list-items{
@@ -84,6 +80,7 @@ input[type="checkbox"]{
 }
 label{
     cursor: pointer;
+    width: 100%;
 }
 
 /* input[type="checkbox"]::after{
@@ -148,7 +145,37 @@ input[type="checkbox"]:checked{
 
 
 /* this is where the filter box stops */
+.search-box{
+    margin: 1%;
+    height: 100%;
+    width: 70%;
+    background-color: #eee;
+    display: inline-block;
+    
+}
 
-input[type="text"]{
+.search-bar{
+    height: 100%;
     width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+.search{
+    width: 100%;
+    padding: 1%;
+    display:inline-block;
+    font-size: 1.1em
+}
+/* .search-button{
+    width: 5%;
+    height: 100%;
+    display: inline-block
+} */ /*currently, the search button does not work, so i shall omit it from the page temporarily */
+
+.search-results{
+    width: 100%;
+    height: 100%;
+    display: block
 }

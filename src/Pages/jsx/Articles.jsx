@@ -1,6 +1,9 @@
 import React from 'react';
 import '../css/Articles.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import ReactPaginate from 'react-paginate';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Articles(){
@@ -82,10 +85,33 @@ function SearchBox(){
     const [search, setSearch] = useState('');
     return(
         <div className="search-box">
-                <div className="search-bar">
-                    <input type="text"/>
-                </div>
-                <div className="search-results"></div>
+            <div className="search-bar">
+                <input type="text" className='search' placeholder="Search articles, research papers, authors and more"/>   
+                {/* i was gonna add a button here, but the styling made it impossible to idgaf anymore  */}
+            </div>
+            <Paginate />
         </div> 
+    )
+}
+
+function Paginate(){
+    const prev = <FontAwesomeIcon icon={faArrowLeft}/>
+    const next = <FontAwesomeIcon icon={faArrowRight}/>
+
+    const handlePageClick = (page) => {
+        console.log(page.selected + 1)
+    }
+    return(
+        <div className="search-results">
+            <ReactPaginate 
+            previousLabel = {prev}
+            nextLabel = {next} 
+            breakLabel = {'...'}
+            pageCount = {10}
+            marginPagesDisplayed={1}
+            onPageChange={handlePageClick}
+            containerClassName=''
+            />
+        </div>
     )
 }
