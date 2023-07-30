@@ -66,6 +66,7 @@
 .nav-menu.inactive {
     visibility: hidden;
     position: fixed;
+    z-index: 999;
 }
 
 .nav-pages {
