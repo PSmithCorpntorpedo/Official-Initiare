@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Articles.css';
+import articles from '../css/Articles.module.css';
 import {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +8,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Articles(){
     return(
-        <div className="page-wrapper">
+        <div className={articles['page-wrapper']}>
             <FilterBox />          
             <SearchBox />
         </div>
@@ -17,7 +17,7 @@ export default function Articles(){
 
 function FilterItem(props){
     return (
-        <li className="no-list-style sub-list-items" style={props.style} >
+        <li className={`${articles["no-list-style"]} ${articles['sub-list-items']}`} style={props.style} >
             <label for={props.name}>
                 <input type="checkbox" id={props.name}/> 
                 {props.name}
@@ -28,14 +28,14 @@ function FilterItem(props){
 
 function FilterBox(){
    return(
-   <div className="filter-box">
-        <div className="filter-caption">FILTER BY</div>
-            <div className="filter-area">
-                <div className="fields">
+   <div className={articles['filter-box']}>
+        <div className={articles["filter-caption"]}>FILTER BY</div>
+            <div className={articles["filter-area"]}>
+                <div className={articles["fields"]}>
                     <h2>Research Area</h2>
-                    <div className="natural-sciences" >
+                    <div className={articles["natural-sciences"]} >
                     <FilterItem name="Natural Sciences" style={{fontWeight:"700", fontSize: "1.2em"}} />
-                            <ul className="sublist1">
+                            <ul className={articles["sublist1"]}>
                                 <FilterItem name="Life Sciences" />
                                 <FilterItem name="Physical Sciences" />
                                 <FilterItem name="Earth Sciences" />
@@ -45,33 +45,33 @@ function FilterBox(){
                             </ul>
 
                     </div>
-                    <div className="social-sciences">
+                    <div className={articles["social-sciences"]}>
                     <FilterItem name="Social Sciences" style={{fontWeight:"700", fontSize: "1.2em"}} />
-                            <ul className="sublist1">
+                            <ul className={articles["sublist1"]}>
                                 <FilterItem name="Social Studies" />
                                 <FilterItem name="Humanities" />
                             </ul>
                         </div>
                     </div>
-                    <div className="header status">
+                    <div className={`${articles["header"]} ${articles["status"]}`}>
                         <h2>Status</h2>
-                        <ul className="sublist2">
+                        <ul className={articles["sublist2"]}>
                             <FilterItem name="Non-reviewed"/>
                             <FilterItem name="Peer-reviewed"/>
                             <FilterItem name="Specialist-reviewed"/>
                         </ul>
                         
                     </div>
-                    <div className="header date-published">
+                    <div className={`${articles["header"]} ${articles["date-published"]}`}>
                         <h2>Date Published</h2>
-                        <ul className="sublist2">
+                        <ul className={articles["sublist2"]}>
                             <FilterItem name="2023" />
                             <FilterItem name="2022" />
-                        </ul>
+                        </ul>   
                     </div>
-                    <div className="header language">
+                    <div className={`${articles["header"]} ${articles["language"]}`}>
                         <h2>Language</h2>
-                        <ul className="sublist2">
+                        <ul className={articles["sublist2"]}>
                             <FilterItem name="English" />
                             <FilterItem name="Vietnamese" />
                         </ul>
@@ -84,9 +84,9 @@ function FilterBox(){
 function SearchBox(){   
     const [search, setSearch] = useState('');
     return(
-        <div className="search-box">
-            <div className="search-bar">
-                <input type="text" className='search' placeholder="Search articles, research papers, authors and more"/>   
+        <div className={articles["search-box"]}>
+            <div className={articles["search-bar"]}>
+                <input type="text" className={articles['search']} placeholder="Search articles, research papers, authors and more"/>   
                 {/* i was gonna add a button here, but the styling made it impossible to idgaf anymore  */}
             </div>
             <Paginate />
@@ -128,7 +128,7 @@ function Paginate(){
         setItems(pageServer)
     }
     return(
-        <div className="search-results">
+        <div className={articles["search-results"]}>
             <div className="row m-2">
         {items.map((item) => {
           return (
