@@ -113,13 +113,13 @@
 @media (max-width: 700px) {
     .footer {
         height: 32rem;
-        
+
     }
 
     .upper-footer {
         height: 28rem;
         flex-direction: column;
-        
+
     }
 
     .main-link-wrap {
@@ -137,7 +137,8 @@
         height: 8rem;
     }
 
-    .follow-wrap, .contact-wrap {
+    .follow-wrap,
+    .contact-wrap {
         flex: 1 1 1px;
     }
 }
@@ -145,13 +146,13 @@
 @media (max-aspect-ratio: 3/4) {
     .footer {
         height: 40rem;
-        
+
     }
 
     .upper-footer {
         height: 36rem;
         display: block;
-        
+
     }
 
     .main-link-wrap {
@@ -169,7 +170,8 @@
         height: 9rem;
     }
 
-    .follow-wrap, .contact-wrap {
+    .follow-wrap,
+    .contact-wrap {
         flex: 1 1 1px;
     }
 }
