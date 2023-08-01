@@ -3,6 +3,7 @@
     top: 0;
     width: 100%;
     transition: top 0.15s linear 0.05s;
+    z-index: 999;
 }
 
 .hidden {
@@ -19,8 +20,6 @@
     background-color: black;
     width: 100%;
 }
-
-
 
 .logo-container {
     height: 100%;
