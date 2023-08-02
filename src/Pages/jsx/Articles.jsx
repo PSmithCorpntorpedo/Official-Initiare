@@ -105,8 +105,8 @@ function Paginate(){
         const getArticles = async () => {
             const res = await fetch(`https://initiare-clone-a22c10683333.herokuapp.com/api/v1/articles?Page=1&Size=12`)
             const data = await res.json()
-            const total = res.headers.get('x-total-count')
-            console.log(total) // null
+            const total = data.res.Total
+            console.log(total)
             setPageCount(Math.ceil(total/12)) 
             setItems(data.res.Records)
         }
