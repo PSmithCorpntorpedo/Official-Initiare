@@ -97,35 +97,35 @@ function SearchBox(){
 function Paginate(){
     const prev = <FontAwesomeIcon icon={faArrowLeft}/>
     const next = <FontAwesomeIcon icon={faArrowRight}/>
-    let limit = 12
 
     const [items, setItems] = useState([])
     const [pageCount, setPageCount] = useState(0)
 
     useEffect(() => {
-        const getComments = async () => {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/comments?_page=1&_limit=12`)
+        const getArticles = async () => {
+            const res = await fetch(`https://initiare-clone-a22c10683333.herokuapp.com/api/v1/articles?Page=1&Size=12`)
             const data = await res.json()
-            const total = res.headers.get('x-total-count')
+            const total = data.res.Total
+            console.log(total)
             setPageCount(Math.ceil(total/12)) 
-            setItems(data)
+            setItems(data.res.Records)
         }
-        getComments()
+        getArticles()
         /*this is essentially a one time use method that loads everytime the page reloads*/
     }, [])
 
 
-    const fetchPageComments = async (page) => {
+    const fetchPageArticles = async (page) => {
          
-        const res = await fetch(`https://jsonplaceholder.typicode.com/comments?_page=${page}&_limit=${limit}`)
+        const res = await fetch(`https://initiare-clone-a22c10683333.herokuapp.com/api/v1/articles?Page=${page}&Size=12`)
         const data = await res.json()
         return data
     }
 
     const handlePageClick = async (input) => {
         const page = input.selected + 1;
-        const pageServer = await fetchPageComments(page)
-        setItems(pageServer)
+        const pageServer = await fetchPageArticles(page)
+        setItems(pageServer.res.Records)
     }
     return(
         <div className={articlescss["search-results"]}>
@@ -137,7 +137,7 @@ function Paginate(){
                 <div className="card-body" style={{ zIndex:'1'}}>
                   <h5 className="card-title text-center h2" style={{ zIndex:'1'}}>Id :{item.id} </h5>
                   <h6 className="card-subtitle mb-2 text-muted text-center">
-                    {item.email}
+                    {item.content}
                   </h6>
                   <p className="card-text" style={{ zIndex:'1'}}>{item.body}</p>
                 </div>
