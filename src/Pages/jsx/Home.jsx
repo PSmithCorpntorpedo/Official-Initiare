@@ -7,8 +7,14 @@ const Home = () => {
         <div className={homecss['home']}>
             <div className={homecss['home-header']}>
                 <video className={homecss['header-video']} src={headerVideo} muted autoPlay loop></video>
+                <div className={homecss['beforemain-wrap']}>
+                    <div className={homecss['beforemain']}>Welcome to</div>
+                </div> 
                 <div className={homecss['main-text-wrap']}>
                     <h1 className={homecss['main-text']}>InitiaRe</h1>
+                </div>
+                <div className={homecss['aftermain-wrap']}>
+                    <div className={homecss['aftermain']}>An open journal for students</div>
                 </div>
                 <div className={homecss['clock-wrap-wrap']}>
                     <div className={homecss['clock-wrap']}>

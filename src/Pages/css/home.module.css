@@ -4,7 +4,8 @@
   width: 100%;
   height: 500vh;
   position: relative;
-  --clock-and-logo-offset: -1.5rem;
+  --clock-and-logo-offset: -1.2rem;
+  --clock-width-height: 90vh;
 }
 
 .header-video {
@@ -15,10 +16,36 @@
   z-index: 1;
 }
 
+.beforemain-wrap, .aftermain-wrap {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beforemain {  
+  top: -6rem;
+}
+
+.aftermain {
+  top: 2.5rem;
+}
+
+.beforemain, .aftermain {
+  color: white;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 1.5rem; 
+  position: relative;
+}
+
 .main-text-wrap {
   position: absolute;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -49,16 +76,15 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  z-index: 2;
+  z-index: 4;
 }
 
 .clock-wrap {
   position: relative;
   top: var(--clock-and-logo-offset);
-  --clock-width-height: 90vh;
   width: var(--clock-width-height);
   height: var(--clock-width-height);
-  z-index: 3;
+  z-index: 4;
 }
 
 .hour-mark {
@@ -136,7 +162,7 @@
 }
 
 @media (min-aspect-ratio: 1/1) {
-  .clock-wrap {
+  .home-header {
     --clock-width-height: 90vh;
   }
   .hour-mark {
@@ -146,17 +172,24 @@
 }
 
 @media (max-aspect-ratio: 1/1) {
-  .clock-wrap {
+  .home-header {
     --clock-width-height: max(90%, 500px);
   }
+  .clock-wrap {
+    min-width: 400px;
+    min-height: 400px;
+  }
   .hour-mark {
-    border-right: max(10vw, 60px) solid var(--hm-color);
-    border-left: max(10vw, 60px) solid var(--hm-color);
+    border-right: max(10vw, 50px) solid var(--hm-color);
+    border-left: max(10vw, 50px) solid var(--hm-color);
   }
 }
 
 @media (max-width: 470px) {
+  .home-header {
+    overflow: hidden;
+  }
   .main-text {
-    font-size: 4rem;
+    font-size: min(4rem, calc(100vw / 7));
   }
 }
