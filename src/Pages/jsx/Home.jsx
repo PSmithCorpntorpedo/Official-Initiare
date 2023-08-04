@@ -1,6 +1,8 @@
 import homecss from './../css/home.module.css';
 import headerVideo from './../assets/pexels-pixabay-855204-1920x1080-30fps.mp4';
 import React from 'react';
+import { faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home = () => {
     return (
@@ -26,6 +28,25 @@ const Home = () => {
                         <div className={homecss['hour-mark']}></div>
                         <div className={homecss['long-hand']}></div>
                         <div className={homecss['short-hand']}></div>
+                    </div>
+                </div>
+                <div className={homecss['afterclock-wrap']}>
+                    <div className={homecss['afterclock']}>
+                        <div className={homecss['learn-more-wrap']}>
+                            <div className={homecss['learn-more']}>Learn more</div>
+                        </div>
+                        <div className={homecss['down-arrow-wrap']}>
+                            <div className={homecss['down-arrow']} onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}><FontAwesomeIcon icon={faArrowDownLong} /></div>
+                        </div>
+                    </div>
+                </div>
+                <div className={homecss['goals-wrap']}>
+                    <div className={homecss['goals']}>
+                        <div className={homecss['upper-goal']}>OUR GOALS</div>
+                        <div className={homecss['goal-line']}></div>
+                        <div className={homecss['lower-goal']}>
+                            <p className={homecss['lower-goal-text']}>The objective of our team is clear! Here at InitiaRe, we aim to establish an accessible and dynamic platform that empowers students by promoting professional research and facilitating the exchange of research papers. This open journal caters not only to those looking to publish their work but also provides inspiration for researchers seeking fresh ideas or reliable sources of information.</p>
+                        </div>
                     </div>
                 </div>
             </div>

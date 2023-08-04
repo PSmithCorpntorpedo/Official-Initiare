@@ -2,7 +2,7 @@
 
 .home-header {
   width: 100%;
-  height: 500vh;
+  height: 250vh;
   position: relative;
   --clock-and-logo-offset: -1.2rem;
   --clock-width-height: 90vh;
@@ -10,7 +10,7 @@
 
 .header-video {
   width: 100%;
-  height: 500vh;
+  height: 250vh;
   position: absolute;
   object-fit: cover;
   z-index: 1;
@@ -158,6 +158,105 @@
   }
   to {
       transform: rotate(450deg);
+  }
+}
+
+.afterclock-wrap {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  z-index: 6;
+}
+
+.afterclock {
+  width: 100%;
+}
+
+.learn-more-wrap, .down-arrow-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-more-wrap {
+  top: 1rem;
+  color: white;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+}
+
+.learn-more {}
+
+.down-arrow-wrap {
+  top: 2rem;
+}
+
+.down-arrow {
+  color: var(--secondary);
+  font-size: 1.3rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  /* line-height must have the same value
+  as height to center text vertically*/
+  text-align: center;
+}
+
+.down-arrow:hover {
+  cursor: pointer;
+}
+
+.goals-wrap {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 150vh;
+  z-index: 6;
+}
+
+.upper-goal {
+  font-size: 4rem;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 20vh;
+}
+
+.goal-line {
+  height: 3px;
+  width: 200px;
+  position: relative;
+  top: 20vh;
+  background-color: var(--secondary);
+  left: calc(50% - 200px / 2);
+}
+
+.lower-goal-text {
+  position: relative;
+  top: 25vh;
+  color: white;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  width: 50%;
+  left: calc(50% - 50% / 2);
+  text-align: justify;
+}
+
+@media (max-width: 1150px) {
+  .lower-goal-text {
+    width: 70%;
+    left: calc(50% - 70% / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .lower-goal-text {
+    width: 90%;
+    left: calc(50% - 90% / 2);
   }
 }
 
