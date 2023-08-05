@@ -8,6 +8,7 @@ import Articles from './Pages/Articles';
 import Upload from './Pages/Upload';
 import Blog from './Pages/Blog';
 import IRScholarJournal from './Pages/Journal';
+import SignUp from './Authentication/Signup';
 import './App.css';
 
 function App(){
@@ -22,6 +23,7 @@ function App(){
                 <Route path='/upload' element={<Upload/>} ></Route>
                 <Route path='/blog' element={<Blog/>} ></Route>
                 <Route path='/journal' element={<IRScholarJournal/>} ></Route>
+                <Route path='/signup' element={<SignUp/>} ></Route>
             </Routes>
             <Footer />
         </BrowserRouter>
