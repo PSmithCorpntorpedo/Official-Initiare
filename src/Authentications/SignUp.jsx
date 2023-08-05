@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./signUp.module.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -15,15 +16,44 @@ export default function SignUp() {
     },
 
     validationSchema: yup.object({
-        firstName: yup.string().max(20, "First name must be =< 20 letters").min(2, "First name must be >= 2 letters").required("Required information"),
-        lastName: yup.string().max(20, "Last name must be =< 20 letters").min(2, "Last name must be >= 2 letters").required("Required information"),
-        email: yup.string().email("Invalid email address").required("Required information")
+      firstName: yup
+        .string()
+        .max(20, "First name must be =< 20 letters")
+        .min(2, "First name must be >= 2 letters")
+        .required("Required information"),
+      lastName: yup
+        .string()
+        .max(20, "Last name must be =< 20 letters")
+        .min(2, "Last name must be >= 2 letters")
+        .required("Required information"),
+      email: yup
+        .string()
+        .email("Invalid email address")
+        .required("Required information"),
+      password: yup
+        .string()
+        .min(3, "Password must be >= 3 letters")
+        .max(20, "Password must be =< 20 letters")
+        .required("Required information"),
+      school: yup.string().min(3, "Your school must have >= 3 letters"),
     }),
-    onSubmit: (values) =>{
-        console.log(values);
-    }
+    onSubmit: async (values) => {
+        setUserInfo(values)
+        fetch(
+          "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/register",
+          {
+            method: "POST",
+            header: {"Content-Type": "application/json"},
+            body: JSON.stringify(userInfo),
+          }
+        )
+        .then(response => console.log(response.json()))
+         
+    },
   });
- 
+  const handleRadioButtons = (e) => (formik.values.gender = e.target.value);
+  let [userInfo, setUserInfo] = useState({});
+
   return (
     <div className={styles[`page-wrapper`]}>
       <form onSubmit={formik.handleSubmit}>
@@ -37,7 +67,9 @@ export default function SignUp() {
             onBlur={formik.handleBlur}
             value={formik.values.firstName}
           />
-          {formik.touched.firstName && formik.errors.firstName && <p>{formik.errors.firstName}</p>}
+          {formik.touched.firstName && formik.errors.firstName && (
+            <p>{formik.errors.firstName}</p>
+          )}
           <input
             id="lastName"
             name="lastName"
@@ -47,7 +79,9 @@ export default function SignUp() {
             onBlur={formik.handleBlur}
             value={formik.values.lastName}
           />
-           {formik.touched.lastName && formik.errors.lastName && <p>{formik.errors.lastName}</p>}
+          {formik.touched.lastName && formik.errors.lastName && (
+            <p>{formik.errors.lastName}</p>
+          )}
           <input
             id="email"
             name="email"
@@ -57,11 +91,62 @@ export default function SignUp() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-            {formik.touched.email && formik.errors.email && <p>{formik.errors.email}</p>}
-        <button type="submit">Register Account </button>
+          {formik.touched.email && formik.errors.email && (
+            <p>{formik.errors.email}</p>
+          )}
+          <input
+            id="password"
+            name="password"
+            type="text"
+            placeholder="Password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+          />
+          {formik.touched.password && formik.errors.password && (
+            <p>{formik.errors.password}</p>
+          )}
+          <input
+            id="school"
+            name="school"
+            type="text"
+            placeholder="School"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.school}
+          />
+          {formik.touched.school && formik.errors.school && (
+            <p>{formik.errors.school}</p>
+          )}
+          <div className={styles[`gender`]}>
+            <label htmlFor="male">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="Male"
+                onChange={(e) => handleRadioButtons(e)}
+                required
+              />
+              Male
+            </label>
+
+            <label htmlFor="female">
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="Female"
+                onChange={(e) => handleRadioButtons(e)}
+                required
+              />
+              Female
+            </label>
+          </div>
+          <button type="submit">Register Account </button>
         </div>
       </form>
-        {/*yeah yeah i know, we can put this into a functional component, but it will mess with formik, and i'm not willing to relinquish cool functionalities for some pretty looking code.
+      {/*yeah yeah i know, we can put this into a functional component, but it will mess with formik, and i'm not willing to relinquish cool functionalities for some pretty looking code.
         and also because im lazy as hell to find a solution to make my code look prettier instead of functional ig lol
         */}
     </div>

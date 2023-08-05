@@ -20,13 +20,13 @@ function App(){
             <Navbar/>
             <Routes>
                 <Route path='/' index element={<Home/>} ></Route>
+                <Route path='/login' element={<Login/>} ></Route>
+                <Route path='/signup' element={<SignUp/>} ></Route>
                 <Route path='/about' element={<About/>} ></Route>
                 <Route path='/articles' element={<Articles/>} ></Route>
                 <Route path='/upload' element={<Upload/>} ></Route>
                 <Route path='/blog' element={<Blog/>} ></Route>
                 <Route path='/journal' element={<IRScholarJournal/>} ></Route>
-                <Route path='/login' element={<Login/>} ></Route>
-                <Route path='/signup' element={<SignUp/>} ></Route>
             </Routes>
             <Footer />
         </BrowserRouter>
