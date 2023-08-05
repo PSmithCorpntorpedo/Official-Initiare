@@ -7,11 +7,12 @@
 }
 
 .hidden {
-    top: -3rem; /* has to be the value of nav-wrap's height but negative */
+    top: -3.5rem;
+    /* has to be the value of nav-wrap's height but negative */
 }
 
 .navbar {
-    height: 3rem;
+    height: 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,37 +22,53 @@
     width: 100%;
 }
 
-.logo-container {
-    height: 100%;
-    color: white;
+.left-container {
     display: flex;
-    margin-left: 2%;
+    height: 100%;
+    /* width: 50%; */
+}
+
+.logo-container {
+    display: block;
+    height: 100%;
 }
 
 .logo {
     height: 100%;
     align-self: center;
+    justify-self: center;
     display: inline-block;
-    margin: auto;
-    vertical-align: middle
+}
+
+.site-name-container {
+    margin-left: 0.75rem;
+}
+
+.site-name {
+    line-height: 3.5rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: white;
+
 }
 
 .menu-container {
-    margin-right: 2%;
     font-size: 1.8rem;
+    aspect-ratio: 1/1;
+    height: 3.5rem;
+    text-align: center;
 }
 
 .menu-icons {
     color: #fff;
-
+    line-height: 3.5rem;
 }
 
 .nav-menu.active {
     visibility: visible;
     position: fixed;
     width: 20%;
-    top: 3rem;
-    left: 80%;
+    top: 3.5rem;
     background-color: black;
     z-index: 999;
     list-style: none;
@@ -77,13 +94,58 @@
 
 .nav-gutter {
     width: 100%;
-    height: 3rem; /* has to be the same value as height of nav-wrap*/
+    height: 3.5rem;
+    /* has to be the same value as height of nav-wrap*/
     background-color: black;
 }
 
 @media (max-width: 1000px) or (max-aspect-ratio: 1/1) {
     .nav-menu.active {
         width: 40%;
-        left: 60%
+        top: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-menu.active {
+        width: 70%;
+    }
+
+    .site-name-container {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .logo-container {
+        display: none;
+    }
+
+    .hidden {
+        top: -3rem;
+    }
+
+    .menu-container {
+        height: 3rem;
+    }
+
+    .nav-menu.active {
+        width: 70%;
+    }
+
+    .navbar {
+        height: 3rem;
+    }
+
+    .nav-gutter {
+        height: 3rem;
+    }
+
+    .menu-icons {
+        line-height: 3rem;
+    }
+
+    .site-name {
+        line-height: 3rem;
     }
 }
