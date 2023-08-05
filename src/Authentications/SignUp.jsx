@@ -38,27 +38,24 @@ export default function SignUp() {
       school: yup.string().min(3, "Your school must have >= 3 letters"),
     }),
     onSubmit: async (values) => {
-        setUserInfo(values)
-        fetch(
-          "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/register",
-          {
-            method: "POST",
-            header: {"Content-Type": "application/json"},
-            body: JSON.stringify(userInfo),
-          }
-        )
-        .then(response => console.log(response.json()))
-         
+      fetch(
+        "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/register",
+        {
+          method: "POST",
+          header: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }
+      ).then((response) => console.log(response.json()));
     },
   });
   const handleRadioButtons = (e) => (formik.values.gender = e.target.value);
-  let [userInfo, setUserInfo] = useState({});
 
   return (
     <div className={styles[`page-wrapper`]}>
       <form onSubmit={formik.handleSubmit}>
         <div className={styles[`input-container`]}>
           <input
+            className={styles[`info-area`]}
             id="firstName"
             name="firstName"
             type="text"
@@ -71,6 +68,7 @@ export default function SignUp() {
             <p>{formik.errors.firstName}</p>
           )}
           <input
+            className={styles[`info-area`]}
             id="lastName"
             name="lastName"
             type="text"
@@ -83,6 +81,7 @@ export default function SignUp() {
             <p>{formik.errors.lastName}</p>
           )}
           <input
+            className={styles[`info-area`]}
             id="email"
             name="email"
             type="text"
@@ -95,6 +94,7 @@ export default function SignUp() {
             <p>{formik.errors.email}</p>
           )}
           <input
+            className={styles[`info-area`]}
             id="password"
             name="password"
             type="text"
@@ -107,6 +107,7 @@ export default function SignUp() {
             <p>{formik.errors.password}</p>
           )}
           <input
+            className={styles[`info-area`]}
             id="school"
             name="school"
             type="text"
@@ -119,7 +120,7 @@ export default function SignUp() {
             <p>{formik.errors.school}</p>
           )}
           <div className={styles[`gender`]}>
-            <label htmlFor="male">
+            <label htmlFor="male" className={styles[`radio`]}>
               <input
                 type="radio"
                 id="male"
@@ -131,7 +132,7 @@ export default function SignUp() {
               Male
             </label>
 
-            <label htmlFor="female">
+            <label htmlFor="female" className={styles[`radio`]}>
               <input
                 type="radio"
                 id="female"
