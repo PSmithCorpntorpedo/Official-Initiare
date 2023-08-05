@@ -36,11 +36,11 @@ const Home = () => {
                             <div className={homecss['learn-more']}>Learn more</div>
                         </div>
                         <div className={homecss['down-arrow-wrap']}>
-                            <div className={homecss['down-arrow']} onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}><FontAwesomeIcon icon={faArrowDownLong} /></div>
+                            <div className={homecss['down-arrow']} onClick={(e) => {e.preventDefault(); window.location.href='#goals-wrap';}}><FontAwesomeIcon icon={faArrowDownLong} /></div>
                         </div>
                     </div>
                 </div>
-                <div className={homecss['goals-wrap']}>
+                <div className={homecss['goals-wrap']} id='goals-wrap'>
                     <div className={homecss['goals']}>
                         <div className={homecss['upper-goal']}>OUR GOALS</div>
                         <div className={homecss['goal-line']}></div>

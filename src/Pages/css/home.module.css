@@ -237,7 +237,7 @@
 
 .lower-goal-text {
   position: relative;
-  top: 25vh;
+  top: 30vh;
   color: white;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
@@ -290,5 +290,11 @@
   }
   .main-text {
     font-size: min(4rem, calc(100vw / 7));
+  }
+}
+
+@media (max-width: 300px) {
+  .beforemain, .aftermain {
+    font-size: 1.4rem;
   }
 }
