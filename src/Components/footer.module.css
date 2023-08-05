@@ -175,3 +175,23 @@
         flex: 1 1 1px;
     }
 }
+
+@media (max-width: 420px) {
+    .footer {
+        height: 42rem;
+    }
+
+    .upper-footer {
+        height: 38rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer {
+        height: 44rem;
+    }
+
+    .upper-footer {
+        height: 40rem;
+    }
+}
