@@ -1,0 +1,72 @@
+.sign-up-wrapper{
+    width: 100vw;
+    height: 102vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.register-form{
+    background-color: aliceblue;
+    width: clamp(50%, 800px, 95%);
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2%
+}
+.form-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-form h1{
+    color: var(--secondary);
+    font-weight: 800
+}
+.register-form h3{
+    color: #864338;
+    font-weight: 800;
+    text-align: center
+}
+
+.info-box{
+    width: 85%;
+    height: 10%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.gender-wrapper{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.birthdate-wrapper{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button{
+    width: 30%;
+    height: 10%;
+    color: var(--primary);
+    background-color: var(--secondary);
+    border-radius: 2px
+}
+
+.submit-button:hover{
+    background-color: #8B8000;
+    color: aliceblue
+}
