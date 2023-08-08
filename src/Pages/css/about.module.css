@@ -152,7 +152,7 @@ body {
   font-family: var(--font-roboto);
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
   margin: 0;
@@ -166,7 +166,7 @@ html {
 }
 
 .about {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 5% 10%;
 }
 
@@ -237,12 +237,11 @@ html {
   .about {
     margin: 0;
     margin-top: 2%;
-    margin-bottom: 2%
+    margin-bottom: 2%;
   }
 
   .banner-icon {
     width: 100%;
-
   }
 
   .main-layout {
@@ -259,7 +258,6 @@ html {
     width: auto;
     margin: 0 5%;
   }
-
 
   .About-big-questions {
     font-size: 2rem;
@@ -275,7 +273,6 @@ html {
   }
 }
 
-
 @media (max-aspect-ratio: 1/1) {
   .about {
     margin: 0;
@@ -284,7 +281,6 @@ html {
 
   .banner-icon {
     width: 100%;
-
   }
 
   .main-layout {
@@ -301,7 +297,6 @@ html {
     width: auto;
     margin: 0 5%;
   }
-
 
   .About-big-questions {
     font-size: 2rem;
