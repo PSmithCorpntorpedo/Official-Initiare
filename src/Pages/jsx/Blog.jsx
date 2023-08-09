@@ -4,7 +4,7 @@ import blogcss from "./../css/blog.module.css";
 
 export default function Blog() {
   return (
-    <div className="blog">
+    <div className={blogcss["blog"]}>
       <div>
         <img className={blogcss["banner-icon"]} alt="" src={banner} />
       </div>
@@ -34,7 +34,7 @@ function BlogCard(props) {
 
 function BlogSection() {
   return (
-    <div className="blogcard-container">
+    <div className={blogcss["blogcard-container"]}>
       <BlogCard
         date="01/01/2023"
         update="Site update"

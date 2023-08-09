@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+.blog{
+  margin: 5% 10%;
+}
+
 .banner-icon {
   width: 100%;
 }
@@ -10,14 +14,15 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-left: 10rem;
+  margin: 1rem 0;
 }
 
 /*blogcard*/
 hr {
   color: #2b52b7;
   border-top: 0.188rem solid;
-  width: 71.875rem;
+  width: 69.375rem;
+  margin-left: 10%;
 }
 
 .date {
@@ -59,16 +64,16 @@ hr {
 
 .blogcard-subcontainer {
   display: flex;
-  height: 12.5rem;
-  width: 69.375rem;
   padding-bottom: 0rem;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: space-between;
-  margin-left: 10%;
   gap: 1.25rem;
-}
+  width: 70%;
+  margin-right: 10%;
 
+}
+/*blogsection*/
 .blogcard-container {
   display: flex;
   flex-direction: column;
