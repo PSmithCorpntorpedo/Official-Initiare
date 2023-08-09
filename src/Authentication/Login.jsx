@@ -22,8 +22,8 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem("email", JSON.stringify(email));
-    window.localStorage.setItem("password", JSON.stringify(password));
+    window.localStorage.setItem("email", email);
+    window.localStorage.setItem("password", password);
     fetch(
       "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/login",
       {
