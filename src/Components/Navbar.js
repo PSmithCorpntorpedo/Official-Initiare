@@ -3,11 +3,13 @@ import navbarcss from './navbar.module.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-
-
+import useAuth from './../Hooks/useAuth.js';
 
 
 function Navbar() {
+    const {auth} = useAuth()
+    auth.user ? console.log('true') : console.log('false')
+
     const bars = <FontAwesomeIcon icon={faBars} />
     const x = <FontAwesomeIcon icon={faTimes} />
 
@@ -68,7 +70,15 @@ function Navbar() {
                         </div>
                     </div>
                     <div className={navbarcss['right-container']}>
-                        
+                        <div className={`${navbarcss['register-button-wrap']} ${ auth.user ? navbarcss['hide'] : navbarcss['show']}`}>
+                            <Link className={navbarcss['register-button-link']} to='/signup'><div className={navbarcss['register-button']}>Register</div></Link>
+                        </div>
+                        <div className={`${navbarcss['login-button-wrap']} ${ auth.user ? navbarcss['hide'] : navbarcss['show']}`}>
+                            <Link className={navbarcss['login-button-link']} to='/login'><div className={navbarcss['login-button']}>Log in</div></Link>
+                        </div>
+                        <div className={`${navbarcss['username-box-wrap']} ${ auth.user ? navbarcss['show'] : navbarcss['hide']}`}>
+                            <div className={navbarcss['username-box']}>{ auth.user ? `${auth.user.first_name} ${auth.user.last_name}` : 'none'}</div>
+                        </div>
                     </div>             
 
                 </nav>

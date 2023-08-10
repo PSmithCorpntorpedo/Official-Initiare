@@ -6,6 +6,10 @@
     z-index: 999;
 }
 
+.shown {
+    top: 0;
+}
+
 .hidden {
     top: -3.5rem;
     /* has to be the value of nav-wrap's height but negative */
@@ -90,6 +94,36 @@
     text-decoration: none;
     color: white;
     font-size: 22px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+}
+
+.register-button-wrap, .login-button-wrap {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-button-link, .login-button-link {
+    text-decoration: none;
+}
+
+.register-button, .login-button {
+    line-height: 100%
+}
+
+.show {
+    display: inherit;
+}
+
+.hide {
+    display: none;
 }
 
 .nav-gutter {
