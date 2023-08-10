@@ -13,7 +13,6 @@
     "@testing-library/user-event": "^13.5.0",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
-    "react-auth-kit": "^2.12.5",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-paginate": "^8.2.0",

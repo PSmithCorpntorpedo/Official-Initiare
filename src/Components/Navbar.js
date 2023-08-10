@@ -6,6 +6,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
+
 function Navbar() {
     const bars = <FontAwesomeIcon icon={faBars} />
     const x = <FontAwesomeIcon icon={faTimes} />
@@ -90,7 +91,7 @@ function Navbar() {
 function DropdownItem(props) {
     return (
         <>
-            <li className={navbarcss['nav-pages']} onClick={props.closeMenu}>
+            <li className={navbarcss['nav-pages']} onClick={(props.closeMenu)}>
                 <Link to={props.link} className={navbarcss['nav-links']}>
                     {props.title}
                 </Link>
