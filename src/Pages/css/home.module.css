@@ -294,6 +294,10 @@
 }
 
 @media (max-width: 300px) {
+  .home-header, .header-video {
+    height: 300vh;
+  }
+
   .beforemain, .aftermain {
     font-size: 1.4rem;
   }
