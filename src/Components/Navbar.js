@@ -8,7 +8,6 @@ import useAuth from './../Hooks/useAuth.js';
 
 function Navbar() {
     const {auth} = useAuth()
-    auth.user ? console.log('true') : console.log('false')
 
     const loginIcon = <FontAwesomeIcon icon={faArrowRightToBracket} />
     const bars = <FontAwesomeIcon icon={faBars} />
