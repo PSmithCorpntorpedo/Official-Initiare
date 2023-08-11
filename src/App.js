@@ -21,12 +21,12 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route element={<PersistLogin />}>
           <Route path="/" index element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/articles" element={<Articles />}></Route>
-          <Route element={<PersistLogin />}>
             <Route element={<RequireAuth />}>
               <Route path="/upload" element={<Upload />}></Route>
               <Route path="/blog" element={<Blog />}></Route>
