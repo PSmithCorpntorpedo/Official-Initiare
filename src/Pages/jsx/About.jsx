@@ -3,20 +3,44 @@ import banner from "./../assets/banner.png";
 
 const About = () => {
   return (
-    <div className={aboutcss['about']}>
-      <div><img className={aboutcss['banner-icon']} alt="" src={banner} /></div>
-      <div className={aboutcss['main-layout']}>
-        <div className={aboutcss['container-content']}>
-          <div className={aboutcss['reason-why']}>
-            <div className={aboutcss['About-big-questions']} id="why-are-we-here">WHY ARE WE HERE?</div>
-            <div className={aboutcss['answer']}>
-              Within the esteemed walls of VNUHCM High School for the Gifted, there dwelled a certain individual, consumed by a thirst for knowledge. He would make numerous attempts to publish his research papers, only to find himself at a crossroads. Then, on the fateful evening of April 30th, inspiration struck: why not create his own platform? Gathering like-minded individuals, Initiare came to life. Initially comprised of only three members—the president, the programming chair, and the PR chair—the team grows exponentially with the help of professors, and students eager to be part of something greater. Initiare becomes a vibrant and effective platform, a welcoming home for science enthusiasts. And now, this extraordinary community seeks new members, extending a hopeful invitation to you. 
+    <div className={aboutcss["about"]}>
+      <div>
+        <img className={aboutcss["banner-icon"]} alt="" src={banner} />
+      </div>
+      <div className={aboutcss["main-layout"]}>
+        <div className={aboutcss["container-content"]}>
+          <div className={aboutcss["reason-why"]}>
+            <div
+              className={aboutcss["About-big-questions"]}
+              id="why-are-we-here"
+            >
+              WHY ARE WE HERE?
+            </div>
+            <div className={aboutcss["answer"]}>
+              Within the esteemed walls of VNUHCM High School for the Gifted,
+              there dwelled a certain individual, consumed by a thirst for
+              knowledge. He would make numerous attempts to publish his research
+              papers, only to find himself at a crossroads. Then, on the fateful
+              evening of April 30th, inspiration struck: why not create his own
+              platform? Gathering like-minded individuals, Initiare came to
+              life. Initially comprised of only three members—the president, the
+              programming chair, and the PR chair—the team grows exponentially
+              with the help of professors, and students eager to be part of
+              something greater. Initiare becomes a vibrant and effective
+              platform, a welcoming home for science enthusiasts. And now, this
+              extraordinary community seeks new members, extending a hopeful
+              invitation to you.
               <b> Will you answer our call?</b>
             </div>
           </div>
-          <div className={aboutcss['reason-why']}>
-            <div className={aboutcss['About-big-questions']} id="what-are-we-doing">WHAT ARE WE DOING?</div>
-            <div className={aboutcss['answer']}>
+          <div className={aboutcss["reason-why"]}>
+            <div
+              className={aboutcss["About-big-questions"]}
+              id="what-are-we-doing"
+            >
+              WHAT ARE WE DOING?
+            </div>
+            <div className={aboutcss["answer"]}>
               We are InitiaRe, your gateway to a world of research excellence!
               Our mission is to revolutionize the academic landscape by
               providing an accessible and dynamic platform designed specifically
@@ -33,10 +57,12 @@ const About = () => {
               today!
             </div>
           </div>
-          <div className={aboutcss['reason-why']}>
-            <div className={aboutcss['About-big-questions']} id="terms-of-use">TERMS OF USE</div>
-            <div className={aboutcss['answer']}>
-              <p className={aboutcss['terms-of-use-content']}>
+          <div className={aboutcss["reason-why"]}>
+            <div className={aboutcss["About-big-questions"]} id="terms-of-use">
+              TERMS OF USE
+            </div>
+            <div className={aboutcss["answer"]}>
+              <p className={aboutcss["terms-of-use-content"]}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Et
                 magnis dis parturient montes nascetur ridiculus mus mauris.
@@ -49,7 +75,7 @@ const About = () => {
                 malesuada fames. A cras semper auctor neque. Odio aenean sed
                 adipiscing diam donec adipiscing tristique risus nec.
               </p>
-              <p className={aboutcss['terms-of-use-content']}>
+              <p className={aboutcss["terms-of-use-content"]}>
                 Ipsum dolor sit amet consectetur adipiscing elit pellentesque
                 habitant. Eu scelerisque felis imperdiet proin fermentum leo vel
                 orci porta. Purus viverra accumsan in nisl nisi. Sed vulputate
@@ -65,7 +91,7 @@ const About = () => {
                 montes nascetur ridiculus mus mauris. Eget est lorem ipsum dolor
                 sit amet.
               </p>
-              <p className={aboutcss['terms-of-use-content']}>
+              <p className={aboutcss["terms-of-use-content"]}>
                 Malesuada fames ac turpis egestas integer eget. Leo vel orci
                 porta non. Cursus risus at ultrices mi tempus imperdiet nulla.
                 Mauris cursus mattis molestie a iaculis at erat pellentesque
@@ -82,15 +108,27 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className={aboutcss['sections']}>
-          <div className={aboutcss['line']} />
-          <div className={aboutcss['container1']}>
-            <div className={aboutcss['point-div']}><a className={aboutcss['point']} href="#why-are-we-here">Why are we here?</a></div>
-            <div className={aboutcss['point-div']}><a className={aboutcss['point']} href="#what-are-we-doing">What are we doing?</a></div>
-            <div className={aboutcss['point-div']}><a className={aboutcss['point']} href="#terms-of-use">Terms of use</a></div>
+        <div className={aboutcss["sections"]}>
+          <div className={aboutcss["line"]} />
+          <div className={aboutcss["container1"]}>
+            <div className={aboutcss["point-div"]}>
+              <a className={aboutcss["point"]} href="#why-are-we-here">
+                Why are we here?
+              </a>
+            </div>
+            <div className={aboutcss["point-div"]}>
+              <a className={aboutcss["point"]} href="#what-are-we-doing">
+                What are we doing?
+              </a>
+            </div>
+            <div className={aboutcss["point-div"]}>
+              <a className={aboutcss["point"]} href="#terms-of-use">
+                Terms of use
+              </a>
+            </div>
           </div>
         </div>
-        <br style={{clear: 'both'}}/> {/* DO NOT DELETE THIS LINE-BREAK*/}
+        <br style={{ clear: "both" }} /> {/* DO NOT DELETE THIS LINE-BREAK*/}
         {/* WHY? TL:DR IT'D BREAK THE FOOTER */}
         {/* I needed .content-container and .sections to be on different columns.
          The modern way to do this is to use either Flexbox or CSS Grid. I thought

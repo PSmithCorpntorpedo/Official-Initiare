@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.blog {
+  margin: 5% 10%;
+}
+
+.banner-icon {
+  width: 100%;
+}
+
+.recent-updates {
+  color: #2b52b7;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 1rem 0;
+}
+
+/*blogcard*/
+hr {
+  color: #2b52b7;
+  border-top: 0.188rem solid;
+  width: 100%;
+}
+
+.date {
+  color: #000;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.update {
+  color: #2b52b7;
+  font-size: 1.375rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.title {
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.description {
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 146.667%;
+}
+
+.blogcard-subcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/*blogsection*/
+.blogcard-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 1.875rem;
+}
