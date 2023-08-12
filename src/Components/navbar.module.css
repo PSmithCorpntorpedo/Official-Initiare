@@ -110,10 +110,19 @@
     border-radius: 10px;
     margin-right: 15px;
     padding: 0 15px 0 15px;
+    transition: 0.15s linear;
 }
 
 .register-button-wrap.show {
     border: 2px solid var(--secondary);   
+}
+
+.register-button-wrap.show:hover {
+    background-color: var(--secondary);
+}
+
+.register-button-wrap.show:hover .register-button-link {
+    color: black;
 }
 
 .login-button-wrap.show {
@@ -145,17 +154,29 @@
 }
 
 .username-box-wrap.show {
+    user-select: none;
     height: 60%;
     display: flex;
     box-sizing: border-box;
     color: black;
     background-color: var(--secondary);
     border-radius: 10px;
+    border: 2px solid var(--secondary);
     padding: 0 15px 0 15px;
     font-size: 1rem;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-right: 15px;
+    transition: 0.15s linear;
+}
+
+.username-box-wrap.show:hover {
+    color: var(--secondary);
+    background-color: black;
+}
+
+.username-box-wrap.show:active {
+    color: var(--primary);
 }
 
 .username-box {
@@ -166,6 +187,42 @@
     display: none;
 }
 
+.activeudda {
+    position: fixed;
+    top: 3rem;
+    right: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: white;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.uddi {
+    user-select: none;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.uddi:active {
+    color: var(--primary);
+}
+
+.uddic {
+    margin-right: 10px;
+}
+
+.logout {
+    color: var(--special);
+}
+
+.logout:active {
+    color: black;
+}
+
+.inactiveudda {
+    display: none;
+}
 
 .nav-gutter {
     width: 100%;

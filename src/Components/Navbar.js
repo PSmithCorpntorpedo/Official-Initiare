@@ -1,20 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import navbarcss from './navbar.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faArrowRightToBracket, faCaretDown, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import useAuth from './../Hooks/useAuth.js';
-
 
 function Navbar() {
     const {auth} = useAuth()
 
+    const logoutIcon = <FontAwesomeIcon icon={faArrowRightFromBracket} />
+    const userIcon = <FontAwesomeIcon icon={faUser} />
+    const downIcon = <FontAwesomeIcon icon={faCaretDown} />
     const loginIcon = <FontAwesomeIcon icon={faArrowRightToBracket} />
     const bars = <FontAwesomeIcon icon={faBars} />
     const x = <FontAwesomeIcon icon={faTimes} />
+    const navi = useNavigate()
+
 
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
+
+    // user-drop-down
+    const [UDDA, setUDD] = useState(false);
+    const handleUDD = () => setUDD(!UDDA);
+
+    const logOut = () => {
+        window.localStorage.clear()
+        navi('/')
+        window.location.reload()
+    }
 
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -77,7 +92,7 @@ function Navbar() {
                             <Link className={navbarcss['login-button-link']} to='/login'><div className={navbarcss['login-button']}>Log in {loginIcon}</div></Link>
                         </div>
                         <div className={`${navbarcss['username-box-wrap']} ${ auth.user ? navbarcss['show'] : navbarcss['hide']}`}>
-                            <div className={navbarcss['username-box']}>{ auth.user ? `${auth.user.first_name}` : 'none'}</div>
+                            <div className={navbarcss['username-box']} onClick={handleUDD}>{ auth.user ? `${auth.user.first_name}` : 'none'} {downIcon}</div>
                         </div>
                     </div>             
 
@@ -89,6 +104,10 @@ function Navbar() {
                     <DropdownItem title="Upload" link="/upload" closeMenu={handleClick} />
                     <DropdownItem title="Blog" link="/blog" closeMenu={handleClick} />
                     <DropdownItem title="IRScholar Journal" link="/journal" closeMenu={handleClick} />
+                </ul>
+                <ul className={`${navbarcss.udd} ${UDDA ? navbarcss.activeudda : navbarcss.inactiveudda}`}>
+                    <li className={`${navbarcss.uddi} ${navbarcss['edit-profile']}`}><span className={navbarcss.uddic}>{userIcon}</span>Edit Profile</li>
+                    <li className={`${navbarcss.uddi} ${navbarcss['logout']}`} onClick={logOut}><span className={navbarcss.uddic}>{logoutIcon}</span>Log out</li>
                 </ul>
 
             </div>
