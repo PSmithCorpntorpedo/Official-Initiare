@@ -125,8 +125,17 @@
     color: black;
 }
 
+.login-button-wrap.show:hover {
+    background-color: black;
+}
+
+.login-button-wrap.show:hover .login-button-link {
+    color: var(--secondary);
+}
+
 .login-button-wrap.show {
     background-color: var(--secondary);
+    border: 2px solid var(--secondary);
 }
 
 .register-button-link {
