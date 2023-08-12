@@ -71,7 +71,7 @@ function Login() {
       <div className={styles['sign-in-panel']}>
         <div className={styles['big-text-wrap']}>
           <div className={styles['big-text']}>Log in to <span style={{ color: 'var(--secondary)' }}>Initia</span><span style={{ color: 'var(--primary)' }}>Re</span></div>
-          <div className={styles['close-icon']}><FontAwesomeIcon icon={faTimes} /></div>
+          <div className={styles['close-icon']} onClick={() => navigate(-1)}><FontAwesomeIcon icon={faTimes} /></div>
         </div>
         <form
           id="login_form"

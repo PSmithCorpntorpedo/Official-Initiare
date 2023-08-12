@@ -27,10 +27,10 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/articles" element={<Articles />}></Route>
+          <Route path="/blog" element={<Blog />}></Route>
+          <Route path="/journal" element={<IRScholarJournal />}></Route>
             <Route element={<RequireAuth />}>
               <Route path="/upload" element={<Upload />}></Route>
-              <Route path="/blog" element={<Blog />}></Route>
-              <Route path="/journal" element={<IRScholarJournal />}></Route>
             </Route>
           </Route>
           <Route path="*" element={<Undefined />}></Route>
