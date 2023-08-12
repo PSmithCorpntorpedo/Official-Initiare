@@ -1,0 +1,141 @@
+.sign-in-wrapper {
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    display: flex;
+}
+
+.sign-in-panel {
+    height: 30rem;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin: auto;
+    width: min(95%, 26rem)
+}
+
+.big-text-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 15% 15% 10% 15%;
+}
+
+.big-text {
+    font-size: 1.75rem;
+    font-weight: 500;
+    
+}
+
+.close-icon {
+    font-size: 1.75rem;
+}
+
+.password-wrap, .email-wrap {
+    width: 100%;
+    padding: 0 15% 5% 15%;
+}
+
+.info-text-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-text {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.info-box {
+    width: 100%;
+    height: 2.5rem;
+    padding: 2% 5%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.show-button {
+    line-height: 1.5rem;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+    user-select: none;
+    color: blue;
+    text-decoration: underline;
+}
+
+.show-button:hover {
+    color: darkblue;
+}
+
+.show-button:active {
+    color: purple;
+}
+
+.submit-wrap {
+    width: 100%;
+    display: flex;
+}
+
+.submit-button {
+    margin: auto;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    border: none;
+    margin-top: 12px;
+}
+
+.register-wrap {
+    margin: 5% 15%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.85rem;
+}
+
+.reg-text {
+    font-weight: 500;
+}
+
+.reg-link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.reg-link:hover {
+    color: darkblue;
+}
+
+.reg-link:active {
+    color: purple;
+}
+
+@media (max-width: 450px) {
+    .big-text-wrap {
+        padding: 10% 10% 10% 10%;
+    }
+
+    .password-wrap, .email-wrap {
+        padding: 0 10% 5% 10%;
+    }
+
+    .register-wrap {
+        margin: 5% 10%;
+    }
+}
+
+@media (max-width: 320px) {
+    .big-text-wrap {
+        padding: 5% 5% 10% 5%;
+    }
+
+    .password-wrap, .email-wrap {
+        padding: 0 5% 5% 5%;
+    }
+
+    .register-wrap {
+        margin: 5% 5%;
+    }
+}
+
