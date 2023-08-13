@@ -7,33 +7,38 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const { setAuth } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/"
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+    /* remember: false */
+    // use for "Remember me" option
+  })
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const handleChange = event => {
+    const target = event.currentTarget
+    setState({
+      ...state,
+      [target.name]: target.type === 'checkbox'
+        ? target.checked
+        : target.value
+    })
+  }
 
   const PVT = () => {
     var x = document.getElementById('password')
-    if (x.type === 'password') {
-      x.type = 'text'
-    } else {
-      x.type = 'password'
-    }
+    x.type === 'password'
+      ? x.type = 'text'
+      : x.type = 'password'
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem("email", email);
-    window.localStorage.setItem("password", password);
+    window.localStorage.setItem("email", state.email);
+    window.localStorage.setItem("password", state.password);
     fetch(
       "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/login",
       {
@@ -43,8 +48,8 @@ function Login() {
           accept: "application/json",
         },
         body: JSON.stringify({
-          email: email,
-          password: password,
+          email: state.email,
+          password: state.password,
         }),
       }
     )
@@ -52,9 +57,13 @@ function Login() {
       .then((data) => {
         const accessToken = data.res?.token;
         const user = data.res?.user;
-        setAuth({ email, password, user, accessToken });
-        setEmail("");
-        setPassword("");
+        const em = state.email;
+        const pw = state.password
+        setAuth({ em, pw, user, accessToken });
+        setState({
+          email: '',
+          password: ''
+        })
         navigate(from, { replace: true })
       })
       .catch((error) => {
@@ -86,7 +95,7 @@ function Login() {
               name="email"
               className={`${styles[`info-box`]} ${styles['email-box']}`}
               placeholder="Enter your email address"
-              onChange={handleEmailChange}
+              onChange={handleChange}
             />
           </div>
           <div className={styles['password-wrap']}>
@@ -100,7 +109,7 @@ function Login() {
               name="password"
               className={`${styles[`info-box`]} ${styles['password-box']}`}
               placeholder="Enter your password"
-              onChange={handlePasswordChange}
+              onChange={handleChange}
             />
           </div>
           {/*'Remember me' and 'Forgot password?' buttons should be here */}
