@@ -29,7 +29,7 @@ function Login() {
   }
 
   const PVT = () => {
-    var x = document.getElementById('password')
+    var x = document.getElementById('login-password')
     x.type === 'password'
       ? x.type = 'text'
       : x.type = 'password'
@@ -91,7 +91,7 @@ function Login() {
             <div className={logincss['info-text']}>Email address</div>
             <input
               type="email"
-              id="email"
+              id="login-email"
               name="email"
               className={`${logincss[`info-box`]} ${logincss['email-box']}`}
               placeholder="Enter your email address"
@@ -105,7 +105,7 @@ function Login() {
             </div>
             <input
               type="password"
-              id="password"
+              id="login-password"
               name="password"
               className={`${logincss[`info-box`]} ${logincss['password-box']}`}
               placeholder="Enter your password"
