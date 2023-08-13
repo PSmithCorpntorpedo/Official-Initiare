@@ -1,6 +1,6 @@
 .sign-in-wrapper {
     width: 100%;
-    height: calc(100vh - 3.5rem);
+    height: max(calc(100vh - 3.5rem), 33rem);
     display: flex;
 }
 
@@ -57,18 +57,18 @@
     line-height: 1.5rem;
     vertical-align: middle;
     margin-bottom: 4px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     user-select: none;
-    color: blue;
     text-decoration: underline;
+    color: var(--primary);
 }
 
 .show-button:hover {
-    color: darkblue;
+    color: black;
 }
 
 .show-button:active {
-    color: purple;
+    color: var(--special);
 }
 
 .submit-wrap {
@@ -98,18 +98,19 @@
     font-weight: 500;
 }
 
-.reg-link {
-    color: blue;
+.reg-link a {
     text-decoration: underline;
+    color: var(--primary);
 }
 
-.reg-link:hover {
-    color: darkblue;
+.reg-link a:hover {
+    color: black;
 }
 
-.reg-link:active {
-    color: purple;
+.reg-link a:active {
+    color: var(--special);
 }
+
 
 @media (max-width: 450px) {
     .big-text-wrap {
