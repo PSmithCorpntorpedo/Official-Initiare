@@ -88,8 +88,11 @@ function Login() {
           className={logincss[`login-form`]}
         >
           <div className={logincss['email-wrap']}>
-            <div className={logincss['info-text']}>Email address</div>
+            <div className={logincss['info-text-wrap']}>
+              <div className={logincss['info-text']}>Email address</div>
+            </div>
             <input
+              required
               type="email"
               id="login-email"
               name="email"
@@ -104,6 +107,7 @@ function Login() {
               <div className={logincss['show-button']} onClick={PVT}>show</div>
             </div>
             <input
+              required
               type="password"
               id="login-password"
               name="password"
