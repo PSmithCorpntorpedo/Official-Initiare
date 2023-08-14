@@ -1,72 +1,209 @@
-.sign-up-wrapper{
-    width: 100vw;
-    height: 102vh;
+.page-wrapper {
+    width: 100%;
+    height: max(calc(100vh - 3.5rem), 33rem);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }
 
-.register-form{
-    background-color: aliceblue;
-    width: clamp(50%, 800px, 95%);
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2%
+.form-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
-.form-header{
+
+.first-panel-wrap,
+.second-panel-wrap {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.not-first-panel {
+    transform: translateX(-100%);
+}
+
+.not-second-panel {
+    transform: translateX(100%);
+}
+
+.first-panel {
+    /* height: 30rem; */
+    width: min(90%, 26rem);
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.big-text-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 15% 15% 10% 15%;
+}
+
+.big-text {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.close-icon {
+    font-size: 1.75rem;
+}
+
+.input-wrap {
+    width: 100%;
+    padding: 0 15% 5% 15%;
+}
+
+.info-wrap {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4px;
 }
 
-.register-form h1{
-    color: var(--secondary);
-    font-weight: 800
-}
-.register-form h3{
-    color: #864338;
-    font-weight: 800;
-    text-align: center
+.info-text {
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
-.info-box{
-    width: 85%;
-    height: 10%;
-    padding: 1%;
-    border-radius: 5px;
+.input {
+    width: 100%;
+    height: 2.5rem;
+    padding: 2% 5%;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
-.gender-wrapper{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+.not-cool {
+    border: 2px solid red;
 }
 
-.birthdate-wrapper{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.submit-button{
-    width: 30%;
-    height: 10%;
+.clickable-text-small {
+    font-size: 0.85rem;
     color: var(--primary);
-    background-color: var(--secondary);
-    border-radius: 2px
+    text-decoration: underline;
 }
 
-.submit-button:hover{
-    background-color: #8B8000;
-    color: aliceblue
+.clickable-text-small:hover {
+    color: black;
+}
+
+.clickable-text-small:active {
+    color: var(--special);
+}
+
+.show-button {
+    user-select: none;
+    vertical-align: middle;
+    line-height: 1.5rem;
+}
+
+.continue-wrap {
+    width: 100%;
+    display: flex;
+}
+
+.continue-button {
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 20px;
+    font-weight: 600;
+    margin-top: 12px;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.continue-button:active {
+    color: white;
+    background-color: var(--primary);
+}
+
+.submit-button {
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    color: black;
+    padding: 5px 20px;
+    font-weight: 600;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+.sign-in-wrap {
+    margin: 5% 15% 15% 15%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.85rem;
+}
+
+.sign-in-text {
+    font-weight: 500;
+}
+
+.second-panel {
+    /* height: 30rem; */
+    width: min(90%, 26rem);
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.complete-profile-wrap {
+    justify-content: unset;
+}
+
+.complete-profile-wrap .big-text {
+    margin: auto;
+}
+
+.second-panel-buttons-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.continue-wrap .continue-button {
+    margin: 12px auto auto auto;
+}
+
+.second-panel-buttons-wrap .continue-button {
+    margin: unset;
+    margin-top: 12px;
+}
+
+@media (max-width: 450px) {
+    .big-text-wrap {
+        padding: 10% 10% 10% 10%;
+    }
+
+    .input-wrap {
+        padding: 0 10% 5% 10%;
+    }
+
+    .sign-in-wrap {
+        margin: 5% 10% 10% 10%;
+    }
+}
+
+@media (max-width: 320px) {
+    .big-text-wrap {
+        padding: 5% 5% 10% 5%;
+    }
+
+    .input-wrap {
+        padding: 0 5% 5% 5%;
+    }
+
+    .sign-in-wrap {
+        margin: 5% 5% 5% 5%;
+    }
 }
