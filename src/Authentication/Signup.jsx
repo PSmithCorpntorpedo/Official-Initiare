@@ -1,136 +1,174 @@
-import React from "react";
-import styles from "../Authentication/Signup.module.css"
+import React, { useState } from "react";
+import signupcss from "../Authentication/Signup.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate, Link } from "react-router-dom";
 
+function SignUp() {
+  const [state, setState] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+    gender: '',
+    school: '',
+  })
 
-class SignUp extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      password: '',
-      gender: '',
-      school: '',
-      birthday: ''
+  const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(state.email)
+  const passwordRegex = /[\S\s]+/.test(state.password)
+  const navigate = useNavigate()
+
+  const [emailCool, setEmailCool] = useState(true) // whether email is valid
+  const [passwordCool, setPasswordCool] = useState(true)
+  const [onPanel, setPanel] = useState(1);
+  const handleContinue = () => {
+    setEmailCool(emailRegex) 
+    setPasswordCool(passwordRegex)
+    if (emailRegex && passwordRegex) {
+      let k = onPanel
+      setPanel(k + 1)
+    }   
+  }
+
+  const handleBack = () => {
+    let k = onPanel
+    setPanel(k - 1)
+  }
+
+  const PVT = () => {
+    var x = document.getElementById('register-password')
+    x.type === 'password'
+      ? x.type = 'text'
+      : x.type = 'password'
+  }
+
+  const handleChange = event => {
+    const target = event.currentTarget
+    setState({
+      ...state,
+      [target.name]: target.type === 'checkbox'
+        ? target.checked
+        : target.value
+    })
+    if (!emailCool) {
+      setEmailCool(emailRegex)
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    if (!passwordCool) {
+      setPasswordCool(passwordRegex)
+    }
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  handleSubmit(event) {
+  const handleSubmit = event => {
     event.preventDefault();
     fetch('https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/register', {
-      method: "POST",
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'accept': 'application/json',
       },
       body: JSON.stringify({
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-        email: this.state.email,
-        password: this.state.password,
-        gender: this.state.gender,
-        school: this.state.school,
-        birthday: this.state.birthday
+        first_name: state.first_name,
+        last_name: state.last_name,
+        email: state.email,
+        password: state.password,
+        gender: state.gender,
+        school: state.school,
       }),
     })
       .then(response => response.json())
       .then(data => console.log(data.status))
       .catch(error => console.error(error.status))
   }
-  render() {
-    return (
-      
-      <div className={styles[`sign-up-wrapper`]}>
-        
-      <form id="register_form" onSubmit={this.handleSubmit} className={styles[`register-form`]}>
-      <div className={styles[`form-header`]}>
-          <h1>Create, Rate, Initiate</h1>
-          <h3>Initialize your glorious journey here</h3>
-        </div>
-        <input
-          type="text"
-          id="first_name"
-          name="first_name"
-          className={styles[`info-box`]}
-          placeholder="First Name"
-          onChange={this.handleChange} />
-        <input
-          type="text"
-          id="last_name"
-          name="last_name"
-          className={styles[`info-box`]}
-          placeholder="Last Name"
-          onChange={this.handleChange} />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className={styles[`info-box`]}
-          placeholder="Email"
-          onChange={this.handleChange} />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          className={styles[`info-box`]}
-          placeholder="Password"
-          onChange={this.handleChange} />
-          
-        <input
-          type="text"
-          id="school"
-          name="school"
-          className={styles[`info-box`]}
-          placeholder="School"
-          onChange={this.handleChange} />
-          <div className={styles[`gender-wrapper`]}>
-          <label for="male">
-          <input
-          type="radio"
-          id="male"
-          name="gender"
-          value="Male"
-          onChange={this.handleChange} />
-          Male
-          </label>
 
-        <label for="female">
-          <input
-          type="radio"
-          id="female"
-          name="gender"
-          value="Female"
-          onChange={this.handleChange} />
-          Female
-          </label>
+  return (
+    <div className={signupcss['page-wrapper']}>
+      <form id='register-form' onSubmit={handleSubmit} className={signupcss['form-wrap']}>
+        <div className={`${signupcss['first-panel-wrap']} ${onPanel === 1 ? signupcss['on-first-panel'] : signupcss['not-first-panel']}`}>
+          <div className={`${signupcss['first-panel']}`}>
+            <div className={signupcss['big-text-wrap']}>
+              <div className={signupcss['big-text']}>Register</div>
+              <div className={signupcss['close-icon']} onClick={() => navigate(-1)}><FontAwesomeIcon icon={faTimes} /></div>
+            </div>
+            <div className={`${signupcss['email-wrap']} ${signupcss['input-wrap']}`}>
+              <div className={`${signupcss['info-wrap']} ${signupcss['email-info-wrap']}`}>
+                <div className={`${signupcss['info-text']} ${signupcss['email-text']}`}>Email address</div>
+              </div>
+              <input
+                required
+                type="text"
+                name="email"
+                id="register-email"
+                placeholder="Enter your email address"
+                className={`${signupcss['email-input']} ${signupcss['input']} ${emailCool ? signupcss['cool'] : signupcss['not-cool']}`}
+                onChange={handleChange} />
+            </div>
+            <div className={`${signupcss['password-wrap']} ${signupcss['input-wrap']}`}>
+              <div className={`${signupcss['info-wrap']} ${signupcss['password-info-wrap']}`}>
+                <div className={`${signupcss['info-text']} ${signupcss['password-text']}`}>Password</div>
+                <div className={`${signupcss['show-button']} ${signupcss['clickable-text-small']}`} onClick={PVT}>show</div>
+              </div>
+              <input
+                required
+                type="password"
+                name="password"
+                id="register-password"
+                placeholder="Enter your password"
+                className={`${signupcss['password-input']} ${signupcss['input']} ${passwordCool ? signupcss['cool'] : signupcss['not-cool']}`}
+                onChange={handleChange} />
+            </div>
+            <div className={signupcss['continue-wrap']}>
+              <div className={signupcss['continue-button']} onClick={handleContinue}>Continue</div>
+            </div>
+            <div className={signupcss['sign-in-wrap']}>
+              <div className={signupcss['sign-in-text']}>Have an account?</div>
+              <Link style={{ display: 'block' }} to='/login' className={`${signupcss['sign-in-link']} ${signupcss['clickable-text-small']}`}>Log in here</Link>
+            </div>
           </div>
-          <div className={styles[`birthdate-wrapper`]}>
-        <label for="birthday">
-        Birthdate:
-        <input
-          type="date"
-          id="birthday"
-          name="birthday"
-          className="birthday"
-          placeholder="Birthday"
-          onChange={this.handleChange}/>
-          </label>
+        </div>
+        <div className={`${signupcss['second-panel-wrap']} ${onPanel === 2 ? signupcss['on-second-panel'] : signupcss['not-second-panel']}`}>
+          <div className={`${signupcss['second-panel']}`}>
+            <div className={`${signupcss['big-text-wrap']} ${signupcss['complete-profile-wrap']}`}>
+              <div className={`${signupcss['big-text']}`}>Complete your profile</div>
+            </div>
+            <div className={`${signupcss['first-name-wrap']} ${signupcss['input-wrap']}`}>
+              <div className={`${signupcss['info-wrap']} ${signupcss['first-name-info-wrap']}`}>
+                <div className={`${signupcss['info-text']} ${signupcss['first-name-text']}`}>First name</div>
+              </div>
+              <input
+                required
+                type="text"
+                name="first_name"
+                id="register-first-name"
+                placeholder="Enter your first name"
+                className={`${signupcss['first-name-input']} ${signupcss['input']}`}
+                onChange={handleChange} />
+            </div>
+            <div className={`${signupcss['last-name-wrap']} ${signupcss['input-wrap']}`}>
+              <div className={`${signupcss['info-wrap']} ${signupcss['last-name-info-wrap']}`}>
+                <div className={`${signupcss['info-text']} ${signupcss['last-name-text']}`}>Last name</div>
+              </div>
+              <input
+                required
+                type="text"
+                name="last_name"
+                id="register-last-name"
+                placeholder="Enter your last name"
+                className={`${signupcss['last-name-input']} ${signupcss['input']}`}
+                onChange={handleChange} />
+            </div>
+            <div className={signupcss['second-panel-buttons-wrap']}>
+              <div className={`${signupcss['continue-button']}`} onClick={handleBack}>Back</div>
+              <button type="submit"  className={`${signupcss['submit-button']}`}>Register</button>
+            </div>
+            <div className={signupcss['sign-in-wrap']}>
+              <div className={signupcss['sign-in-text']}>Have an account?</div>
+              <Link style={{ display: 'block' }} to='/login' className={`${signupcss['sign-in-link']} ${signupcss['clickable-text-small']}`}>Log in here</Link>
+            </div>
           </div>
-          
-        <button type="submit" form="register_form" className={styles[`submit-button`]}>Submit</button>
+        </div>
       </form>
     </div>
-    )
-  }
-
-
+  )
 }
 
 export default SignUp;

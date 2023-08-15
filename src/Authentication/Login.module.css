@@ -1,11 +1,10 @@
 .sign-in-wrapper {
     width: 100%;
-    height: calc(100vh - 3.5rem);
+    height: max(calc(100vh - 3.5rem), 33rem);
     display: flex;
 }
 
 .sign-in-panel {
-    height: 30rem;
     border: 2px solid lightgray;
     border-radius: 10px;
     margin: auto;
@@ -37,12 +36,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4px;
 }
 
 .info-text {
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 4px;
 }
 
 .info-box {
@@ -56,19 +55,19 @@
 .show-button {
     line-height: 1.5rem;
     vertical-align: middle;
-    margin-bottom: 4px;
-    font-size: 0.75rem;
+    /* margin-bottom: 4px; */
+    font-size: 0.85rem;
     user-select: none;
-    color: blue;
     text-decoration: underline;
+    color: var(--primary);
 }
 
 .show-button:hover {
-    color: darkblue;
+    color: black;
 }
 
 .show-button:active {
-    color: purple;
+    color: var(--special);
 }
 
 .submit-wrap {
@@ -88,7 +87,7 @@
 }
 
 .register-wrap {
-    margin: 5% 15%;
+    margin: 5% 15% 15% 15%;
     display: flex;
     justify-content: space-evenly;
     font-size: 0.85rem;
@@ -98,18 +97,19 @@
     font-weight: 500;
 }
 
-.reg-link {
-    color: blue;
+.reg-link a {
     text-decoration: underline;
+    color: var(--primary);
 }
 
-.reg-link:hover {
-    color: darkblue;
+.reg-link a:hover {
+    color: black;
 }
 
-.reg-link:active {
-    color: purple;
+.reg-link a:active {
+    color: var(--special);
 }
+
 
 @media (max-width: 450px) {
     .big-text-wrap {
@@ -121,7 +121,7 @@
     }
 
     .register-wrap {
-        margin: 5% 10%;
+        margin: 5% 10% 10% 10%;
     }
 }
 
@@ -135,7 +135,7 @@
     }
 
     .register-wrap {
-        margin: 5% 5%;
+        margin: 5% 5% 5% 5%;
     }
 }
 

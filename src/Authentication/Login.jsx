@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../Authentication/Login.module.css";
+import logincss from "../Authentication/Login.module.css";
 import useAuth from "../Hooks/useAuth";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,33 +7,38 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const { setAuth } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/"
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+    /* remember: false */
+    // use for "Remember me" option
+  })
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const handleChange = event => {
+    const target = event.currentTarget
+    setState({
+      ...state,
+      [target.name]: target.type === 'checkbox'
+        ? target.checked
+        : target.value
+    })
+  }
 
   const PVT = () => {
-    var x = document.getElementById('password')
-    if (x.type === 'password') {
-      x.type = 'text'
-    } else {
-      x.type = 'password'
-    }
+    var x = document.getElementById('login-password')
+    x.type === 'password'
+      ? x.type = 'text'
+      : x.type = 'password'
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem("email", email);
-    window.localStorage.setItem("password", password);
+    window.localStorage.setItem("email", state.email);
+    window.localStorage.setItem("password", state.password);
     fetch(
       "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/login",
       {
@@ -43,8 +48,8 @@ function Login() {
           accept: "application/json",
         },
         body: JSON.stringify({
-          email: email,
-          password: password,
+          email: state.email,
+          password: state.password,
         }),
       }
     )
@@ -52,9 +57,13 @@ function Login() {
       .then((data) => {
         const accessToken = data.res?.token;
         const user = data.res?.user;
-        setAuth({ email, password, user, accessToken });
-        setEmail("");
-        setPassword("");
+        const em = state.email;
+        const pw = state.password
+        setAuth({ em, pw, user, accessToken });
+        setState({
+          email: '',
+          password: ''
+        })
         navigate(from, { replace: true })
       })
       .catch((error) => {
@@ -67,56 +76,60 @@ function Login() {
       });
   };
   return (
-    <div className={styles[`sign-in-wrapper`]}>
-      <div className={styles['sign-in-panel']}>
-        <div className={styles['big-text-wrap']}>
-          <div className={styles['big-text']}>Log in to <span style={{ color: 'var(--secondary)' }}>Initia</span><span style={{ color: 'var(--primary)' }}>Re</span></div>
-          <div className={styles['close-icon']} onClick={() => navigate(-1)}><FontAwesomeIcon icon={faTimes} /></div>
+    <div className={logincss[`sign-in-wrapper`]}>
+      <div className={logincss['sign-in-panel']}>
+        <div className={logincss['big-text-wrap']}>
+          <div className={logincss['big-text']}>Log in to <span style={{ color: 'var(--secondary)' }}>Initia</span><span style={{ color: 'var(--primary)' }}>Re</span></div>
+          <div className={logincss['close-icon']} onClick={() => navigate(-1)}><FontAwesomeIcon icon={faTimes} /></div>
         </div>
         <form
           id="login_form"
           onSubmit={handleSubmit}
-          className={styles[`login-form`]}
+          className={logincss[`login-form`]}
         >
-          <div className={styles['email-wrap']}>
-            <div className={styles['info-text']}>Email address</div>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className={`${styles[`info-box`]} ${styles['email-box']}`}
-              placeholder="Enter your email address"
-              onChange={handleEmailChange}
-            />
-          </div>
-          <div className={styles['password-wrap']}>
-            <div className={styles['info-text-wrap']}>
-              <div className={styles['info-text']}>Password</div>
-              <div className={styles['show-button']} onClick={PVT}>show</div>
+          <div className={logincss['email-wrap']}>
+            <div className={logincss['info-text-wrap']}>
+              <div className={logincss['info-text']}>Email address</div>
             </div>
             <input
+              required
+              type="email"
+              id="login-email"
+              name="email"
+              className={`${logincss[`info-box`]} ${logincss['email-box']}`}
+              placeholder="Enter your email address"
+              onChange={handleChange}
+            />
+          </div>
+          <div className={logincss['password-wrap']}>
+            <div className={logincss['info-text-wrap']}>
+              <div className={logincss['info-text']}>Password</div>
+              <div className={logincss['show-button']} onClick={PVT}>show</div>
+            </div>
+            <input
+              required
               type="password"
-              id="password"
+              id="login-password"
               name="password"
-              className={`${styles[`info-box`]} ${styles['password-box']}`}
+              className={`${logincss[`info-box`]} ${logincss['password-box']}`}
               placeholder="Enter your password"
-              onChange={handlePasswordChange}
+              onChange={handleChange}
             />
           </div>
           {/*'Remember me' and 'Forgot password?' buttons should be here */}
-          <div className={styles['submit-wrap']}>
+          <div className={logincss['submit-wrap']}>
             <button
               type="submit"
               form="login_form"
-              className={styles[`submit-button`]}
+              className={logincss[`submit-button`]}
             >
               Log in
             </button>
           </div>
         </form>
-        <div className={styles['register-wrap']}>
-          <div className={styles['reg-text']}>Don't have an account?</div>
-          <div className={styles['reg-link']}><Link to='/signup'>Register here</Link></div>
+        <div className={logincss['register-wrap']}>
+          <div className={logincss['reg-text']}>Don't have an account?</div>
+          <div className={logincss['reg-link']}><Link to='/signup'>Register here</Link></div>
         </div>
       </div>
     </div>
