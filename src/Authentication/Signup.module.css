@@ -165,6 +165,52 @@
     margin: auto;
 }
 
+.gender-wrap {
+    padding-bottom: 2%;
+}
+
+.gender-input-wrap {
+    display: flex;
+    width: 100%;
+}
+
+.gender-input-container {
+    display: flex;
+    width: 50%;
+}
+
+.gender-input {
+    display: none;
+    
+}
+
+.gender-checkbox {
+    width: 1.75rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    transition: background-color 0.2s linear;
+    margin-right: 1rem;
+}
+
+.gender-checkbox.checked {
+    background-color: var(--primary);
+}
+
+.gender-checkbox.checked span {
+    color: white;
+}
+
+.gender-checkbox.unchecked {
+    border: 1px solid black;
+}
+
+.gender-checkbox.unchecked span {
+    visibility: hidden;
+}
+
 .second-panel-buttons-wrap {
     width: 100%;
     display: flex;
@@ -192,6 +238,10 @@
     .sign-in-wrap {
         margin: 5% 10% 10% 10%;
     }
+
+    /* .gender-wrap {
+        padding: 0 10%;
+    } */
 }
 
 @media (max-width: 320px) {
@@ -206,4 +256,8 @@
     .sign-in-wrap {
         margin: 5% 5% 5% 5%;
     }
+
+    /* .gender-wrap {
+        padding: 0 5%;
+    } */
 }
