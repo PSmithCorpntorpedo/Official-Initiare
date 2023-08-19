@@ -205,6 +205,7 @@
 
 .gender-checkbox.unchecked {
     border: 1px solid black;
+    box-sizing: border-box;
 }
 
 .gender-checkbox.unchecked span {

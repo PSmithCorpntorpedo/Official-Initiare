@@ -70,6 +70,53 @@
     color: var(--special);
 }
 
+.memory-foam {
+    width: 100%;
+    padding: 0 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-me-wrap {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.remember-me-checkbox {
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    text-align: center;
+    transition: background-color 0.2s linear;
+
+}
+
+.remember-me-checkbox.checked {
+    background-color: var(--primary);
+}
+
+.remember-me-checkbox.checked span {
+    color: white;
+}
+
+.remember-me-checkbox.unchecked {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.remember-me-checkbox.unchecked span {
+    visibility: hidden;
+}
+
+.remember-me-text {
+    user-select: none;
+    height: 100%;
+    line-height: 1.75rem;
+    margin-left: 5px;
+}
+
 .submit-wrap {
     width: 100%;
     display: flex;
@@ -110,6 +157,20 @@
     color: var(--special);
 }
 
+.clickable-text-small {
+    font-size: 0.85rem;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.clickable-text-small:hover {
+    color: black;
+}
+
+.clickable-text-small:active {
+    color: var(--special);
+}
+
 
 @media (max-width: 450px) {
     .big-text-wrap {
@@ -118,6 +179,10 @@
 
     .password-wrap, .email-wrap {
         padding: 0 10% 5% 10%;
+    }
+
+    .memory-foam {
+        padding: 0 10%;
     }
 
     .register-wrap {
@@ -132,6 +197,10 @@
 
     .password-wrap, .email-wrap {
         padding: 0 5% 5% 5%;
+    }
+
+    .memory-foam {
+        padding: 0 5%;
     }
 
     .register-wrap {

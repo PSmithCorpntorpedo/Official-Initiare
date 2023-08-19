@@ -44,12 +44,7 @@ function SignUp() {
 
   const handleChange = event => {
     const target = event.currentTarget
-    setState({
-      ...state,
-      [target.name]: target.type === 'checkbox'
-        ? target.checked
-        : target.value
-    })
+    setState({...state, [target.name]: target.value})
     if (!emailCool) {
       setEmailCool(emailRegex)
     }
