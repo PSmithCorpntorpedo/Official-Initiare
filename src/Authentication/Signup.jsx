@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import signupcss from "../Authentication/Signup.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, Link } from "react-router-dom";
 
 function SignUp() {
@@ -22,12 +22,12 @@ function SignUp() {
   const [passwordCool, setPasswordCool] = useState(true)
   const [onPanel, setPanel] = useState(1);
   const handleContinue = () => {
-    setEmailCool(emailRegex) 
+    setEmailCool(emailRegex)
     setPasswordCool(passwordRegex)
     if (emailRegex && passwordRegex) {
       let k = onPanel
       setPanel(k + 1)
-    }   
+    }
   }
 
   const handleBack = () => {
@@ -44,12 +44,7 @@ function SignUp() {
 
   const handleChange = event => {
     const target = event.currentTarget
-    setState({
-      ...state,
-      [target.name]: target.type === 'checkbox'
-        ? target.checked
-        : target.value
-    })
+    setState({...state, [target.name]: target.value})
     if (!emailCool) {
       setEmailCool(emailRegex)
     }
@@ -156,9 +151,45 @@ function SignUp() {
                 className={`${signupcss['last-name-input']} ${signupcss['input']}`}
                 onChange={handleChange} />
             </div>
+            <div className={`${signupcss['gender-wrap']} ${signupcss['input-wrap']}`}>
+              <div className={signupcss['info-wrap']}>
+                <div className={signupcss['info-text']}>Gender</div>
+              </div>
+              <div className={signupcss['gender-input-wrap']}>
+
+                <label className={signupcss['gender-input-container']}>
+                  <div className={`${signupcss['gender-checkbox']} ${(state.gender === 'Male') ? signupcss.checked : signupcss.unchecked}`}>
+                    <span><FontAwesomeIcon icon={faCheck} /></span>
+                  </div>
+                  <input
+                    className={signupcss['gender-input']}
+                    required
+                    type="radio"
+                    name="gender"
+                    id="register-gender-male"
+                    value="Male"
+                    onChange={handleChange} />
+                  <div className={signupcss['radio-text']}>Male</div>
+                </label>
+                <label className={signupcss['gender-input-container']}>
+                  <div className={`${signupcss['gender-checkbox']} ${(state.gender === 'Female') ? signupcss.checked : signupcss.unchecked}`}>
+                    <span><FontAwesomeIcon icon={faCheck} /></span>
+                  </div>
+                  <input
+                    className={signupcss['gender-input']}
+                    required
+                    type="radio"
+                    name="gender"
+                    id="register-gender-female"
+                    value="Female"
+                    onChange={handleChange} />
+                  <div className={signupcss['radio-text']}>Female</div>
+                </label>
+              </div>
+            </div>
             <div className={signupcss['second-panel-buttons-wrap']}>
               <div className={`${signupcss['continue-button']}`} onClick={handleBack}>Back</div>
-              <button type="submit"  className={`${signupcss['submit-button']}`}>Register</button>
+              <button type="submit" className={`${signupcss['submit-button']}`}>Register</button>
             </div>
             <div className={signupcss['sign-in-wrap']}>
               <div className={signupcss['sign-in-text']}>Have an account?</div>
@@ -166,8 +197,8 @@ function SignUp() {
             </div>
           </div>
         </div>
-      </form>
-    </div>
+      </form >
+    </div >
   )
 }
 

@@ -3,7 +3,7 @@ import logincss from "../Authentication/Login.module.css";
 import useAuth from "../Hooks/useAuth";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const { setAuth } = useAuth();
@@ -14,18 +14,22 @@ function Login() {
   const [state, setState] = useState({
     email: '',
     password: '',
-    /* remember: false */
-    // use for "Remember me" option
   })
+
+  const [remember, setRemember] = useState(true)
 
   const handleChange = event => {
     const target = event.currentTarget
     setState({
       ...state,
       [target.name]: target.type === 'checkbox'
-        ? target.checked
+        ? (!state[target.name])
         : target.value
     })
+  }
+
+  const handleRememberCheck = () => {
+    setRemember(!remember)
   }
 
   const PVT = () => {
@@ -37,8 +41,10 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem("email", state.email);
-    window.localStorage.setItem("password", state.password);
+    if (remember) {
+      window.localStorage.setItem("email", state.email);
+      window.localStorage.setItem("password", state.password);
+    }
     fetch(
       "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/login",
       {
@@ -113,10 +119,17 @@ function Login() {
               name="password"
               className={`${logincss[`info-box`]} ${logincss['password-box']}`}
               placeholder="Enter your password"
-              onChange={handleChange}
-            />
+              onChange={handleChange} />
           </div>
-          {/*'Remember me' and 'Forgot password?' buttons should be here */}
+          <div className={`${logincss['memory-foam']}`}>
+            <div onClick={handleRememberCheck} className={`${logincss['remember-me-wrap']}`}>
+              <div  className={`${logincss['remember-me-checkbox']} ${remember ? logincss.checked : logincss.unchecked}`}>
+                <span><FontAwesomeIcon icon={faCheck} /></span>
+              </div>
+              <div className={`${logincss['remember-me-text']}`}>Remember me</div>
+            </div>
+            <div className={`${logincss['forgot']} ${logincss['clickable-text-small']}`}>Forgot password?</div>              
+          </div>
           <div className={logincss['submit-wrap']}>
             <button
               type="submit"
