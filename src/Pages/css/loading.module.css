@@ -1,0 +1,39 @@
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loader-wrapper {
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logging {
+  color: #ffbc00;
+  font-size: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade 1.5s infinite;
+  margin-right: 1%;
+}
+
+.in {
+  color: #2B52B7;
+  font-size: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade 1.5s infinite;
+  margin-left: 1%;
+}
