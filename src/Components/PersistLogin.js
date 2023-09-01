@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import {useState, useEffect} from "react";
 import useAuth from "../Hooks/useAuth";
-
+import Loading from "../Pages/jsx/Loading";
 
 const PersistLogin = () => {
     const [isLoading, setLoading] = useState(true);
@@ -45,7 +45,7 @@ const PersistLogin = () => {
   return (
     <>
     {isLoading ?
-    <p>Loading right now...</p> :
+     <Loading/>:
     <Outlet />}
     </>
     )

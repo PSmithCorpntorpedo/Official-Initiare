@@ -1,0 +1,28 @@
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loader-wrapper {
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  color: #ffbc00;
+  font-size: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade 1.5s infinite;
+}
