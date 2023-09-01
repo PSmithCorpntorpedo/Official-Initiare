@@ -18,11 +18,22 @@
   align-items: center;
 }
 
-.loading {
+.logging {
   color: #ffbc00;
-  font-size: 10vw;
+  font-size: 12vw;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fade 1.5s infinite;
+  margin-right: 1%;
+}
+
+.in {
+  color: #2B52B7;
+  font-size: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade 1.5s infinite;
+  margin-left: 1%;
 }
