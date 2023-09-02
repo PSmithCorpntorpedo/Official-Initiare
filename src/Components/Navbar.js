@@ -92,7 +92,7 @@ function Navbar() {
                             <Link className={navbarcss['login-button-link']} to='/login'><div className={navbarcss['login-button']}>Log in {loginIcon}</div></Link>
                         </div>
                         <div className={`${navbarcss['username-box-wrap']} ${ auth.user ? navbarcss['show'] : navbarcss['hide']}`}>
-                            <div className={navbarcss['username-box']} onClick={handleUDD}>{ auth.user ? `${auth.user.id}` : 'none'} {downIcon}</div>
+                            <div className={navbarcss['username-box']} onClick={handleUDD}>{ auth.user ? `${auth.user.first_name}` : 'none'} {downIcon}</div>
                         </div>
                     </div>             
 
@@ -107,7 +107,7 @@ function Navbar() {
                 </ul>
                 <ul className={`${navbarcss.udd} ${UDDA ? navbarcss.activeudda : navbarcss.inactiveudda}`}>
                     <li className={`${navbarcss.uddi} ${navbarcss['edit-profile']}`}><span className={navbarcss.uddic}>{userIcon}</span>Edit Profile</li>
-                    <li className={`${navbarcss.uddi} ${navbarcss['logout']}`} onClick={logOut}><span className={navbarcss.uddic}>{logoutIcon}</span>Log out</li>
+                    <li className={`${navbarcss.uddi} ${navbarcss['logout']}`} onClick={logOut}><span className={navbarcss.uddic}> {logoutIcon}</span>Log out</li>
                 </ul>
 
             </div>

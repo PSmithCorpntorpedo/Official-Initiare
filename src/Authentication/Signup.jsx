@@ -23,9 +23,11 @@ function SignUp() {
   const [passwordCool, setPasswordCool] = useState(true)
   const [onPanel, setPanel] = useState(1);
   const handleContinue = () => {
-    setEmailCool(emailRegex)
-    setPasswordCool(passwordRegex)
-    if (emailRegex && passwordRegex) {
+    let ek = emailRegex
+    let pk = passwordRegex
+    setEmailCool(ek)
+    setPasswordCool(pk)
+    if (ek && pk) {
       let k = onPanel
       setPanel(k + 1)
     }

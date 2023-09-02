@@ -1,7 +1,9 @@
+import UploadJSX from './jsx/Upload.jsx';
+
 export default function Upload(){
     return(
-        <>
-            <h1>This is my mock Upload page</h1>
-        </>
+        <div>
+            <UploadJSX />
+        </div>
     )
 }
