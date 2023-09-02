@@ -103,7 +103,7 @@ function Paginate(){
 
     useEffect(() => {
         const getArticles = async () => {
-            const res = await fetch(`https://initiare-clone-a22c10683333.herokuapp.com/api/v1/articles?Page=1&Size=12`)
+            const res = await fetch(`https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=1&Size=12`)
             const data = await res.json()
             const total = data.res.Total
             console.log(total)

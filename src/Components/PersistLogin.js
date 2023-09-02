@@ -12,7 +12,7 @@ const PersistLogin = () => {
     useEffect(() =>{
         const verifyUser = async () =>{
             fetch(
-                "https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/login",
+                "https://initiare-website-2603191647bb.herokuapp.com/api/v1/auth/login",
                 {
                   method: "POST",
                   headers: {

@@ -92,7 +92,7 @@ function Navbar() {
                             <Link className={navbarcss['login-button-link']} to='/login'><div className={navbarcss['login-button']}>Log in {loginIcon}</div></Link>
                         </div>
                         <div className={`${navbarcss['username-box-wrap']} ${ auth.user ? navbarcss['show'] : navbarcss['hide']}`}>
-                            <div className={navbarcss['username-box']} onClick={handleUDD}>{ auth.user ? `${auth.user.first_name}` : 'none'} {downIcon}</div>
+                            <div className={navbarcss['username-box']} onClick={handleUDD}>{ auth.user ? `${auth.user.id}` : 'none'} {downIcon}</div>
                         </div>
                     </div>             
 
