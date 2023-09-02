@@ -55,7 +55,7 @@ function SignUp() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch('https://initiare-clone-a22c10683333.herokuapp.com/api/v1/auth/register', {
+    fetch('https://initiare-website-2603191647bb.herokuapp.com/api/v1/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
