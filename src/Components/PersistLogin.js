@@ -36,12 +36,12 @@ const PersistLogin = () => {
 
         !auth?.accessToken ?  verifyUser() : setLoading(false); //if the accessToken doesn't exist (or after every refresh it disappears), load it; otherwise, don't
 
-    }, []) // this loads everytime the page refreshed, hence the name
+    }, [auth?.accessToken, email, password, setAuth]) // this loads everytime the page refreshed, hence the name
 
     useEffect(() =>{
         console.log(`isLoading: ${isLoading}`)
         console.log(`accessToken: ${auth?.accessToken}`)
-    }, [isLoading])
+    }, [isLoading, auth?.accessToken])
   return (
     <>
     {isLoading ?
