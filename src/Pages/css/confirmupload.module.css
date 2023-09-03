@@ -1,12 +1,10 @@
 .confirm-upload-page-wrap {
     /* width: 700%; */
     overflow: hidden;
-    height: 600px;
 }
 
 .plane-of-existence {
     width: 700%;
-    height: 100%;
     display: flex;
     flex-direction: row;
     transition: transform 0.5s ease-in-out 0.2s;
@@ -49,7 +47,7 @@
 .seventh-stage {
     width: calc(100% / 7);
     height: 100%;
-    background-color: yellow;
+    display: flex;
 }
 
 .continue-button {
@@ -66,4 +64,60 @@
 
 .being-clicked {
     pointer-events: none;
+}
+
+.before-you-proceed {
+    margin: 5% auto;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    width: min(800px, 90%);
+    padding: 2.5%;
+    box-sizing: border-box;
+}
+
+.byp-h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary)
+}
+
+.byp-h2 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.byp-list-element {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+.clickable-text-small {
+    font-size: 0.85rem;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.clickable-text-small:hover {
+    color: black;
+}
+
+.clickable-text-small:active {
+    color: var(--special);
+}
+
+.byp-last-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.byp-agree {
+    margin-left: 40px;
+    padding: 5px 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: var(--secondary);
 }
