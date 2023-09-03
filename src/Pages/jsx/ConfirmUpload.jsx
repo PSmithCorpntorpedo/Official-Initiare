@@ -11,6 +11,7 @@ function ConfirmUpload() {
     }
 
     const handleBack = () => {
+        let k = stage
         setStage(k - 1)
     }
 
