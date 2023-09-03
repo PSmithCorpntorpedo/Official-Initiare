@@ -1,0 +1,69 @@
+.confirm-upload-page-wrap {
+    /* width: 700%; */
+    overflow: hidden;
+    height: 600px;
+}
+
+.plane-of-existence {
+    width: 700%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.5s ease-in-out 0.2s;
+}
+
+.plane-of-existence.on-first-stage {
+    transform: translateX(0%);
+}
+
+.plane-of-existence.on-second-stage {
+    transform: translateX(calc((100% / 7) * -1));
+}
+
+.plane-of-existence.on-third-stage {
+    transform: translateX(calc((100% / 7) * -2));
+}
+
+.plane-of-existence.on-fourth-stage {
+    transform: translateX(calc((100% / 7) * -3));
+}
+
+.plane-of-existence.on-fifth-stage {
+    transform: translateX(calc((100% / 7) * -4));
+}
+
+.plane-of-existence.on-sixth-stage {
+    transform: translateX(calc((100% / 7) * -5));
+}
+
+.plane-of-existence.on-seventh-stage {
+    transform: translateX(calc((100% / 7) * -6));
+}
+
+.first-stage,
+.second-stage,
+.third-stage,
+.fourth-stage,
+.fifth-stage,
+.sixth-stage,
+.seventh-stage {
+    width: calc(100% / 7);
+    height: 100%;
+    background-color: yellow;
+}
+
+.continue-button {
+    background-color: blue;
+    height: 50px;
+    width: 200px;
+}
+
+.back-button {
+    background-color: red;
+    height: 50px;
+    width: 200px;
+}
+
+.being-clicked {
+    pointer-events: none;
+}
