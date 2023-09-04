@@ -1,0 +1,133 @@
+.panel {
+  width: clamp(70%, 800px, 90%);
+  display: block;
+  height: 100%;
+  display: flex;
+  padding: 5%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5%;
+  border-radius: 10px;
+  background: aliceblue;
+  box-shadow: 0px 4px 20px 0px rgba(43, 82, 183, 0.1);
+}
+
+.instructions-box {
+  border-radius: 10px;
+  width: 90%;
+  background: var(--primary-variant, #eaeffa);
+  display: flex;
+  padding: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10%;
+  align-self: stretch;
+  height: clamp(20%, 200px, 70%);
+}
+
+.instructions-box p {
+  align-self: stretch;
+  color: var(--primary-main, #2b52b7);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 162.5%;
+  font-size: 1.5em;
+}
+
+
+.understood {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: stretch;
+}
+
+.understood p {
+  font-size: 1em;
+  font-family: Roboto;
+  font-weight: 800;
+  font-style: normal;
+  color: var(--primary-main, #2b52b7);
+  cursor: pointer;
+}
+.upload-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+  gap: 1.5%;
+}
+
+.upload-section span {
+    color: #9fa2ab
+}
+.upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10%;
+  align-self: stretch;
+}
+
+.upload p {
+  color: #000;
+  font-family: Roboto;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload label {
+  width: clamp(15%, 70px, 20%);
+  height: 100%;
+  display: flex;
+  color: #fff;
+  padding: 1% 1.2%;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+  align-self: stretch;
+  border-radius: 10px;
+  background: var(--primary-main, #2b52b7);
+}
+
+.file-name {
+  width: 80%;
+  height: 100%;
+  display: flex;    
+  align-items: center;
+  gap: 5px;
+  flex: 1 0 0;
+  background-color: #fff;
+  border: 3px solid #9fa2ab;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+
+
+
+
+
+@media (max-width: 500px) {
+    .instructions-box p {
+      font-size: 1em;
+    }
+    .understood p {
+      font-size: 0.75;
+    }
+    .upload p {
+      font-size: 1em;
+    }
+    .upload label {
+      font-size: 0.75em;
+    }
+  }

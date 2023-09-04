@@ -1,6 +1,9 @@
+
 .confirm-upload-page-wrap {
     /* width: 700%; */
     overflow: hidden;
+    width: auto;
+    height: 100%;
 }
 
 .plane-of-existence {
@@ -8,6 +11,8 @@
     display: flex;
     flex-direction: row;
     transition: transform 0.5s ease-in-out 0.2s;
+    height: 100%;
+    align-items: center;
 }
 
 .plane-of-existence.on-first-stage {
@@ -38,7 +43,6 @@
     transform: translateX(calc((100% / 7) * -6));
 }
 
-.first-stage,
 .second-stage,
 .third-stage,
 .fourth-stage,
@@ -46,20 +50,37 @@
 .sixth-stage,
 .seventh-stage {
     width: calc(100% / 7);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 4%;
+}
+
+.first-stage {
+    width: calc(100% / 7);
     height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-buttons {
+    display: flex;
+    width: clamp(40%, 200px, 80%);
+    gap: 4%
 }
 
 .continue-button {
     background-color: blue;
     height: 50px;
-    width: 200px;
+    width: 50%;
 }
 
 .back-button {
     background-color: red;
     height: 50px;
-    width: 200px;
+    width: 50%;
 }
 
 .being-clicked {
@@ -121,3 +142,4 @@
     border-radius: 10px;
     background-color: var(--secondary);
 }
+

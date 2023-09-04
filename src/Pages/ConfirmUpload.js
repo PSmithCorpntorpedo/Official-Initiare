@@ -1,9 +1,11 @@
 import ConfirmUploadJSX from './jsx/ConfirmUpload.jsx';
-
+import { FileProvider } from './jsx/UploadStages/FileContext/FileProvider.js';
 function ConfirmUpload() {
     return (
         <div>
-            <ConfirmUploadJSX />
+            <FileProvider>
+                <ConfirmUploadJSX />
+            </FileProvider>
         </div>
     )
 }

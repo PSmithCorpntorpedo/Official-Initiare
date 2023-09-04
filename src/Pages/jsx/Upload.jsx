@@ -4,6 +4,7 @@ import uploadcss from './../css/upload.module.css';
 import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
 function Upload() {
     const navi = useNavigate()
 
@@ -18,12 +19,12 @@ function Upload() {
                             <div className={uploadcss['line-and-items-wrapper']}>
                                 <div className={uploadcss['toc-line']}></div>
                                 <div className={uploadcss['toc-item-list']}>
-                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-abstract" className={uploadcss['toc-item']}>Abstract</a>
+                                <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-abstract" className={uploadcss['toc-item']}>Abstract</a>
                                     {/* add an href attribute like the one above to make it scroll on click to the element with the given id*/}
-                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} className={uploadcss['toc-item']}>Introduction</a>
-                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} className={uploadcss['toc-item']}>Section snippets</a>
-                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} className={uploadcss['toc-item']}>Reference</a>
-                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} className={uploadcss['toc-item']}>Recommended articles</a>
+                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-introduction"className={uploadcss['toc-item']}>Introduction</a>
+                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-section-snippets" className={uploadcss['toc-item']}>Section snippets</a>
+                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-reference" className={uploadcss['toc-item']}>Reference</a>
+                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-recommended-articles" className={uploadcss['toc-item']}>Recommended articles</a>
                                 </div>
                             </div>
                         </div>
