@@ -19,7 +19,7 @@ function Upload() {
                             <div className={uploadcss['line-and-items-wrapper']}>
                                 <div className={uploadcss['toc-line']}></div>
                                 <div className={uploadcss['toc-item-list']}>
-                                    <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-abstract" className={uploadcss['toc-item']}>Abstract</a>
+                                <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-abstract" className={uploadcss['toc-item']}>Abstract</a>
                                     {/* add an href attribute like the one above to make it scroll on click to the element with the given id*/}
                                     <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-introduction"className={uploadcss['toc-item']}>Introduction</a>
                                     <a style={{ display: "block", textDecoration: "none", color: "inherit" }} href="#upload-section-snippets" className={uploadcss['toc-item']}>Section snippets</a>
