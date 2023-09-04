@@ -1,0 +1,6 @@
+.upload-window{
+    background-color: orange;
+    width: clamp(70%, 800px, 85%);
+    display: block;
+    height: 100%
+}
