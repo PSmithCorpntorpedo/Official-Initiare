@@ -57,31 +57,25 @@ function ConfirmUpload() {
                         </div>
                     </div>
                 </div>
-                <div className={`${cfucss['second-stage']} `}>
-                    <div className={`${cfucss['continue-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleContinue(); handleClick() }}></div>
-                    <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
-                </div>
-                <div className={`${cfucss['third-stage']} `}>
-                    <div className={`${cfucss['continue-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleContinue(); handleClick() }}></div>
-                    <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
-                </div>
-                <div className={`${cfucss['fourth-stage']} `}>
-                    <div className={`${cfucss['continue-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleContinue(); handleClick() }}></div>
-                    <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
-                </div>
-                <div className={`${cfucss['fifth-stage']} `}>
-                    <div className={`${cfucss['continue-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleContinue(); handleClick() }}></div>
-                    <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
-                </div>
-                <div className={`${cfucss['sixth-stage']} `}>
-                    <div className={`${cfucss['continue-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleContinue(); handleClick() }}></div>
-                    <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
-                </div>
+                <UploadPages classStage="second-stage" handleBack={handleBack} handleClick={handleClick} handleContinue={handleContinue} clicked={clicked} />
+                <UploadPages classStage="third-stage" handleBack={handleBack} handleClick={handleClick} handleContinue={handleContinue} clicked={clicked} />
+                <UploadPages classStage="fourth-stage" handleBack={handleBack} handleClick={handleClick} handleContinue={handleContinue} clicked={clicked} />
+                <UploadPages classStage="fifth-stage" handleBack={handleBack} handleClick={handleClick} handleContinue={handleContinue} clicked={clicked} />
+                <UploadPages classStage="sixth-stage" handleBack={handleBack} handleClick={handleClick} handleContinue={handleContinue} clicked={clicked} />
                 <div className={`${cfucss['seventh-stage']} `}>
                     <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
                 </div>
             </div>
         </div>
+    )
+}
+
+const UploadPages = ({classStage, handleBack, handleClick, handleContinue, clicked}) => {
+    return (
+        <div className={`${cfucss[classStage]}`}>
+                    <div className={`${cfucss['continue-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleContinue(); handleClick() }}></div>
+                    <div className={`${cfucss['back-button']} ${clicked ? cfucss['being-clicked'] : cfucss['not-being-clicked']}`} onClick={() => { handleBack(); handleClick() }}></div>
+                </div>
     )
 }
 
