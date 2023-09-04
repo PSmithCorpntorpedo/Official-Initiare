@@ -2,9 +2,10 @@ import { useContext } from "react";
 import FileContext from "../Pages/jsx/UploadStages/FileContext/FileProvider";
 
 
-const useAuth = () => {
+const useFile = () => {
     return useContext(FileContext);
 }
-//this is essentially a custom hook to use the AuthContext initialized in every single 
+//this is essentially a custom hook to use the FileContext initialized in every single 
 //children component by combining useContext with a global context
-export default useAuth;
+//also how tf did this code previously worked with useAuth as the exported hook lmao
+export default useFile;
