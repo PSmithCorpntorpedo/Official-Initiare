@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Articles from "./Pages/Articles";
 import Upload from "./Pages/Upload";
+import ConfirmUpload from "./Pages/ConfirmUpload";
 import Blog from "./Pages/Blog";
 import IRScholarJournal from "./Pages/Journal";
 import SignUp from "./Authentication/Signup";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/journal" element={<IRScholarJournal />}></Route>
             <Route element={<RequireAuth />}>
               <Route path="/upload" element={<Upload />}></Route>
+              <Route path="/confirm-upload" element={<ConfirmUpload />}></Route>
             </Route>
           </Route>
           <Route path="*" element={<Undefined />}></Route>

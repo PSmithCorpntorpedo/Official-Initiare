@@ -1,0 +1,155 @@
+.upload-page {
+    width: 100%;
+}
+
+.upload-page {
+    width: 100%;
+    display: flex;
+}
+
+.page-content-wrapper {
+    width: min(1500px, 80%);
+    /*needs media query*/
+    margin: 5% auto 2.5%;
+}
+
+.content-and-table-of-contents-wrap {
+    width: 100%;
+}
+
+.main-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.toc-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.line-and-items-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 1% 0;
+}
+
+.toc-line {
+    width: 4px;
+    background-color: var(--secondary);
+    margin-right: 1.5rem;
+    margin-left: 4px;
+}
+
+.toc-item {
+    font-size: 1.2rem;
+    margin: 5% 0;
+}
+
+.structure-title {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* CSS trickery to add colored bullet points */
+.main-bullet-point::before {
+    content: "\2022";
+    color: var(--primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.main-bullet-point {
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.small-blue-text {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.pop-up-wrapper {
+    display: flex;
+    position: sticky;
+    bottom: 20px;
+    margin-bottom: 35px;
+}
+
+.pop-up {
+    background: white;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: min(85%, 400px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px 5px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 lightgrey;
+}
+
+.pop-up-text {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.pop-up-button {
+    user-select: none;
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #2B52B751, #FFBC0051);
+}
+
+.pop-up-button:active {
+    background: linear-gradient(to right, #2B52B777, #FFBC0077)
+}
+
+@media (min-width: 1295px) {
+    .content-and-table-of-contents-wrap {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .toc-line {
+        margin-left: 0;
+    }
+
+    .content, .main-text {
+        width: 70%;
+    }
+
+    .table-of-contents {
+        width: 20%;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-content-wrapper {
+        width: 90%;
+    }
+
+    .main-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .upload-icon {
+        display: none;
+    }
+
+    .pop-up-text, .pop-up-button {
+        font-size: 0.9rem;
+    }
+}
