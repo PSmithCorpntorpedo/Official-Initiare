@@ -32,7 +32,7 @@ function ConfirmUpload() {
     "sixth",
     "seventh",
   ];
-  
+
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -43,7 +43,7 @@ function ConfirmUpload() {
     if (clicked) {
       setTimeout(() => {
         setClicked(false);
-      }, 700);
+      }, 500);
     }
   }, [clicked, setClicked]);
 
@@ -126,6 +126,7 @@ function ConfirmUpload() {
             </div>
           </div>
         </div>
+
         <UploadPages
           classStage="second-stage"
           handleBack={handleBack}
@@ -133,6 +134,7 @@ function ConfirmUpload() {
           handleContinue={handleContinue}
           clicked={clicked}
           PageComponent={Stage2JSX}
+          stage={1}
         />
         <UploadPages
           classStage="third-stage"
@@ -141,6 +143,7 @@ function ConfirmUpload() {
           handleContinue={handleContinue}
           clicked={clicked}
           PageComponent={Stage3JSX}
+          stage={2}
         />
         <UploadPages
           classStage="fourth-stage"
@@ -149,6 +152,7 @@ function ConfirmUpload() {
           handleContinue={handleContinue}
           clicked={clicked}
           PageComponent={Stage4JSX}
+          stage={3}
         />
         <UploadPages
           classStage="fifth-stage"
@@ -157,6 +161,7 @@ function ConfirmUpload() {
           handleContinue={handleContinue}
           clicked={clicked}
           PageComponent={Stage5JSX}
+          stage={4}
         />
         <UploadPages
           classStage="sixth-stage"
@@ -165,6 +170,7 @@ function ConfirmUpload() {
           handleContinue={handleContinue}
           clicked={clicked}
           PageComponent={Stage6JSX}
+          stage={5}
         />
 
         <div className={`${cfucss["seventh-stage"]} `}>
@@ -177,7 +183,9 @@ function ConfirmUpload() {
               handleBack();
               handleClick();
             }}
-          ></div>
+          >
+            Back
+          </div>
         </div>
       </div>
     </div>
@@ -191,29 +199,37 @@ const UploadPages = ({
   handleContinue,
   clicked,
   PageComponent,
+  stage,
 }) => {
   return (
     <div className={`${cfucss[classStage]}`}>
       <PageComponent />
-      <div className={`${cfucss[`nav-buttons`]}`}>
-        <div
-          className={`${cfucss["continue-button"]} ${
-            clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
-          }`}
-          onClick={() => {
-            handleContinue();
-            handleClick();
-          }}
-        ></div>
-        <div
-          className={`${cfucss["back-button"]} ${
-            clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
-          }`}
-          onClick={() => {
-            handleBack();
-            handleClick();
-          }}
-        ></div>
+      <div className={`${cfucss[`stage-nav`]}`}>
+        <p className={`${cfucss[`stage-num`]}`}>Stage {stage} of 5:</p>
+        <div className={`${cfucss[`nav-buttons`]}`}>
+          <div
+            className={`${cfucss["back-button"]} ${
+              clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
+            }`}
+            onClick={() => {
+              handleBack();
+              handleClick();
+            }}
+          >
+            <p>Back</p>
+          </div>
+          <div
+            className={`${cfucss["continue-button"]} ${
+              clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
+            }`}
+            onClick={() => {
+              handleContinue();
+              handleClick();
+            }}
+          >
+            <p>Next</p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@
 
 .instructions-box {
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   background: var(--primary-variant, #eaeffa);
   display: flex;
   padding: 10%;
