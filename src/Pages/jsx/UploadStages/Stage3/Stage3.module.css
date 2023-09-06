@@ -33,6 +33,7 @@
 
 .primary-question span {
   font-style: italic;
+  font-weight: 800;
 }
 
 .choices {
@@ -54,26 +55,32 @@
 }
 
 
-.option {
-    padding: 1.5%;
-    display: flex;
-    border-radius: 10px;
-    border: 1px solid var(--primary-variant, #EAEFFA);
-    padding: 2%;
-}
 
-input[type="radio"] {
+
+.radio-button {
     display: none;
 }
 
-input[type="radio"]:checked + label:before {
+.radio-button:checked + .primary-label:before {
     background-color: blue;
 }
-.option-label {
+.option {
+  padding: 1.5%;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid var(--primary-variant, #EAEFFA);
+  padding: 2%;
+}
+
+.chosen {
+  border: 1px solid var(--primary-main, #2B52B7);
+}
+
+.primary-label {
     position: relative;
     display: flex;
 }
-.option-label:before {
+.primary-label:before {
     content: "";
     height: 20px;
     width: 20px;
