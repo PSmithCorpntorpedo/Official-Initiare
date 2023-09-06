@@ -1,8 +1,10 @@
 import React from 'react';
 import useFile from "../../../../Hooks/useFile";
 import useAuth from '../../../../Hooks/useAuth';
+import usePrimaryCategories from '../../../../Hooks/usePrimaryCategories';
 
 export default function Stage6JSX() {
+  const {pCategory} = usePrimaryCategories();
   const {file} = useFile();
   const {auth} = useAuth();
   
@@ -34,7 +36,9 @@ export default function Stage6JSX() {
 
   };
 
-  return (
+  return (<>
      <button onClick={handleClick}>Upload File</button> 
+      <button onClick={() => console.log(pCategory)}>Check if pCategory works until stage 6</button>
+  </>
   )
 }

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FileContext from "../Pages/jsx/UploadStages/FileContext/FileProvider";
+import FileContext from "../Pages/jsx/UploadStages/UploadContext/FileProvider";
 
 
 const useFile = () => {

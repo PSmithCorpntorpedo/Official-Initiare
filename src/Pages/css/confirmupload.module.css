@@ -65,23 +65,64 @@
     justify-content: center;
     align-items: center;
 }
+
+.stage-nav {
+    display: flex;
+    width: clamp(70%, 800px, 90%);
+    justify-content: space-between;
+}
+
+
 .nav-buttons {
     display: flex;
-    width: clamp(40%, 200px, 80%);
-    gap: 4%
+    gap: 4%;
+    justify-content: flex-end;
+    width: 70%;
+    gap: 1%;
 }
 
 .continue-button {
-    background-color: blue;
-    height: 50px;
-    width: 50%;
+    color: var(--primary);
+    height: 40px;
+    width: clamp(20%, 75px, 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid blue;
+    border-radius: 10px;
+    
+}
+
+.continue-button p {
+    font-weight: 700;
+    text-align: center;
+    vertical-align: center;
+    margin: 0;
 }
 
 .back-button {
-    background-color: red;
-    height: 50px;
-    width: 50%;
+    color: var(--primary);
+    height: 40px;
+    width: clamp(20%, 75px, 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.back-button p {
+    text-align: center;
+    vertical-align: center;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.stage-num {
+    width: 40%;
+    color: var(--primary);
+    font-size: 0.85em;
+}
+
+
 
 .being-clicked {
     pointer-events: none;
