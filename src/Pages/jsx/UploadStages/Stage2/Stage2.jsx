@@ -16,8 +16,7 @@ const Stage2JSX = () => {
       {!read && (
         <div className={u2css[`instructions-box`]}>
           <p>
-            Please upload a file ending in .docx (Microsoft Word, WPS Word,
-            etc.)
+            Please upload a file containing your paper (.docx, .pdf, etc.)
           </p>
           <div className={u2css[`understood`]}>
             <p onClick={() => setRead(true)}>I understand</p>
