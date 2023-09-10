@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import u3css from "./Stage3.module.css";
-import usePrimaryCategories from "../../../../Hooks/usePrimaryCategories";
+import useCategories from "../../../../Hooks/useCategories";
 
 export default function Stage3JSX() {
   const [chosenCat, setChosenCat] = useState("");
@@ -36,18 +36,18 @@ export default function Stage3JSX() {
 }
 
 const Options = ({ name, setChosenCat, chosenCat }) => {
-  const {setPCategory} = usePrimaryCategories();
+  const {category, setCategory} = useCategories();
   
   return (
-    <div className={`${u3css[`option`]} ${chosenCat === "Primary" + name ? u3css[`chosen`] : u3css[`not-chosen`]} `}>
+    <div className={`${u3css[`option`]} ${chosenCat === name ? u3css[`chosen`] : u3css[`not-chosen`]} `}>
       <input 
         type="radio"
         id={"Primary" + name}
         name="option"
         className={`${u3css[`radio-button`]}`}
-        value={"Primary" + name}
+        value={name}
         onChange={(e) => {
-          setPCategory(e.target.value);
+          setCategory(e.target.value);
           setChosenCat(e)
         }}
       />

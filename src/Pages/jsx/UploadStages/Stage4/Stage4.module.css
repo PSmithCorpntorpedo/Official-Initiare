@@ -9,7 +9,7 @@
   align-items: flex-start;
   gap: 5%;
   border-radius: 10px;
-  background: aliceblue;
+  background: white;
   box-shadow: 0px 4px 20px 0px rgba(43, 82, 183, 0.1);
 }
 
@@ -40,6 +40,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 2%
 }
 
 .option-wrapper {

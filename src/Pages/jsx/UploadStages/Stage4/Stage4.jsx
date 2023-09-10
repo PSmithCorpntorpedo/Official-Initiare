@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import u4css from "./Stage4.module.css";
-import usePrimaryCategories from "../../../../Hooks/usePrimaryCategories";
+import useSubCategories from "../../../../Hooks/useSubCategories";
+import useCategories from "../../../../Hooks/useCategories";
 
 export default function Stage4JSX() {
+    
+
   return (
     <div className={`${u4css[`panel`]}`}>
       <p className={`${u4css[`primary-question`]}`}>
@@ -25,7 +28,7 @@ export default function Stage4JSX() {
         <div className={`${u4css[`option-wrapper`]}`}>
           <p className={`${u4css[`option-header`]}`}>Social Sciences</p>
           <Options name="Social Studies" />
-          <Options name="Humanities" />
+          <Options name="Humanities"  />
         </div>
       </div>
     </div>
@@ -33,22 +36,45 @@ export default function Stage4JSX() {
 }
 
 const Options = ({ name }) => {
-  const {pCategory} = usePrimaryCategories();
+  const { category } = useCategories();
   const [isChosen, setIsChosen] = useState(false);
+  const { subCategory, setSubCategory } = useSubCategories();
+  function handleChange(e) {
+    setIsChosen(!isChosen)
+    let { value, checked } = e.target;
+
+    if (checked) {
+      setSubCategory([...subCategory, value]);
+      
+    } else if (!checked) {
+      const newSubCategories = subCategory.filter(cat => cat !== value)
+      setSubCategory(newSubCategories);
+    }
+  }
+
   return (
-    <div className={`${u4css[`option`]} ${pCategory !== "Primary" + name ? u4css[`vacant`] : u4css[`not-vacant`] } ${isChosen ? u4css[`chosen`] : u4css[`not-chosen`] }`}>
-      <input
-        type="checkbox"
-        id={"Secondary" + name}
-        name="option"
-        className={`${u4css[`checkbox`]}`}
-        value={"Secondary" + name}
-        onChange={(e) => {
-          // setPCategory(e.target.value);
-          setIsChosen(!isChosen)
-        }}
-      />
-      <label for={"Secondary" + name} className={`${u4css[`secondary-label`]} ${pCategory !== "Primary" + name ? u4css[`vacant`] : u4css[`not-vacant-label`] }` }>
+    <div
+      className={`${u4css[`option`]} ${
+        category !== name ? u4css[`vacant`] : u4css[`not-vacant`]
+      } ${isChosen ? u4css[`chosen`] : u4css[`not-chosen`]}`}
+    >
+      {category !== name ? (
+        <input
+          type="checkbox"
+          id={"Secondary" + name}
+          name="option"
+          className={`${u4css[`checkbox`]}`}
+          value={name}
+          onChange={handleChange}
+        />
+      ) : null}
+
+      <label
+        for={"Secondary" + name}
+        className={`${u4css[`secondary-label`]} ${
+          category !== name ? u4css[`vacant`] : u4css[`not-vacant-label`]
+        }`}
+      >
         <span>{name}</span>
       </label>
     </div>

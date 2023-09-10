@@ -15,7 +15,6 @@ function ConfirmUpload() {
   const handleContinue = () => {
     let k = stage;
     setStage(k + 1);
-    console.log(k + 1);
   };
 
   const handleBack = () => {

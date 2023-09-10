@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import useFile from "../../../../Hooks/useFile";
-import useAuth from '../../../../Hooks/useAuth';
-import usePrimaryCategories from '../../../../Hooks/usePrimaryCategories';
+import useAuth from "../../../../Hooks/useAuth";
+import useCategories from "../../../../Hooks/useCategories";
+import useSubCategories from "../../../../Hooks/useSubCategories";
 
 export default function Stage6JSX() {
-  const {pCategory} = usePrimaryCategories();
-  const {file} = useFile();
-  const {auth} = useAuth();
-  
+  const { category } = useCategories();
+  const {subCategory} = useSubCategories();
+  const { file } = useFile();
+  const { auth } = useAuth();
+
   const handleClick = () => {
     if (!file) {
       console.log("There is no file as of now, please upload one");
@@ -31,14 +33,21 @@ export default function Stage6JSX() {
         body: fd,
       }
     )
-      .then(res => res.json())
-      .then(data => console.log(data.res.download_url)) //change later when user download is viable
-
+      .then((res) => res.json())
+      .then((data) => console.log(data.res.download_url)); //change later when user download is viable
   };
 
-  return (<>
-     <button onClick={handleClick}>Upload File</button> 
-      <button onClick={() => console.log(pCategory)}>Check if pCategory works until stage 6</button>
-  </>
-  )
+  return (
+    <>
+      <button onClick={handleClick}>Upload File</button>
+      <button
+        onClick={() => {
+          console.log(category);
+          console.log(subCategory)
+        }}
+      >
+        Check if all categories works until stage 6
+      </button>
+    </>
+  );
 }

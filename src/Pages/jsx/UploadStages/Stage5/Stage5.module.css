@@ -1,0 +1,56 @@
+.panel {
+  width: clamp(70%, 800px, 90%);
+  height: clamp(50%, 400px, 70%);
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5%;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 4px 20px 0px rgba(43, 82, 183, 0.1);
+}
+
+.panel p {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3%;
+}
+
+.radio-button {
+  display: none;
+}
+
+.radio-button:checked + .primary-label:before {
+  background-color: blue;
+}
+.option {
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid var(--primary-variant, #eaeffa);
+  padding: 2%;
+  margin: 3px 0;
+}
+
+.chosen {
+  border: 1px solid var(--primary-main, #2b52b7);
+}
+
+.primary-label {
+  position: relative;
+  display: flex;
+}
+.primary-label:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  margin-right: 15px;
+}
