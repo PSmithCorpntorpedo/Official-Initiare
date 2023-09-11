@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import u4css from "./Stage4.module.css";
 import useSubCategories from "../../../../Hooks/useSubCategories";
 import useCategories from "../../../../Hooks/useCategories";
@@ -51,6 +51,12 @@ const Options = ({ name }) => {
       setSubCategory(newSubCategories);
     }
   }
+
+  useEffect(() => {
+    const newSubCategories = subCategory.filter(cat => cat !== category)
+    setSubCategory(newSubCategories)
+    if(category === name) setIsChosen(false)
+  }, [category])
 
   return (
     <div

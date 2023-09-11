@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 2%
+  gap: 2%;
 }
 
 .option-wrapper {
@@ -55,53 +55,48 @@
   line-height: normal;
 }
 
-
-
-
 .radio-button {
-    display: none;
+  display: none;
 }
 
-.radio-button:checked + .primary-label:before {
-    background-color: blue;
-}
 .option {
   padding: 1.5%;
   display: flex;
   border-radius: 10px;
-  border: 1px solid var(--primary-variant, #EAEFFA);
+  border: 1px solid var(--primary-variant, #eaeffa);
   padding: 2%;
 }
 
 .chosen {
-  border: 1px solid var(--primary-main, #2B52B7);
+  border: 1px solid var(--primary-main, #2b52b7);
+}
+.chosen-label {
+  background-color: blue;
 }
 
 .primary-label {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
-.primary-label:before {
-    content: "";
-    height: 20px;
-    width: 20px;
-    border: 2px solid var(--primary);
-    border-radius: 50%;
-    margin-right: 15px
+.before-primary-label {
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  margin-right: 15px;
 }
 
 @media (max-width: 350px) {
-    .option-header {
-        font-size: 0.7em;
-      }
-      label {
-        font-size: 0.7em
-    }
-    label:before {
-        font-size: 0.7em;
-        margin-right: 5px;
-        width: 15px;
-        height: 15px
-    }
-    
+  .option-header {
+    font-size: 0.7em;
+  }
+  label {
+    font-size: 0.7em;
+  }
+  .before-primary-label {
+    font-size: 0.7em;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+  }
 }

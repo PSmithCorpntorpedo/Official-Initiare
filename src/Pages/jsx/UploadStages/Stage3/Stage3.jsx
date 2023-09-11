@@ -52,6 +52,7 @@ const Options = ({ name, setChosenCat, chosenCat }) => {
         }}
       />
       <label for={"Primary" + name} className={`${u3css[`primary-label`]}`}>
+        <div className={`${u3css[`before-primary-label`]} ${chosenCat === name ? u3css[`chosen-label`] : u3css[`not-chosen`]}`}></div>
         <span>{name}</span>
       </label>
     </div>

@@ -3,9 +3,11 @@ import useFile from "../../../../Hooks/useFile";
 import useAuth from "../../../../Hooks/useAuth";
 import useCategories from "../../../../Hooks/useCategories";
 import useSubCategories from "../../../../Hooks/useSubCategories";
+import usePaperType from "../../../../Hooks/usePaperType";
 
 export default function Stage6JSX() {
   const { category } = useCategories();
+  const {paperType} = usePaperType();
   const {subCategory} = useSubCategories();
   const { file } = useFile();
   const { auth } = useAuth();
@@ -43,7 +45,8 @@ export default function Stage6JSX() {
       <button
         onClick={() => {
           console.log(category);
-          console.log(subCategory)
+          console.log(subCategory);
+          console.log(paperType)
         }}
       >
         Check if all categories works until stage 6
