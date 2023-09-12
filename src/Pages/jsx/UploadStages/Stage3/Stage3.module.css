@@ -65,13 +65,14 @@
   border-radius: 10px;
   border: 1px solid var(--primary-variant, #eaeffa);
   padding: 2%;
+  user-select: none;
 }
 
 .chosen {
   border: 1px solid var(--primary-main, #2b52b7);
 }
 .chosen-label {
-  background-color: blue;
+  background-color: #2b52b7;
 }
 
 .primary-label {

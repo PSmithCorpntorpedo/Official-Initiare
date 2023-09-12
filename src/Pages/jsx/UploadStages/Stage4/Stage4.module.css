@@ -61,14 +61,16 @@
   border-radius: 10px;
   border: 1px solid var(--primary-variant, #eaeffa);
   padding: 2%;
+  user-select: none;
 }
+
 
 .checkbox {
   display: none;
 }
 
 .checkbox:checked + .secondary-label:before {
-  background-color: blue;
+  background-color: #2b52b7;
 }
 .secondary-label {
   position: relative;
@@ -80,6 +82,7 @@
   width: 20px;
   border: 2px solid var(--primary);
   margin-right: 15px;
+  border-radius: 20%;
 }
 
 .not-vacant {
@@ -92,7 +95,7 @@
   pointer-events: none;
 }
 .not-vacant-label:before {
-  background-color: blue;
+  background-color: #2b52b7;
   opacity: 0.5;
 }
 
