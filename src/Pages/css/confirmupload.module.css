@@ -88,9 +88,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid blue;
+    border: 1px solid var(--primary);
     border-radius: 10px;
     
+}
+
+.continue-button:active {
+    color: white;
+    background-color: var(--primary);
 }
 
 .continue-button p {
@@ -98,6 +103,7 @@
     text-align: center;
     vertical-align: center;
     margin: 0;
+    user-select: none;
 }
 
 .back-button {
@@ -114,6 +120,7 @@
     vertical-align: center;
     text-decoration: underline;
     margin: 0;
+    user-select: none;
 }
 
 .stage-num {
