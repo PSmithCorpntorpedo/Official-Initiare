@@ -3,9 +3,8 @@ import u4css from "./Stage4.module.css";
 import useSubCategories from "../../../../Hooks/useSubCategories";
 import useCategories from "../../../../Hooks/useCategories";
 
-export default function Stage4JSX() {
-    
-
+export default function Stage4JSX({setHasSelected}) {
+  useEffect(() => setHasSelected(true))
   return (
     <div className={`${u4css[`panel`]}`}>
       <p className={`${u4css[`primary-question`]}`}>
@@ -28,7 +27,7 @@ export default function Stage4JSX() {
         <div className={`${u4css[`option-wrapper`]}`}>
           <p className={`${u4css[`option-header`]}`}>Social Sciences</p>
           <Options name="Social Studies" />
-          <Options name="Humanities"  />
+          <Options name="Humanities"/>
         </div>
       </div>
     </div>
@@ -39,6 +38,7 @@ const Options = ({ name }) => {
   const { category } = useCategories();
   const [isChosen, setIsChosen] = useState(false);
   const { subCategory, setSubCategory } = useSubCategories();
+ 
   function handleChange(e) {
     setIsChosen(!isChosen)
     let { value, checked } = e.target;
@@ -57,6 +57,7 @@ const Options = ({ name }) => {
     setSubCategory(newSubCategories)
     if(category === name) setIsChosen(false)
   }, [category])
+
 
   return (
     <div

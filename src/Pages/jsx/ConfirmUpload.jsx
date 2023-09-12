@@ -200,9 +200,11 @@ const UploadPages = ({
   PageComponent,
   stage,
 }) => {
+  const [hasSelected, setHasSelected] = useState(false);
+  
   return (
     <div className={`${cfucss[classStage]}`}>
-      <PageComponent />
+      <PageComponent setHasSelected={setHasSelected} />
       <div className={`${cfucss[`stage-nav`]}`}>
         <p className={`${cfucss[`stage-num`]}`}>Stage {stage} of 5:</p>
         <div className={`${cfucss[`nav-buttons`]}`}>
@@ -217,17 +219,33 @@ const UploadPages = ({
           >
             <p>Back</p>
           </div>
-          <div
-            className={`${cfucss["continue-button"]} ${
-              clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
-            }`}
-            onClick={() => {
-              handleContinue();
-              handleClick();
-            }}
-          >
-            <p>Next</p>
-          </div>
+          {stage === 5 ? (
+            <div
+              className={`${cfucss["continue-button"]} ${
+                clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
+              } ${hasSelected ? cfucss["next"] : cfucss["block-submit"]} ${
+                cfucss["submit-button"]
+              } `}
+              onClick={() => {
+                handleContinue();
+                handleClick();
+              }}
+            >
+              <p>Submit</p>
+            </div>
+          ) : (
+            <div
+              className={`${cfucss["continue-button"]} ${
+                clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
+              } ${hasSelected ? cfucss["next"] : cfucss["block-next"]}`}
+              onClick={() => {
+                handleContinue();
+                handleClick();
+              }}
+            >
+              <p>Next</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

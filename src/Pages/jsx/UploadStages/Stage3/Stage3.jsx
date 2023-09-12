@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import u3css from "./Stage3.module.css";
 import useCategories from "../../../../Hooks/useCategories";
 
-export default function Stage3JSX() {
+export default function Stage3JSX({setHasSelected}) {
   const [chosenCat, setChosenCat] = useState("");
   const HandleChoose = (e) => {
     setChosenCat(e.target.value);
+    setHasSelected(true)
   }
   return (
     <div className={`${u3css[`panel`]}`}>

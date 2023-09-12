@@ -3,10 +3,11 @@ import { useState } from "react";
 import u5css from "./Stage5.module.css";
 import usePaperType from "../../../../Hooks/usePaperType";
 
-export default function Stage5JSX() {
+export default function Stage5JSX({setHasSelected}) {
   const [chosenCat, setChosenCat] = useState("");
   const HandleChoose = (e) => {
     setChosenCat(e.target.value);
+    setHasSelected(true)
   };
   return (
     <div className={`${u5css[`panel`]}`}>

@@ -87,6 +87,10 @@
   border: 1px solid var(--primary-main, #2b52b7);
   color: grey;
 }
+
+.not-vacant-label {
+  pointer-events: none;
+}
 .not-vacant-label:before {
   background-color: blue;
   opacity: 0.5;
@@ -96,7 +100,7 @@
   border: 1px solid var(--primary-main, #2b52b7);
 }
 
-@media (max-width: 350px) {
+@media (max-width: 450px) {
   .option-header {
     font-size: 0.7em;
   }
@@ -113,3 +117,4 @@
     font-size: 0.7em;
   }
 }
+
