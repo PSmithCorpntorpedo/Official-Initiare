@@ -3,8 +3,11 @@ import headerVideo from './../assets/pexels-pixabay-855204-1920x1080-30fps.mp4';
 import React from 'react';
 import { faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navi = useNavigate();
+
     return (
         <div className={homecss['home']}>
             <div className={homecss['home-header']}>
@@ -48,6 +51,14 @@ const Home = () => {
                             <p className={homecss['lower-goal-text']}>The objective of our team is clear! Here at InitiaRe, we aim to establish an accessible and dynamic platform that empowers students by promoting professional research and facilitating the exchange of research papers. This open journal caters not only to those looking to publish their work but also provides inspiration for researchers seeking fresh ideas or reliable sources of information.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className={homecss['join-us']}>
+                <div className={homecss['join-us-content']}>
+                    <div className={homecss['join-us-main-text']}>
+                        Want to be a part of the <span style={{color: "var(--secondary)"}}>Initia</span><span style={{color: "var(--primary)"}}>Re</span> Team?
+                    </div>
+                    <div onClick={() => {window.open('https://www.facebook.com/profile.php?id=100092825321496')}} className={homecss['join-us-button']}>Learn more</div>
                 </div>
             </div>
         </div>

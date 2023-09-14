@@ -25,7 +25,7 @@
   justify-content: center;
   align-items: center;
   animation: fade 1.5s infinite;
-  margin-right: 1%;
+  /* margin-right: 1%; */
 }
 
 .in {
@@ -35,5 +35,5 @@
   justify-content: center;
   align-items: center;
   animation: fade 1.5s infinite;
-  margin-left: 1%;
+  /* margin-left: 1%; */
 }
