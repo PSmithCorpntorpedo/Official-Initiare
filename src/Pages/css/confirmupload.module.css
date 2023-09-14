@@ -1,46 +1,45 @@
-
 .confirm-upload-page-wrap {
-    /* width: 700%; */
-    overflow: hidden;
-    width: auto;
-    height: 100%;
+  /* width: 700%; */
+  overflow: hidden;
+  width: auto;
+  height: 100%;
 }
 
 .plane-of-existence {
-    width: 700%;
-    display: flex;
-    flex-direction: row;
-    transition: transform 0.5s ease-in-out 0.2s;
-    height: 100%;
-    align-items: center;
+  width: 700%;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease-in-out 0.2s;
+  height: 100%;
+  align-items: center;
 }
 
 .plane-of-existence.on-first-stage {
-    transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 .plane-of-existence.on-second-stage {
-    transform: translateX(calc((100% / 7) * -1));
+  transform: translateX(calc((100% / 7) * -1));
 }
 
 .plane-of-existence.on-third-stage {
-    transform: translateX(calc((100% / 7) * -2));
+  transform: translateX(calc((100% / 7) * -2));
 }
 
 .plane-of-existence.on-fourth-stage {
-    transform: translateX(calc((100% / 7) * -3));
+  transform: translateX(calc((100% / 7) * -3));
 }
 
 .plane-of-existence.on-fifth-stage {
-    transform: translateX(calc((100% / 7) * -4));
+  transform: translateX(calc((100% / 7) * -4));
 }
 
 .plane-of-existence.on-sixth-stage {
-    transform: translateX(calc((100% / 7) * -5));
+  transform: translateX(calc((100% / 7) * -5));
 }
 
 .plane-of-existence.on-seventh-stage {
-    transform: translateX(calc((100% / 7) * -6));
+  transform: translateX(calc((100% / 7) * -6));
 }
 
 .second-stage,
@@ -49,145 +48,171 @@
 .fifth-stage,
 .sixth-stage,
 .seventh-stage {
-    width: calc(100% / 7);
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    row-gap: 4%;
+  width: calc(100% / 7);
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 4%;
 }
 
 .first-stage {
-    width: calc(100% / 7);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: calc(100% / 7);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stage-nav {
-    display: flex;
-    width: clamp(70%, 800px, 90%);
-    justify-content: space-between;
+  display: flex;
+  width: clamp(70%, 800px, 90%);
+  justify-content: space-between;
 }
 
-
 .nav-buttons {
-    display: flex;
-    gap: 4%;
-    justify-content: flex-end;
-    width: 70%;
-    gap: 1%;
+  display: flex;
+  gap: 4%;
+  justify-content: flex-end;
+  width: 70%;
+  gap: 1%;
 }
 
 .continue-button {
-    color: var(--primary);
-    height: 40px;
-    width: clamp(20%, 75px, 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--primary);
-    border-radius: 10px;
-    
+  color: var(--primary);
+  height: 40px;
+  width: clamp(25%, 70px, 27%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
 }
 
 .continue-button:active {
-    color: white;
-    background-color: var(--primary);
+  color: white;
+  background-color: var(--primary);
 }
 
 .continue-button p {
-    font-weight: 700;
-    text-align: center;
-    vertical-align: center;
-    margin: 0;
-    user-select: none;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: center;
+  margin: 0;
+  user-select: none;
 }
 
 .back-button {
-    color: var(--primary);
-    height: 40px;
-    width: clamp(20%, 75px, 25%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: var(--primary);
+  height: 40px;
+  width: clamp(25%, 70px, 27%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-button p {
-    text-align: center;
-    vertical-align: center;
-    text-decoration: underline;
-    margin: 0;
-    user-select: none;
+  text-align: center;
+  vertical-align: center;
+  text-decoration: underline;
+  margin: 0;
+  user-select: none;
 }
 
 .stage-num {
-    width: 40%;
-    color: var(--primary);
-    font-size: 0.85em;
+  width: 40%;
+  color: var(--primary);
+  font-size: 0.85em;
 }
 
-
-
 .being-clicked {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .before-you-proceed {
-    margin: 5% auto;
-    border: 2px solid lightgray;
-    border-radius: 10px;
-    width: min(800px, 90%);
-    padding: 2.5%;
-    box-sizing: border-box;
+  margin: 5% auto;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  width: min(800px, 90%);
+  padding: 2.5%;
+  box-sizing: border-box;
 }
 
 .byp-h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--primary)
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primary);
 }
 
 .byp-h2 {
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-    color: var(--primary);
-    font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .byp-list-element {
-    font-size: 1.1rem;
-    line-height: 2rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
 }
 
 .clickable-text-small {
-    font-size: 0.85rem;
-    color: var(--primary);
-    text-decoration: underline;
+  font-size: 0.85rem;
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 .clickable-text-small:hover {
-    color: black;
+  color: black;
 }
 
 .clickable-text-small:active {
-    color: var(--special);
+  color: var(--special);
 }
 
 .byp-last-row {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .byp-agree {
-    margin-left: 40px;
-    padding: 5px 20px;
-    font-weight: 600;
-    border-radius: 10px;
-    background-color: var(--secondary);
+  margin-left: 40px;
+  padding: 5px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: var(--secondary);
+}
+.submit-button {
+  margin-left: 40px;
+  padding: 5px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  border: 0;
+}
+
+.submit-button p {
+  font-weight: 700;
+  color: #000;
+}
+
+.block-next {
+  user-select: none;
+  pointer-events: none;
+  color: rgba(43, 82, 183, 0.25);
+  border: 1px solid rgba(43, 82, 183, 0.25);
+}
+
+.block-submit {
+  user-select: none;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 188, 0, 0.25);
+}
+.block-submit p {
+    color: rgba(0, 0, 0, 0.25);
 }
 
