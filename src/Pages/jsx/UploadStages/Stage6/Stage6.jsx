@@ -1,51 +1,15 @@
 import React, { useEffect, useState } from "react";
 import u6css from "./Stage6.module.css";
-import useFile from "../../../../Hooks/useFile";
-import useAuth from "../../../../Hooks/useAuth";
-import useCategories from "../../../../Hooks/useCategories";
-import useSubCategories from "../../../../Hooks/useSubCategories";
-import usePaperType from "../../../../Hooks/usePaperType";
+
 
 export default function Stage6JSX({ setHasSelected }) {
-  const { category } = useCategories();
-  const { paperType } = usePaperType();
-  const { subCategory } = useSubCategories();
-  const { file } = useFile();
-  const { auth } = useAuth();
   const [ticks, setTicks] = useState(0);
- 
+
   useEffect(() => {
-    if(ticks === 12) setHasSelected(true)
-    else setHasSelected(false)
-  }, [ticks])
+    if (ticks === 12) setHasSelected(true);
+    else setHasSelected(false);
+  }, [ticks]);
 
-
-  const handleClick = () => {
-    if (!file) {
-      console.log("There is no file as of now, please upload one");
-      return;
-    }
-
-    const fd = new FormData();
-    fd.append("file", file);
-    uploadFile(fd);
-  };
-
-  const uploadFile = async (fd) => {
-    await fetch(
-      "https://initiare-website-2603191647bb.herokuapp.com/api/v1/storage/media/upload",
-      {
-        mode: "cors",
-        method: "POST",
-        headers: {
-          Authorization: "Bearer " + auth.accessToken,
-        },
-        body: fd,
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => console.log(data.res.download_url)); //change later when user download is viable
-  };
 
   return (
     <div className={`${u6css[`panel`]}`}>
@@ -132,20 +96,19 @@ export default function Stage6JSX({ setHasSelected }) {
   );
 }
 
-const Options = ({ name, content, ticks ,setTicks }) => {
+const Options = ({ name, content, ticks, setTicks }) => {
   const [isChosen, setIsChosen] = useState(false);
-  
+
   function handleChange(e) {
     setIsChosen(!isChosen);
     let { checked } = e.target;
 
     if (checked) {
-      setTicks(ticks + 1)
+      setTicks(ticks + 1);
     } else if (!checked) {
-      setTicks(ticks - 1)
+      setTicks(ticks - 1);
     }
   }
-  
 
   return (
     <div
@@ -161,13 +124,14 @@ const Options = ({ name, content, ticks ,setTicks }) => {
         value={name}
         onChange={handleChange}
       />
-      <div
-        className={`${u6css[`before-primary-label`]} ${
-          isChosen ? u6css[`chosen-label`] : u6css[`not-chosen`]
-        }`}
-      ></div>
+
       <label for={name} className={`${u6css[`label`]}`}>
-        <span>
+        <div
+          className={`${u6css[`before-primary-label`]} ${
+            isChosen ? u6css[`chosen-label`] : u6css[`not-chosen`]
+          }`}
+        ></div>
+        <span className={`${u6css[`content`]}`}>
           {name}: {content}
         </span>
       </label>
