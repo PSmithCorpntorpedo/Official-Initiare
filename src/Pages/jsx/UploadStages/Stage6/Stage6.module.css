@@ -42,6 +42,9 @@
   margin-right: 15px;
   border-radius: 20%;
 }
+.content {
+  width: 90%
+}
 
 .label {
   width: 100%;

@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 import cfucss from "./../css/confirmupload.module.css";
 import { useNavigate } from "react-router-dom";
+import useFile from "../../Hooks/useFile";
+import useAuth from "../../Hooks/useAuth";
+import useCategories from "../../Hooks/useCategories";
+import useSubCategories from "../../Hooks/useSubCategories";
+import usePaperType from "../../Hooks/usePaperType";
 import Stage2JSX from "./UploadStages/Stage2/Stage2.jsx";
 import Stage3JSX from "./UploadStages/Stage3/Stage3.jsx";
 import Stage4JSX from "./UploadStages/Stage4/Stage4.jsx";
 import Stage5JSX from "./UploadStages/Stage5/Stage5.jsx";
 import Stage6JSX from "./UploadStages/Stage6/Stage6.jsx";
-import Stage7JSX from "./UploadStages/Stage7/Stage7.jsx";
+import Stage7UploadingJSX from "./UploadStages/Stage7/Stage7_Uploading.jsx";
+import Stage7SuccessJSX from "./UploadStages/Stage7/Stage7_Success.jsx";
 
 function ConfirmUpload() {
   const navi = useNavigate();
   const [stage, setStage] = useState(1);
+  const [isUploading, setIsUploading] = useState(true);
 
   const handleContinue = () => {
     let k = stage;
@@ -45,6 +52,142 @@ function ConfirmUpload() {
       }, 500);
     }
   }, [clicked, setClicked]);
+  const { category } = useCategories();
+  const { paperType } = usePaperType();
+  const { subCategory } = useSubCategories();
+  const { file } = useFile();
+  const { auth } = useAuth();
+
+  let sCategory;
+  switch (category) {
+    case "Life Sciences":
+      sCategory = 45;
+      break;
+    case "Physical Sciences":
+      sCategory = 38;
+      break;
+    case "Earth Sciences":
+      sCategory = 39;
+      break;
+    case "Medical and Health":
+      sCategory = 40;
+      break;
+    case "Mathematics":
+      sCategory = 41;
+      break;
+    case "Formal Sciences":
+      sCategory = 42;
+      break;
+    case "Social Studies":
+      sCategory = 43;
+      break;
+    case "Humanities":
+      sCategory = 44;
+      break;
+  }
+
+  let sSubCategory = "";
+  for (let i = 0; i < subCategory.length; i++) {
+    let temp = "";
+    let current = sSubCategory;
+    switch (subCategory[i]) {
+      case "Life Sciences":
+        temp = "45";
+        break;
+      case "Physical Sciences":
+        temp = "38";
+        break;
+      case "Earth Sciences":
+        temp = "39";
+        break;
+      case "Medical and Health":
+        temp = "40";
+        break;
+      case "Mathematics":
+        temp = "41";
+        break;
+      case "Formal Sciences":
+        temp = "42";
+        break;
+      case "Social Studies":
+        temp = "43";
+        break;
+      case "Humanities":
+        temp = "44";
+        break;
+    }
+    if (sSubCategory === "") {
+      sSubCategory = temp;
+    }
+    else {
+      sSubCategory = current.concat(",", temp)
+    }
+  }
+
+  let sPaperType;
+  switch (paperType) {
+    case "Research Paper":
+      sPaperType = 0;
+      break;
+    case "Review Paper":
+      sPaperType = 1;
+      break;
+    case "Research Proposal":
+      sPaperType = 2;
+      break;
+  }
+
+  const handleSubmit = () => {
+    if (!file) {
+      console.log("There is no file as of now, please upload one");
+      return;
+    }
+
+    const fd = new FormData();
+    fd.append("file", file);
+    uploadFile(fd);
+  };
+
+  const uploadFile = async (fd) => {
+    await fetch(
+      "https://initiare-website-2603191647bb.herokuapp.com/api/v1/storage/media/upload",
+      {
+        mode: "cors",
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + auth.accessToken,
+        },
+        body: fd,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        fetch(
+          "https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles",
+          {
+            mode: "cors",
+            method: "POST",
+
+            headers: {
+              Authorization: "Bearer " + auth.accessToken,
+              "Content-Type": "application/json",
+              accept: "application/json",
+            },
+            body: JSON.stringify({
+              category_id: sCategory,
+              content: "Real test 1",
+              pre_publish_content: data.res.download_url,
+              publish_date: "2023-09-12T14:48:00.000Z",
+              short_brief: "brief",
+              sub_category_ids: sSubCategory,
+              thumbnail: "thumbnail",
+              title: "title",
+              type_id: sPaperType,
+            }),
+          }
+        ).then(() => setIsUploading(false));
+      });
+  };
 
   return (
     <div className={cfucss["confirm-upload-page-wrap"]}>
@@ -134,6 +277,7 @@ function ConfirmUpload() {
           clicked={clicked}
           PageComponent={Stage2JSX}
           stage={1}
+          handleSubmit={handleSubmit}
         />
         <UploadPages
           classStage="third-stage"
@@ -143,6 +287,7 @@ function ConfirmUpload() {
           clicked={clicked}
           PageComponent={Stage3JSX}
           stage={2}
+          handleSubmit={handleSubmit}
         />
         <UploadPages
           classStage="fourth-stage"
@@ -152,6 +297,7 @@ function ConfirmUpload() {
           clicked={clicked}
           PageComponent={Stage4JSX}
           stage={3}
+          handleSubmit={handleSubmit}
         />
         <UploadPages
           classStage="fifth-stage"
@@ -161,6 +307,7 @@ function ConfirmUpload() {
           clicked={clicked}
           PageComponent={Stage5JSX}
           stage={4}
+          handleSubmit={handleSubmit}
         />
         <UploadPages
           classStage="sixth-stage"
@@ -170,10 +317,11 @@ function ConfirmUpload() {
           clicked={clicked}
           PageComponent={Stage6JSX}
           stage={5}
+          handleSubmit={handleSubmit}
         />
 
         <div className={`${cfucss["seventh-stage"]} `}>
-          <Stage7JSX />
+          {isUploading ? <Stage7UploadingJSX /> : <Stage7SuccessJSX />}
           <div
             className={`${cfucss["back-button"]} ${
               clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
@@ -199,9 +347,10 @@ const UploadPages = ({
   clicked,
   PageComponent,
   stage,
+  handleSubmit,
 }) => {
   const [hasSelected, setHasSelected] = useState(false);
-  
+
   return (
     <div className={`${cfucss[classStage]}`}>
       <PageComponent setHasSelected={setHasSelected} />
@@ -229,6 +378,7 @@ const UploadPages = ({
               onClick={() => {
                 handleContinue();
                 handleClick();
+                handleSubmit();
               }}
             >
               <p>Submit</p>
