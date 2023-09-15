@@ -11,11 +11,13 @@ import Stage3JSX from "./UploadStages/Stage3/Stage3.jsx";
 import Stage4JSX from "./UploadStages/Stage4/Stage4.jsx";
 import Stage5JSX from "./UploadStages/Stage5/Stage5.jsx";
 import Stage6JSX from "./UploadStages/Stage6/Stage6.jsx";
-import Stage7JSX from "./UploadStages/Stage7/Stage7.jsx";
+import Stage7UploadingJSX from "./UploadStages/Stage7/Stage7_Uploading.jsx";
+import Stage7SuccessJSX from "./UploadStages/Stage7/Stage7_Success.jsx";
 
 function ConfirmUpload() {
   const navi = useNavigate();
   const [stage, setStage] = useState(1);
+  const [isUploading, setIsUploading] = useState(true);
 
   const handleContinue = () => {
     let k = stage;
@@ -86,35 +88,40 @@ function ConfirmUpload() {
 
   let sSubCategory = "";
   for (let i = 0; i < subCategory.length; i++) {
-    let temp;
+    let temp = "";
     let current = sSubCategory;
     switch (subCategory[i]) {
       case "Life Sciences":
-        temp = 45;
+        temp = "45";
         break;
       case "Physical Sciences":
-        temp = 38;
+        temp = "38";
         break;
       case "Earth Sciences":
-        temp = 39;
+        temp = "39";
         break;
       case "Medical and Health":
-        temp = 40;
+        temp = "40";
         break;
       case "Mathematics":
-        temp = 41;
+        temp = "41";
         break;
       case "Formal Sciences":
-        temp = 42;
+        temp = "42";
         break;
       case "Social Studies":
-        temp = 43;
+        temp = "43";
         break;
       case "Humanities":
-        temp = 44;
+        temp = "44";
         break;
     }
-    sSubCategory = current.concat(",", temp);
+    if (sSubCategory === "") {
+      sSubCategory = temp;
+    }
+    else {
+      sSubCategory = current.concat(",", temp)
+    }
   }
 
   let sPaperType;
@@ -160,15 +167,16 @@ function ConfirmUpload() {
           {
             mode: "cors",
             method: "POST",
-            "Content-Type": "application/json",
-            accept: "application/json",
+
             headers: {
               Authorization: "Bearer " + auth.accessToken,
+              "Content-Type": "application/json",
+              accept: "application/json",
             },
             body: JSON.stringify({
               category_id: sCategory,
               content: "Real test 1",
-              pre_publish_content: "testing",
+              pre_publish_content: data.res.download_url,
               publish_date: "2023-09-12T14:48:00.000Z",
               short_brief: "brief",
               sub_category_ids: sSubCategory,
@@ -177,7 +185,7 @@ function ConfirmUpload() {
               type_id: sPaperType,
             }),
           }
-        );
+        ).then(() => setIsUploading(false));
       });
   };
 
@@ -313,7 +321,7 @@ function ConfirmUpload() {
         />
 
         <div className={`${cfucss["seventh-stage"]} `}>
-          <Stage7JSX />
+          {isUploading ? <Stage7UploadingJSX /> : <Stage7SuccessJSX />}
           <div
             className={`${cfucss["back-button"]} ${
               clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
