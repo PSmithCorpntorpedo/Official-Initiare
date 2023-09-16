@@ -82,7 +82,7 @@ function FilterBox(){
 }
 
 function SearchBox(){   
-    const [search, setSearch] = useState('');
+    // const [search, setSearch] = useState('');
     return(
         <div className={articlescss["search-box"]}>
             <div className={articlescss["search-bar"]}>

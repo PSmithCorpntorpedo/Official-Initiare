@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import u6css from "./Stage6.module.css";
-import { faC, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { /*faC,*/ faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Stage6JSX({ setHasSelected }) {
@@ -9,7 +9,7 @@ export default function Stage6JSX({ setHasSelected }) {
   useEffect(() => {
     if (ticks === 12) setHasSelected(true);
     else setHasSelected(false);
-  }, [ticks]);
+  }, [ticks, setHasSelected]);
 
 
   return (

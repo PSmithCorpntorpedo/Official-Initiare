@@ -84,6 +84,8 @@ function ConfirmUpload() {
     case "Humanities":
       sCategory = 44;
       break;
+    default:
+      sCategory = 0;
   }
 
   let sSubCategory = "";
@@ -115,6 +117,8 @@ function ConfirmUpload() {
       case "Humanities":
         temp = "44";
         break;
+      default:
+        temp = "0"
     }
     if (sSubCategory === "") {
       sSubCategory = temp;
@@ -135,6 +139,8 @@ function ConfirmUpload() {
     case "Research Proposal":
       sPaperType = 2;
       break;
+    default:
+      sPaperType = -1;
   }
 
   const handleSubmit = () => {

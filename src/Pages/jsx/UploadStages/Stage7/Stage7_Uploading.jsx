@@ -1,9 +1,9 @@
 import React from "react";
 import u7css from "../Stage7/Stage7.module.css";
-import { useNavigate } from "react-router-dom"; 
+// import { useNavigate } from "react-router-dom"; 
 
 export default function Stage7UploadingJSX() {
-  const navi = useNavigate()
+  // const navi = useNavigate()
   return (
     <div className={`${u7css["panel"]}`}>
       <div className={`${u7css["message"]}`}>
