@@ -328,7 +328,7 @@ function ConfirmUpload() {
 
         <div className={`${cfucss["seventh-stage"]} `}>
           {isUploading ? <Stage7UploadingJSX /> : <Stage7SuccessJSX />}
-          <div
+          {/* <div
             className={`${cfucss["back-button"]} ${
               clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
             }`}
@@ -338,7 +338,7 @@ function ConfirmUpload() {
             }}
           >
             Back
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -117,7 +117,7 @@ function Paginate(){
 
     const fetchPageArticles = async (page) => {
          
-        const res = await fetch(`https://initiare-clone-a22c10683333.herokuapp.com/api/v1/articles?Page=${page}&Size=12`)
+        const res = await fetch(`https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=${page}&Size=12`)
         const data = await res.json()
         return data
     }
