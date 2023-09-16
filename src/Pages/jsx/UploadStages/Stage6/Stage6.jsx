@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import u6css from "./Stage6.module.css";
-
+import { faC, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Stage6JSX({ setHasSelected }) {
   const [ticks, setTicks] = useState(0);
@@ -130,7 +131,7 @@ const Options = ({ name, content, ticks, setTicks }) => {
           className={`${u6css[`before-primary-label`]} ${
             isChosen ? u6css[`chosen-label`] : u6css[`not-chosen`]
           }`}
-        ></div>
+        ><FontAwesomeIcon icon={faCheck} /></div>
         <span className={`${u6css[`content`]}`}>
           {name}: {content}
         </span>
