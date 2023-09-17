@@ -131,13 +131,13 @@ function ConfirmUpload() {
   let sPaperType;
   switch (paperType) {
     case "Research Paper":
-      sPaperType = 0;
-      break;
-    case "Review Paper":
       sPaperType = 1;
       break;
-    case "Research Proposal":
+    case "Review Paper":
       sPaperType = 2;
+      break;
+    case "Research Proposal":
+      sPaperType = 3;
       break;
     default:
       sPaperType = -1;
@@ -328,17 +328,6 @@ function ConfirmUpload() {
 
         <div className={`${cfucss["seventh-stage"]} `}>
           {isUploading ? <Stage7UploadingJSX /> : <Stage7SuccessJSX />}
-          {/* <div
-            className={`${cfucss["back-button"]} ${
-              clicked ? cfucss["being-clicked"] : cfucss["not-being-clicked"]
-            }`}
-            onClick={() => {
-              handleBack();
-              handleClick();
-            }}
-          >
-            Back
-          </div> */}
         </div>
       </div>
     </div>
