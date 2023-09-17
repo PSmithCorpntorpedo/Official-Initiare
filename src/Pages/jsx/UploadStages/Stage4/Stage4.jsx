@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import u4css from "./Stage4.module.css";
 import useSubCategories from "../../../../Hooks/useSubCategories";
 import useCategories from "../../../../Hooks/useCategories";
+import { /*faC,*/ faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Stage4JSX({setHasSelected}) {
   useEffect(() => setHasSelected(true))
@@ -81,7 +83,7 @@ const Options = ({ name }) => {
         className={`${u4css[`secondary-label`]} ${
           category !== name ? u4css[`vacant`] : u4css[`not-vacant-label`]
         }`}
-      >
+      ><div className={`${u4css[`before-secondary-label`]} ${isChosen ? u4css[`chosen-label`] : u4css[`not-chosen`]}`}>{isChosen  && <FontAwesomeIcon icon={faCheck} />} {category === name  && <FontAwesomeIcon icon={faCheck} />}</div>
         <span>{name}</span>
       </label>
     </div>
