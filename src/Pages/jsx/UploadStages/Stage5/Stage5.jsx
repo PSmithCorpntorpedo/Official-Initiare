@@ -28,6 +28,16 @@ export default function Stage5JSX({setHasSelected}) {
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
         />
+        <Options
+          name="Poster"
+          setChosenCat={HandleChoose}
+          chosenCat={chosenCat}
+        />
+        <Options
+          name="Abstract"
+          setChosenCat={HandleChoose}
+          chosenCat={chosenCat}
+        />
       </div>
     </div>
   );
@@ -44,7 +54,7 @@ const Options = ({ name, setChosenCat, chosenCat }) => {
     >
       <input
         type="radio"
-        id={name}
+        id={name + "type"}
         name="option"
         className={`${u5css[`radio-button`]}`}
         value={name}
@@ -53,7 +63,7 @@ const Options = ({ name, setChosenCat, chosenCat }) => {
           setChosenCat(e);
         }}
       />
-      <label for={name} className={`${u5css[`primary-label-5`]}`}>
+      <label for={name + "type"} className={`${u5css[`primary-label-5`]}`}>
       <div className={`${u5css[`before-primary-label`]} ${chosenCat === name ? u5css[`chosen-label`] : u5css[`not-chosen`]}`}></div>
         <span>{name}</span>
       </label>
