@@ -118,13 +118,12 @@ function ConfirmUpload() {
         temp = "44";
         break;
       default:
-        temp = "0"
+        temp = "0";
     }
     if (sSubCategory === "") {
       sSubCategory = temp;
-    }
-    else {
-      sSubCategory = current.concat(",", temp)
+    } else {
+      sSubCategory = current.concat(",", temp);
     }
   }
 
@@ -138,6 +137,12 @@ function ConfirmUpload() {
       break;
     case "Research Proposal":
       sPaperType = 3;
+      break;
+    case "Poster":
+      sPaperType = 4;
+      break;
+    case "Abstract":
+      sPaperType = 5;
       break;
     default:
       sPaperType = -1;
