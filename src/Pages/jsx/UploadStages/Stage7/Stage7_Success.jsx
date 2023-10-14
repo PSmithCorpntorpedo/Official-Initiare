@@ -6,7 +6,7 @@ export default function Stage7SuccessJSX() {
   const navi = useNavigate();
   return (
     <div className={`${u7css["page-wrapper"]}`}>
-      <img src="/Images/success-icon.svg" className={`${u7css["icon"]}`} />
+      <img alt="" src="/Images/success-icon.svg" className={`${u7css["icon"]}`} />
       <div className={`${u7css["panel"]}`}>
         <div className={`${u7css["message"]}`}>
           <h1>Success!</h1>

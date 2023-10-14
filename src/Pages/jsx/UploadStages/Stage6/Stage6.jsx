@@ -16,7 +16,7 @@ export default function Stage6JSX({ setHasSelected }) {
       if (ticks === -8 || ticks === 8 ) setHasSelected(true);
       else setHasSelected(false);
     }
-  }, [ticks]);
+  }, [ticks, paperType, setHasSelected]);
 
   return (
     <div className={`${u6css[`panel`]}`}>
@@ -185,7 +185,7 @@ const Options = ({ name, content, ticks, setTicks, uniq }) => {
   useEffect(() => {
     setTicks(0);
     setIsChosen(false);
-  }, [paperType]);
+  }, [paperType, setTicks]);
 
   function handleChange(e) {
     setIsChosen(!isChosen);
