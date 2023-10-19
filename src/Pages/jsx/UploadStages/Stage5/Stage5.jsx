@@ -29,12 +29,12 @@ export default function Stage5JSX({setHasSelected}) {
           chosenCat={chosenCat}
         />
         <Options
-          name="Poster"
+          name="Scientific Poster"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
         />
         <Options
-          name="Abstract"
+          name="Literature Review"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
         />

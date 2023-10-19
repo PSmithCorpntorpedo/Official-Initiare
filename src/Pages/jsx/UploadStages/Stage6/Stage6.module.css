@@ -54,22 +54,6 @@
   align-items: center;
 }
 
-.checkbox {
-  display: none;
-}
-
-.chosen {
-  border: 1px solid var(--primary-main, #2b52b7);
-}
-.chosen-label {
-  background-color: #2b52b7;
-}
-
-.not-chosen .before-primary-label{
-  color: #fff0;
-}
-
-
 
 @media (max-width: 600px) {
   .tickboxes {
