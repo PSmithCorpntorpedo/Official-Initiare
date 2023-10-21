@@ -19,7 +19,7 @@ function FilterItem(props){
     return (
         <li className={`${articlescss["no-list-style"]} ${articlescss['sub-list-items']}`} style={props.style} >
             <label for={props.name}>
-                <input type="checkbox" id={props.name}/> 
+                <input type="checkbox" id={props.name} className={`${articlescss[`filter-checkbox`]}`}/> 
                 {props.name}
             </label>
         </li>

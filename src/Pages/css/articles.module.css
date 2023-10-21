@@ -65,7 +65,7 @@ body{
     align-items: center;
 }
 
-input[type="checkbox"]{
+.filter-checkbox {
     appearance: none;
     -webkit-appearance: none;
     height: 1.2em;

@@ -11,6 +11,9 @@
   background: white;
   box-shadow: 0px 4px 20px 0px rgba(43, 82, 183, 0.1);
 }
+.panel p {
+  font-weight: 800;
+}
 
 .tickboxes {
   width: 100%;
@@ -53,6 +56,25 @@
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.user-agreement {
+  margin-top: 1.2%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5%;
+  width: 100%;
+  user-select: none;
+  font-style: italic;
+}
+
+.user-agreement label {
+  width:65%;
+}
+.agree-checkbox {
+  width: 25px;
+  height: 25px;
 }
 
 

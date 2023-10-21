@@ -7,7 +7,6 @@ import usePaperType from "../../../../Hooks/usePaperType";
 export default function Stage6JSX({ setHasSelected }) {
   const { paperType } = usePaperType();
   
-  
   const handleAgree = (e) => { 
       setHasSelected(e.target.checked)
   }
@@ -108,7 +107,12 @@ export default function Stage6JSX({ setHasSelected }) {
           </>
         )}
       </div>
-      <input type="checkbox" onClick={handleAgree}></input>
+      <div className={`${u6css[`user-agreement`]}`}>
+        <input type="checkbox" onClick={handleAgree} className={`${u6css[`agree-checkbox`]}`} id="I-agree"/>
+        <label for="I-agree">
+          <span>I have made sure that my work has included all of the things mentioned above</span>
+        </label>
+      </div>
     </div>
   );
 }
