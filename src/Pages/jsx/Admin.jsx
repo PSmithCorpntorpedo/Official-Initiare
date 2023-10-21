@@ -139,7 +139,8 @@ function Paginate(){
                   <h6 className="card-subtitle mb-2 text-muted text-center">
                     {item.content}
                   </h6>
-                  <p className="card-text" style={{ zIndex:'1'}}>{item.content}</p>
+                  <p className="card-text" style={{ zIndex:'1'}}>{item.title}</p>
+                  <p className="card-text" style={{ zIndex:'1'}}>{item.category_id}</p>
                 </div>
               </div>
             </div>

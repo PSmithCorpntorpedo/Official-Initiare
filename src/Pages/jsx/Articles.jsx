@@ -7,22 +7,13 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function ArticlesJSX(){
+    const [categories, setCategories] = useState("");
+    
     return(
         <div className={articlescss['page-wrapper']}>
-            <FilterBox />          
-            <SearchBox />
+            <FilterBox categories={categories} setSearch={setCategories}/>          
+            <SearchBox categories={categories} setSearch={setCategories}/>
         </div>
-    )
-}
-
-function FilterItem(props){
-    return (
-        <li className={`${articlescss["no-list-style"]} ${articlescss['sub-list-items']}`} style={props.style} >
-            <label for={props.name}>
-                <input type="checkbox" id={props.name} className={`${articlescss[`filter-checkbox`]}`}/> 
-                {props.name}
-            </label>
-        </li>
     )
 }
 
@@ -80,25 +71,51 @@ function FilterBox(){
     </div>
     )
 }
+function FilterItem(props){
+    return (
+        <li className={`${articlescss["no-list-style"]} ${articlescss['sub-list-items']}`} style={props.style} >
+            <label for={props.name}>
+                <input type="checkbox" id={props.name} className={`${articlescss[`filter-checkbox`]}`}/> 
+                {props.name}
+            </label>
+        </li>
+    )
+}
 
-function SearchBox(){   
-    // const [search, setSearch] = useState('');
+function SearchBox({categories, setCategories}){  
+    const [items, setItems] = useState([]);
+    const[search, setSearch] = useState("")
+    const fetchTitle = async () => {
+        const res = await fetch(`https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=1&Size=12&title=${search}`)
+        const data = await res.json()
+        return data;
+    }
+
+    const typeHandler = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const clickHandler = async () => {
+        if(search !== "")  {
+            const searchedItems = await fetchTitle();
+            setItems(searchedItems.res.Records)
+        }
+    }
     return(
         <div className={articlescss["search-box"]}>
             <div className={articlescss["search-bar"]}>
-                <input type="text" className={articlescss['search']} placeholder="Search articles, research papers, authors and more"/>   
-                {/* i was gonna add a button here, but the styling made it impossible to idgaf anymore  */}
+                <input type="text" className={articlescss['search-input']} placeholder="Search articles, research papers, authors and more" onChange={typeHandler}/>   
+                <button className={articlescss['search-button']} onClick={clickHandler}></button>
             </div>
-            <Paginate />
+            <Paginate search={search} items={items} setItems={setItems} />
         </div> 
     )
 }
 
-function Paginate(){
+function Paginate({search, items, setItems}){
     const prev = <FontAwesomeIcon icon={faArrowLeft}/>
     const next = <FontAwesomeIcon icon={faArrowRight}/>
-
-    const [items, setItems] = useState([])
+    
     const [pageCount, setPageCount] = useState(0)
 
     useEffect(() => {
@@ -116,8 +133,7 @@ function Paginate(){
 
 
     const fetchPageArticles = async (page) => {
-         
-        const res = await fetch(`https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=${page}&Size=12`)
+        const res = await fetch(`https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=${page}&Size=12${search !== "" ? "&title="+search : ""}`)
         const data = await res.json()
         return data
     }
@@ -139,7 +155,7 @@ function Paginate(){
                   <h6 className="card-subtitle mb-2 text-muted text-center">
                     {item.content}
                   </h6>
-                  <p className="card-text" style={{ zIndex:'1'}}>{item.content}</p>
+                  <p className="card-text" style={{ zIndex:'1'}}>{item.title}</p>
                 </div>
               </div>
             </div>
