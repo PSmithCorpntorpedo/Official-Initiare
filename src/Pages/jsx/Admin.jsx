@@ -1,14 +1,14 @@
 import React from 'react';
-import articlescss from '../css/articles.module.css';
+import admincss from '../css/admin.module.css';
 import {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function ArticlesJSX(){
+export default function AdminJSX(){
     return(
-        <div className={articlescss['page-wrapper']}>
+        <div className={admincss['page-wrapper']}>
             <FilterBox />          
             <SearchBox />
         </div>
@@ -17,9 +17,9 @@ export default function ArticlesJSX(){
 
 function FilterItem(props){
     return (
-        <li className={`${articlescss["no-list-style"]} ${articlescss['sub-list-items']}`} style={props.style} >
+        <li className={`${admincss["no-list-style"]} ${admincss['sub-list-items']}`} style={props.style} >
             <label for={props.name}>
-                <input type="checkbox" id={props.name} className={`${articlescss[`filter-checkbox`]}`}/> 
+                <input type="checkbox" id={props.name} className={`${admincss[`filter-checkbox`]}`}/> 
                 {props.name}
             </label>
         </li>
@@ -28,14 +28,14 @@ function FilterItem(props){
 
 function FilterBox(){
    return(
-   <div className={articlescss['filter-box']}>
-        <div className={articlescss["filter-caption"]}>FILTER BY</div>
-            <div className={articlescss["filter-area"]}>
-                <div className={articlescss["fields"]}>
+   <div className={admincss['filter-box']}>
+        <div className={admincss["filter-caption"]}>FILTER BY</div>
+            <div className={admincss["filter-area"]}>
+                <div className={admincss["fields"]}>
                     <h2>Research Area</h2>
-                    <div className={articlescss["natural-sciences"]} >
+                    <div className={admincss["natural-sciences"]} >
                     <FilterItem name="Natural Sciences" style={{fontWeight:"700", fontSize: "1.2em"}} />
-                            <ul className={articlescss["sublist1"]}>
+                            <ul className={admincss["sublist1"]}>
                                 <FilterItem name="Life Sciences" />
                                 <FilterItem name="Physical Sciences" />
                                 <FilterItem name="Earth Sciences" />
@@ -45,33 +45,33 @@ function FilterBox(){
                             </ul>
 
                     </div>
-                    <div className={articlescss["social-sciences"]}>
+                    <div className={admincss["social-sciences"]}>
                     <FilterItem name="Social Sciences" style={{fontWeight:"700", fontSize: "1.2em"}} />
-                            <ul className={articlescss["sublist1"]}>
+                            <ul className={admincss["sublist1"]}>
                                 <FilterItem name="Social Studies" />
                                 <FilterItem name="Humanities" />
                             </ul>
                         </div>
                     </div>
-                    <div className={`${articlescss["header"]} ${articlescss["status"]}`}>
+                    <div className={`${admincss["header"]} ${admincss["status"]}`}>
                         <h2>Status</h2>
-                        <ul className={articlescss["sublist2"]}>
+                        <ul className={admincss["sublist2"]}>
                             <FilterItem name="Non-reviewed"/>
                             <FilterItem name="Peer-reviewed"/>
                             <FilterItem name="Specialist-reviewed"/>
                         </ul>
                         
                     </div>
-                    <div className={`${articlescss["header"]} ${articlescss["date-published"]}`}>
+                    <div className={`${admincss["header"]} ${admincss["date-published"]}`}>
                         <h2>Date Published</h2>
-                        <ul className={articlescss["sublist2"]}>
+                        <ul className={admincss["sublist2"]}>
                             <FilterItem name="2023" />
                             <FilterItem name="2022" />
                         </ul>   
                     </div>
-                    <div className={`${articlescss["header"]} ${articlescss["language"]}`}>
+                    <div className={`${admincss["header"]} ${admincss["language"]}`}>
                         <h2>Language</h2>
-                        <ul className={articlescss["sublist2"]}>
+                        <ul className={admincss["sublist2"]}>
                             <FilterItem name="English" />
                             <FilterItem name="Vietnamese" />
                         </ul>
@@ -84,9 +84,9 @@ function FilterBox(){
 function SearchBox(){   
     // const [search, setSearch] = useState('');
     return(
-        <div className={articlescss["search-box"]}>
-            <div className={articlescss["search-bar"]}>
-                <input type="text" className={articlescss['search']} placeholder="Search articles, research papers, authors and more"/>   
+        <div className={admincss["search-box"]}>
+            <div className={admincss["search-bar"]}>
+                <input type="text" className={admincss['search']} placeholder="Search articles, research papers, authors and more"/>   
                 {/* i was gonna add a button here, but the styling made it impossible to idgaf anymore  */}
             </div>
             <Paginate />
@@ -128,7 +128,7 @@ function Paginate(){
         setItems(pageServer.res.Records)
     }
     return(
-        <div className={articlescss["search-results"]}>
+        <div className={admincss["search-results"]}>
             <div className="row m-2">
         {items.map((item) => {
           return (
