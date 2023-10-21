@@ -184,7 +184,8 @@ function ConfirmUpload() {
               "Content-Type": "application/json",
               accept: "application/json",
             },
-            body: JSON.stringify({
+            body: JSON.stringify(
+              {
               category_id: sCategory,
               content: "Real test 1",
               pre_publish_content: data.res.download_url,
@@ -194,7 +195,8 @@ function ConfirmUpload() {
               thumbnail: "thumbnail",
               title: "title",
               type_id: sPaperType,
-            }),
+            }
+          ),
           }
         ).then(() => setIsUploading(false));
       });

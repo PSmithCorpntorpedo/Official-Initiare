@@ -115,7 +115,7 @@ export default function Stage6JSX({ setHasSelected }) {
 
 const Options = ({ name, content }) => {
   return (
-    <div>
+    <div className={`${u6css[`option`]}`}>
         <span className={`${u6css[`content`]}`}>
           {name}: {content}
         </span>

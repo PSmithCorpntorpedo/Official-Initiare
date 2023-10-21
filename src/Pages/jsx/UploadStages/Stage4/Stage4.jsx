@@ -53,12 +53,12 @@ const Options = ({ name }) => {
       setSubCategory(newSubCategories);
     }
   }
-
+  // eslint-disable-next-line
   useEffect(() => {
     const newSubCategories = subCategory.filter(cat => cat !== category)
     setSubCategory(newSubCategories)
     if(category === name) setIsChosen(false)
-  }, [category, name, setSubCategory, subCategory])
+  }, [category])
 
 
   return (
