@@ -11,6 +11,7 @@ import Blog from "./Pages/Blog";
 import IRScholarJournal from "./Pages/Journal";
 import SignUp from "./Authentication/Signup";
 import Login from "./Authentication/Login";
+import Admin from "./Pages/Admin";
 import Undefined from "./Pages/jsx/Undefined";
 import RequireAuth from "./Components/RequireAuth";
 import PersistLogin from "./Components/PersistLogin";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/articles" element={<Articles />}></Route>
+          <Route path="/admin" element={<Admin />}></Route>
           <Route path="/blog" element={<Blog />}></Route>
           <Route path="/journal" element={<IRScholarJournal />}></Route>
             <Route element={<RequireAuth />}>
