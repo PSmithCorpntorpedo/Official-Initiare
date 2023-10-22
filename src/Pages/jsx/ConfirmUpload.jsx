@@ -61,28 +61,28 @@ function ConfirmUpload() {
   let sCategory;
   switch (category) {
     case "Life Sciences":
-      sCategory = 45;
+      sCategory = 1;
       break;
     case "Physical Sciences":
-      sCategory = 38;
+      sCategory = 2;
       break;
     case "Earth Sciences":
-      sCategory = 39;
+      sCategory = 3;
       break;
     case "Medical and Health":
-      sCategory = 40;
+      sCategory = 4;
       break;
     case "Mathematics":
-      sCategory = 41;
+      sCategory = 5;
       break;
     case "Formal Sciences":
-      sCategory = 42;
+      sCategory = 6;
       break;
     case "Social Studies":
-      sCategory = 43;
+      sCategory = 7;
       break;
     case "Humanities":
-      sCategory = 44;
+      sCategory = 8;
       break;
     default:
       sCategory = 0;
@@ -94,28 +94,28 @@ function ConfirmUpload() {
     let current = sSubCategory;
     switch (subCategory[i]) {
       case "Life Sciences":
-        temp = "45";
+        temp = "1";
         break;
       case "Physical Sciences":
-        temp = "38";
+        temp = "2";
         break;
       case "Earth Sciences":
-        temp = "39";
+        temp = "3";
         break;
       case "Medical and Health":
-        temp = "40";
+        temp = "4";
         break;
       case "Mathematics":
-        temp = "41";
+        temp = "5";
         break;
       case "Formal Sciences":
-        temp = "42";
+        temp = "6";
         break;
       case "Social Studies":
-        temp = "43";
+        temp = "7";
         break;
       case "Humanities":
-        temp = "44";
+        temp = "8";
         break;
       default:
         temp = "0";
@@ -193,7 +193,7 @@ function ConfirmUpload() {
               short_brief: "brief",
               sub_category_ids: sSubCategory,
               thumbnail: "thumbnail",
-              title: "title",
+              title: "Web Upload",
               type_id: sPaperType,
             }
           ),
