@@ -17,13 +17,16 @@
   width: 100%;
   background: var(--primary-variant, #eaeffa);
   display: flex;
-  padding: 5%;
+  padding: 2%;
+  padding-top: 5%;
+  padding-right: 1.75%;
+  padding-bottom: 2.5%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 10%;
   align-self: stretch;
-  height: clamp(20%, 200px, 70%);
+  height: clamp(15%, 100px, 50%);
 }
 
 .instructions-box-down {
@@ -50,7 +53,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 162.5%;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 
