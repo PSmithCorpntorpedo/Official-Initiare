@@ -4,7 +4,8 @@ import useFile from "../../../../Hooks/useFile";
 
 const Stage2JSX = ({ setHasSelected }) => {
   const {setFile } = useFile();
-  const [read, setRead] = useState(false);
+  const [readUp, setReadUp] = useState(false);
+  const [readDown, setReadDown] = useState(false);
   const [fileName, setFileName] = useState(null);
 
   const SubmitHandler = (e) => {
@@ -20,11 +21,11 @@ const Stage2JSX = ({ setHasSelected }) => {
   // }, [fileName]);
   return (
     <div className={`${u2css[`panel`]}`}>
-      {!read && (
+      {!readUp && (
         <div className={u2css[`instructions-box`]}>
           <p>Please upload a file containing your paper (.docx, .pdf, etc.)</p>
           <div className={u2css[`understood`]}>
-            <p onClick={() => setRead(true)}>I understand</p>
+            <p onClick={() => setReadUp(true)}>I understand</p>
           </div>
         </div>
       )}
@@ -38,6 +39,13 @@ const Stage2JSX = ({ setHasSelected }) => {
           <label for="file">Browse</label>
         </div>
       </div>
+      {!readDown && (<div className={u2css[`instructions-box-down`]}>
+          <p>For PIISE participants, name your files according the competition's rubrics</p>
+          <p style={{"font-style": "italic" }}>E.g: "A_A1_210422", "B1_A4_210622", "C2_B5_220901", "B2_C_220909", or "B2_B1_220901_1" and "B2_B1_220901_2" if you have more than one work regarding one field </p>
+          <div className={u2css[`understood`]}>
+            <p onClick={() => setReadDown(true)}>I understand</p>
+          </div>
+        </div>)}
     </div>
   );
 };
