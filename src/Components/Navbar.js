@@ -109,7 +109,7 @@ function Navbar() {
                     </ul>
                 </div>
                 <ul className={`${navbarcss.udd} ${UDDA ? navbarcss.activeudda : navbarcss.inactiveudda}`}>
-                    <li className={`${navbarcss.uddi} ${navbarcss['edit-profile']}`}><span className={navbarcss.uddic}>{userIcon}</span>Edit Profile</li>
+                    {/* <li className={`${navbarcss.uddi} ${navbarcss['edit-profile']}`}><span className={navbarcss.uddic}>{userIcon}</span>Edit Profile</li> */}
                     <li className={`${navbarcss.uddi} ${navbarcss['logout']}`} onClick={logOut}><span className={navbarcss.uddic}> {logoutIcon}</span>Log out</li>
                 </ul>
 
