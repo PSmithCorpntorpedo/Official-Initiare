@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className={homecss['home']}>
             <div className={homecss['home-header']}>
-                <video className={homecss['header-video']} src={headerVideo} muted autoPlay loop></video>
+                <img className={homecss['header-video']} src={"Images/vlcsnap-2023-07-06-21h40m04s969 1.png"}></img>
                 <div className={homecss['beforemain-wrap']}>
                     <div className={homecss['beforemain']}>Welcome to</div>
                 </div> 

@@ -97,14 +97,17 @@ function Navbar() {
                     </div>             
 
                 </nav>
-                <ul className={`${navbarcss['nav-menu']} ${click ? navbarcss['active'] : navbarcss['inactive']}`}>
+
+                <div className={`${navbarcss['nav-menu']} ${click ? navbarcss['active'] : navbarcss['inactive']}`}>
+                    <ul className={`${navbarcss['nav-directories']}`}>
                     <DropdownItem title="Home" link="/" closeMenu={handleClick} />
-                    <DropdownItem title="About" link="/about" closeMenu={handleClick} />
-                    <DropdownItem title="Articles" link="/articles" closeMenu={handleClick} />
                     <DropdownItem title="Upload" link="/upload" closeMenu={handleClick} />
+                    {/* <DropdownItem title="About" link="/about" closeMenu={handleClick} />
+                    <DropdownItem title="Articles" link="/articles" closeMenu={handleClick} />
                     <DropdownItem title="Blog" link="/blog" closeMenu={handleClick} />
-                    <DropdownItem title="IRScholar Journal" link="/journal" closeMenu={handleClick} />
-                </ul>
+                    <DropdownItem title="IRScholar Journal" link="/journal" closeMenu={handleClick} /> */}
+                    </ul>
+                </div>
                 <ul className={`${navbarcss.udd} ${UDDA ? navbarcss.activeudda : navbarcss.inactiveudda}`}>
                     <li className={`${navbarcss.uddi} ${navbarcss['edit-profile']}`}><span className={navbarcss.uddic}>{userIcon}</span>Edit Profile</li>
                     <li className={`${navbarcss.uddi} ${navbarcss['logout']}`} onClick={logOut}><span className={navbarcss.uddic}> {logoutIcon}</span>Log out</li>

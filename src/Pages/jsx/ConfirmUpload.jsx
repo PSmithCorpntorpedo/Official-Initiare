@@ -81,8 +81,17 @@ function ConfirmUpload() {
     case "Social Studies":
       sCategory = 7;
       break;
-    case "Humanities":
+    case "Economics":
       sCategory = 8;
+      break;
+    case "Psychology":
+      sCategory = 9;
+      break;
+    case "Education":
+      sCategory = 10;
+      break;
+    case "Culture and Arts":
+      sCategory = 11;
       break;
     default:
       sCategory = 0;
@@ -114,8 +123,17 @@ function ConfirmUpload() {
       case "Social Studies":
         temp = "7";
         break;
-      case "Humanities":
+      case "Economics":
         temp = "8";
+        break;
+      case "Psychology":
+        temp = "9";
+        break;
+      case "Education":
+        temp = "10";
+        break;
+      case "Culture and Arts":
+        temp = "11";
         break;
       default:
         temp = "0";
@@ -184,8 +202,7 @@ function ConfirmUpload() {
               "Content-Type": "application/json",
               accept: "application/json",
             },
-            body: JSON.stringify(
-              {
+            body: JSON.stringify({
               category_id: sCategory,
               content: "Real test 1",
               pre_publish_content: data.res.download_url,
@@ -195,8 +212,7 @@ function ConfirmUpload() {
               thumbnail: "thumbnail",
               title: "Web Upload",
               type_id: sPaperType,
-            }
-          ),
+            }),
           }
         ).then(() => setIsUploading(false));
       });

@@ -29,7 +29,7 @@ body{
     height: 10%;
     color: var(--primary);
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 
@@ -42,7 +42,7 @@ body{
     display: inline-block;
     margin: 1%;
     border-radius: 5px;
-    border: 1px var(--primary) solid;
+    border: 1px aliceblue solid;
     
 }
 
@@ -61,8 +61,9 @@ body{
 }
 .sub-list-items{
     margin-top: 4%;
-    font-size: 1em; 
+    font-size: 0.8em; 
     align-items: center;
+    font-weight: lighter;
 }
 
 .filter-checkbox {
@@ -72,8 +73,8 @@ body{
     width: 1.2em;
     background-color: white;
     margin-right: 1%;
-    border-radius: 5px;
-    border: grey 2px solid;
+    border-radius: 4px;
+    border: black 1px solid;
     cursor: pointer;
     
 }

@@ -29,12 +29,15 @@
 .left-container {
     display: flex;
     height: 100%;
+    justify-content: center;
+    align-items: center;
     /* width: 50%; */
 }
 
 .logo-container {
     display: block;
-    height: 100%;
+    height: 50%;
+    margin-bottom: 3%;
 }
 
 .logo {
@@ -45,12 +48,12 @@
 }
 
 .site-name-container {
-    margin-left: 0.75rem;
+    margin-left: 0.3rem;
 }
 
 .site-name {
     line-height: 3.5rem;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: white;
 
@@ -59,19 +62,26 @@
 .menu-container {
     font-size: 1.8rem;
     aspect-ratio: 1/1;
-    height: 3.5rem;
+    height: 2rem;
     text-align: center;
+    margin-right: 5%;
+    margin-left: 15%;
 }
 
 .menu-icons {
     color: #fff;
-    line-height: 3.5rem;
+    line-height: 1.5rem;
+}
+svg {
+    height: 0.6em !important
 }
 
+
 .nav-menu.active {
+    height: 100%;
     visibility: visible;
     position: fixed;
-    width: 20%;
+    width: 15%;
     top: 3.5rem;
     background-color: black;
     z-index: 999;
@@ -79,21 +89,28 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 .nav-menu.inactive {
     visibility: hidden;
     position: fixed;
 }
+.nav-directories {
+    height: 30%;
+    padding-left: 7%
+}
 
 .nav-pages {
-    margin: 7%;
+    margin: 5%;
+    margin-left: 2%;
 }
 
 .nav-links {
     text-decoration: none;
     color: white;
-    font-size: 22px;
+    font-size: 15px;
+    font-weight: 500
 }
 
 .right-container {

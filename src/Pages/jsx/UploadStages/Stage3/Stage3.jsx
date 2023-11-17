@@ -29,7 +29,10 @@ export default function Stage3JSX({setHasSelected}) {
         <div className={`${u3css[`option-wrapper`]}`}>
           <p className={`${u3css[`option-header`]}`}>Social Sciences</p>
           <Options name="Social Studies" setChosenCat={HandleChoose} chosenCat={chosenCat}/>
-          <Options name="Humanities" setChosenCat={HandleChoose} chosenCat={chosenCat}/>
+          <Options name="Economics" setChosenCat={HandleChoose} chosenCat={chosenCat}/>
+          <Options name="Psychology" setChosenCat={HandleChoose} chosenCat={chosenCat}/>
+          <Options name="Education" setChosenCat={HandleChoose} chosenCat={chosenCat}/>
+          <Options name="Culture and Arts" setChosenCat={HandleChoose} chosenCat={chosenCat}/>
         </div>
       </div>
     </div>
