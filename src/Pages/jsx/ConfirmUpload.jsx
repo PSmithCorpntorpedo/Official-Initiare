@@ -91,7 +91,7 @@ function ConfirmUpload() {
       sCategory = 10;
       break;
     case "Culture and Arts":
-      sCategory = 11;
+      sCategory = 23;
       break;
     default:
       sCategory = 0;
@@ -133,7 +133,7 @@ function ConfirmUpload() {
         temp = "10";
         break;
       case "Culture and Arts":
-        temp = "11";
+        temp = "23";
         break;
       default:
         temp = "0";
@@ -156,10 +156,10 @@ function ConfirmUpload() {
     case "Research Proposal":
       sPaperType = 3;
       break;
-    case "Poster":
+    case "Scientific Poster":
       sPaperType = 4;
       break;
-    case "Abstract":
+    case "Literature Review":
       sPaperType = 5;
       break;
     default:
@@ -204,13 +204,13 @@ function ConfirmUpload() {
             },
             body: JSON.stringify({
               category_id: sCategory,
-              content: "Real test 1",
+              content: file.name,
               pre_publish_content: data.res.download_url,
               publish_date: "2023-09-12T14:48:00.000Z",
               short_brief: "brief",
               sub_category_ids: sSubCategory,
               thumbnail: "thumbnail",
-              title: "Web Upload",
+              title: "Review board chooses name later",
               type_id: sPaperType,
             }),
           }

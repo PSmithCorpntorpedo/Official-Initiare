@@ -70,7 +70,7 @@ function SignUp() {
         email: state.email,
         password: state.password,
         gender: state.gender,
-        school: state.school,
+        school: "Phổ thông Năng khiếu, ĐHQG-HCM"//state.school, 
       }),
     })
       .then(response => response.json())

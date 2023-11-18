@@ -3,7 +3,7 @@ import u2css from "./Stage2.module.css";
 import useFile from "../../../../Hooks/useFile";
 
 const Stage2JSX = ({ setHasSelected }) => {
-  const {setFile } = useFile();
+  const {setFile} = useFile();
   const [readUp, setReadUp] = useState(false);
   const [readDown, setReadDown] = useState(false);
   const [fileName, setFileName] = useState(null);
