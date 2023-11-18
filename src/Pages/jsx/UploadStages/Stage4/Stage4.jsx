@@ -29,7 +29,10 @@ export default function Stage4JSX({setHasSelected}) {
         <div className={`${u4css[`option-wrapper`]}`}>
           <p className={`${u4css[`option-header`]}`}>Social Sciences</p>
           <Options name="Social Studies" />
-          <Options name="Humanities"/>
+          <Options name="Economics"/>
+          <Options name="Psychology"/>
+          <Options name="Education"/>
+          <Options name="Culture and Arts"/>
         </div>
       </div>
     </div>

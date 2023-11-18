@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+
 export default function ArticlesJSX() {
   return <SearchBox />;
 }
@@ -12,14 +13,18 @@ export default function ArticlesJSX() {
 function FilterBox({ categories, setCategories }) {
   return (
     <div className={articlescss["filter-box"]}>
-      <div className={articlescss["filter-caption"]}>FILTER BY</div>
+      <div className={articlescss["filter-caption"]}>
+        <img src="/Images/Filter.svg" alt='logo' className={articlescss['filter-logo']} /><span>FILTER BY</span></div>
       <div className={articlescss["filter-area"]}>
         <div className={articlescss["fields"]}>
-          <h2>Research Area</h2>
+          <h5>Research Area</h5>
           <div className={articlescss["natural-sciences"]}>
             <FilterItem
               name="Natural Sciences"
-              style={{ fontWeight: "700", fontSize: "1.2em" }}
+              style={{ fontWeight: "700", fontSize: "1em" }}
+              c_id={"1,2,3,4,5,6"}
+              categories={categories}
+              setCategories={setCategories}
             />
             <ul className={articlescss["sublist1"]}>
               <FilterItem
@@ -63,7 +68,10 @@ function FilterBox({ categories, setCategories }) {
           <div className={articlescss["social-sciences"]}>
             <FilterItem
               name="Social Sciences"
-              style={{ fontWeight: "700", fontSize: "1.2em" }}
+              style={{ fontWeight: "700", fontSize: "1em" }}
+              c_id={"7,8"}
+              categories={categories}
+              setCategories={setCategories}
             />
             <ul className={articlescss["sublist1"]}>
               <FilterItem
@@ -81,7 +89,7 @@ function FilterBox({ categories, setCategories }) {
             </ul>
           </div>
         </div>
-        <div className={`${articlescss["header"]} ${articlescss["status"]}`}>
+        {/* <div className={`${articlescss["header"]} ${articlescss["status"]}`}>
           <h2>Status</h2>
           <ul className={articlescss["sublist2"]}>
             <FilterItem name="Non-reviewed" />
@@ -104,7 +112,7 @@ function FilterBox({ categories, setCategories }) {
             <FilterItem name="English" />
             <FilterItem name="Vietnamese" />
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -233,29 +241,19 @@ function Paginate({ search, items, setItems, categories }) {
     <div className={articlescss["search-results"]}>
       <div className="row m-2">
         {items.map((item) => {
-          return (
+          return item.status_name === "Approved" ? (
             <div key={item.id} className="col-sm-6 col-md-4 v my-2">
-              <div className="shadow-sm w-100" style={{ minHeight: 225 }}>
-                <div className="card-body" style={{ zIndex: "1" }}>
-                  <h5
-                    className="card-title text-center h2"
-                    style={{ zIndex: "1" }}
-                  >
-                    Id :{item.id}{" "}
-                  </h5>
+              <div className="shadow-sm w-100" style={{ minHeight: 225}}>
+                <div className="card-body" style={{ zIndex:'1'}}>
+                  <h5 className="card-title text-center h2" style={{ zIndex:'1'}}>Id :{item.id} </h5>
                   <h6 className="card-subtitle mb-2 text-muted text-center">
                     {item.title}
                   </h6>
-                  <p className="card-text" style={{ zIndex: "1" }}>
-                    {item.content}
-                  </p>
-                  <p className="card-text" style={{ zIndex: "1" }}>
-                    {item.category_name}
-                  </p>
+                  <p className="card-text" style={{ zIndex:'1'}}>{item.content}</p>
                 </div>
               </div>
             </div>
-          );
+          ) : (<></>)
         })}
         <ReactPaginate
           previousLabel={prev}

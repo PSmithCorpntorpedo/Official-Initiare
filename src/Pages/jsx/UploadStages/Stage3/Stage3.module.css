@@ -31,6 +31,10 @@
   font-weight: 500;
 }
 
+.secondary-question {
+  font-weight: 800;
+}
+
 .primary-question span {
   font-style: italic;
   font-weight: 800;

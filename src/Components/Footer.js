@@ -12,11 +12,11 @@ function Footer() {
         <div className={footercss['footer']}>
             <div className={footercss['upper-footer']}>
                 <div className={footercss['main-link-wrap']}>
-                    <Link className={footercss['main-link']} to='/articles'>Articles</Link>
+                    {/* <Link className={footercss['main-link']} to='/articles'>Articles</Link> */}
                     <Link className={footercss['main-link']} to='/upload'>Upload your paper</Link>
                     <Link className={footercss['main-link']} to='/about#terms-of-use'>Terms & Conditions</Link>
-                    <Link className={footercss['main-link']} to='/journal'>IRScholar Journal</Link>
-                    <Link className={footercss['main-link']} to='/blog'>Our blog</Link>
+                    {/* <Link className={footercss['main-link']} to='/journal'>IRScholar Journal</Link> */}
+                    {/* <Link className={footercss['main-link']} to='/blog'>Our blog</Link> */}
                     <Link className={footercss['main-link']} to='/about'>About us</Link>
                 </div>
                 <div className={footercss['follow-contact']}>

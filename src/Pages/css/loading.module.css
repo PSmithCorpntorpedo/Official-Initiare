@@ -10,7 +10,7 @@
 
 .loader-wrapper {
   position: fixed;
-  background-color: white;
+  background-color: black;
   height: 100%;
   width: 100%;
   display: flex;
@@ -36,4 +36,20 @@
   align-items: center;
   animation: fade 1.5s infinite;
   /* margin-left: 1%; */
+}
+
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #eee;
+  border-top: 10px solid #363b3e;
+  border-radius: 100%;
+  animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
 }
