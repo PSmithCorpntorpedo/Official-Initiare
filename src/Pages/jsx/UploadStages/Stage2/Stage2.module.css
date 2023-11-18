@@ -1,7 +1,7 @@
 .panel {
   width: clamp(70%, 800px, 90%);
+  height: auto;
   display: block;
-  height: 100%;
   display: flex;
   padding: 3%;
   flex-direction: column;
@@ -17,16 +17,16 @@
   width: 100%;
   background: var(--primary-variant, #eaeffa);
   display: flex;
-  padding: 2%;
+  padding-left: 3%;
+  padding-right: 5%;
   padding-top: 5%;
-  padding-right: 1.75%;
   padding-bottom: 2.5%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 10%;
   align-self: stretch;
-  height: clamp(15%, 100px, 50%);
+  height: clamp(20%, 120px, 50%);
 }
 
 .instructions-box-down {
@@ -36,14 +36,14 @@
   background: aliceblue;
   display: flex;
   padding-left: 3%;  
-  padding-top: 5%;
+  padding-top: 4%;
   padding-right: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 4%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   align-self: stretch;
-  height: 35%;
+  height: 50%;
 }
 
 .instructions-box p {
@@ -139,7 +139,10 @@ input[type="file"] {
 
 @media (max-width: 500px) {
     .instructions-box p {
-      font-size: 1em;
+      font-size: 0.9em;
+    }
+    .instructions-box-down {
+      font-size: 0.75em;
     }
     .understood p {
       font-size: 0.75;

@@ -121,7 +121,7 @@ const Options = ({ name, content }) => {
   return (
     <div className={`${u6css[`option`]}`}>
         <span className={`${u6css[`content`]}`}>
-          {name}: {content}
+          <span style={{"font-weight": "800", "color": "#2B52B7"}}>{name}</span>: {content}
         </span>
     </div>
   );

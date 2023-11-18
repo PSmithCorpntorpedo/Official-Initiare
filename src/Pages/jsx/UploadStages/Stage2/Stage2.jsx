@@ -40,8 +40,8 @@ const Stage2JSX = ({ setHasSelected }) => {
         </div>
       </div>
       {!readDown && (<div className={u2css[`instructions-box-down`]}>
-          <p>For PIISE participants, name your files according the competition's rubrics: <span style={{"font-style": "bold" }}>(Brackets)_(Field)_(Representing Student's ID)</span></p>
-          <p style={{"font-style": "italic" }}>E.g: "A_A1_210422", "B1_A4_210622", "C2_B5_220901", "B2_C_220909", or "B2_B1_220901_1" and "B2_B1_220901_2" if you have more than one work regarding one field </p>
+          <p>For PIISE participants, name your files according the competition's rubrics: <span style={{"font-weight": "900" }}>(Brackets)_(Field)_(Representing Student's ID)</span></p>
+          <p style={{"font-style": "italic" }}>E.g: "<span style={{"font-weight": "800" }}>A_A1_210422</span>", "<span style={{"font-weight": "800" }}>B1_A4_210622</span>", "<span style={{"font-weight": "800" }}>C2_B5_220901</span>", or "<span style={{"font-weight": "800" }}>B2_B1_220901_1</span>" and "<span style={{"font-weight": "800" }}>B2_B1_220901_2</span>" if you have more than one work regarding one field </p>
           <div className={u2css[`understood`]}>
             <p onClick={() => setReadDown(true)}>I understand</p>
           </div>
