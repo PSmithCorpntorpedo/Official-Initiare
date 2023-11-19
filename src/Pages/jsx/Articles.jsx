@@ -206,21 +206,21 @@ function Paginate({ search, items, setItems, categories }) {
   const next = <FontAwesomeIcon icon={faArrowRight} />;
   const [pageCount, setPageCount] = useState(0);
 
-  const getArticlesUponLoad = async () => {
-    const res = await fetch(
-      `https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=1&Size=12`
-    );
-    const data = await res.json();
-    const total = data.res.Total;
-    console.log(total);
-    setPageCount(Math.ceil(total / 12));
-    setItems(data.res.Records);
-  };
-  //eslint-disable-next-line
   useEffect(() => {
+    const getArticlesUponLoad = async () => {
+      const res = await fetch(
+        `https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=1&Size=12`
+      );
+      const data = await res.json();
+      const total = data.res.Total;
+      console.log(total);
+      setPageCount(Math.ceil(total / 12));
+      setItems(data.res.Records);
+    };
+
     getArticlesUponLoad();
     /*this is essentially a one time use method that loads everytime the page reloads*/
-  }, []);
+  });
 
   const fetchPageArticles = async (page) => {
     const res = await fetch(
