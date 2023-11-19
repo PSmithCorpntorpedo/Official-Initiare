@@ -3,14 +3,14 @@ import navbarcss from './navbar.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faArrowRightToBracket, faCaretDown, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+// import { faUser } from '@fortawesome/free-regular-svg-icons';
 import useAuth from './../Hooks/useAuth.js';
 
 function Navbar() {
     const {auth} = useAuth()
 
     const logoutIcon = <FontAwesomeIcon icon={faArrowRightFromBracket} />
-    const userIcon = <FontAwesomeIcon icon={faUser} />
+    // const userIcon = <FontAwesomeIcon icon={faUser} />
     const downIcon = <FontAwesomeIcon icon={faCaretDown} />
     const loginIcon = <FontAwesomeIcon icon={faArrowRightToBracket} />
     const bars = <FontAwesomeIcon icon={faBars} />

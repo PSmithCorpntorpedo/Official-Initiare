@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { /*useEffect,*/ useState } from "react";
 import u2css from "./Stage2.module.css";
 import useFile from "../../../../Hooks/useFile";
 

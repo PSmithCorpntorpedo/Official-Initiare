@@ -24,7 +24,7 @@ function Footer() {
                         <div className={footercss['follow-text']}>Follow us</div>
                         <div className={footercss['follow-icons']}>
                             <a href='https://www.facebook.com/people/InitiaRe/100092825321496/'>{facebookIcon}</a>
-                            <a>{instagramIcon}</a>
+                            <a href='https://instagram.com'>{instagramIcon}</a>
                         </div>
                     </div>
                     <div className={footercss['contact-wrap']}>

@@ -1,17 +1,15 @@
 import homecss from './../css/home.module.css';
-import headerVideo from './../assets/pexels-pixabay-855204-1920x1080-30fps.mp4';
+// import headerVideo from './../assets/pexels-pixabay-855204-1920x1080-30fps.mp4';
 import React from 'react';
 import { faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const navi = useNavigate();
 
     return (
         <div className={homecss['home']}>
             <div className={homecss['home-header']}>
-                <img className={homecss['header-video']} src={"Images/vlcsnap-2023-07-06-21h40m04s969 1.png"}></img>
+                <img className={homecss['header-video']} src={"Images/vlcsnap-2023-07-06-21h40m04s969 1.png"} alt='dark background'></img>
                 <div className={homecss['beforemain-wrap']}>
                     <div className={homecss['beforemain']}>Welcome to</div>
                 </div> 

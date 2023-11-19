@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React/*, { useEffect, useState }*/ from "react";
 import u6css from "./Stage6.module.css";
-import { /*faC,*/ faCheck } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { /*faC,*/ faCheck } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import usePaperType from "../../../../Hooks/usePaperType";
 
 export default function Stage6JSX({ setHasSelected }) {

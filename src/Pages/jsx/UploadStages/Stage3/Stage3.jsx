@@ -90,7 +90,9 @@ export default function Stage3JSX({ setHasSelected }) {
 }
 
 const Options = ({ name, setChosenCat, chosenCat }) => {
+  // eslint-disable-next-line
   const { category, setCategory } = useCategories();
+ // disabled eslint warning on this line because it's saying the category variable is unused
 
   return (
     <div
