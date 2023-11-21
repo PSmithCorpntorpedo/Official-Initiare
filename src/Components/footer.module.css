@@ -48,7 +48,7 @@
 .follow-text,
 .contact-text {
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .follow-icons {
@@ -61,7 +61,7 @@
 
 .disclaimer-wrap {
     flex: 2 1 1px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: justify;
 }
 
@@ -73,7 +73,7 @@
     text-decoration: none;
     color: white;
     display: block;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     flex: 1 1 4rem;
 }
 

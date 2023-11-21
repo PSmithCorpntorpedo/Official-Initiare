@@ -13,7 +13,7 @@ export default function Stage5JSX({setHasSelected}) {
     <div className={`${u5css[`panel`]}`}>
       <p>What type of paper is being submitted?</p>
       <div className={`${u5css[`choices`]}`}>
-        <Options
+        {/* <Options
           name="Research Paper"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
@@ -22,19 +22,19 @@ export default function Stage5JSX({setHasSelected}) {
           name="Review Paper"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
-        />
+        /> */}
         <Options
           name="Research Proposal"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
         />
-        <Options
+        {/* <Options
           name="Scientific Poster"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
-        />
+        /> */}
         <Options
-          name="Literature Review"
+          name="Research Report"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
         />

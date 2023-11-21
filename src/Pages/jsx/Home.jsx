@@ -46,7 +46,7 @@ const Home = () => {
                         <div className={homecss['upper-goal']}>OUR GOALS</div>
                         <div className={homecss['goal-line']}></div>
                         <div className={homecss['lower-goal']}>
-                            <p className={homecss['lower-goal-text']}>The objective of our team is clear! Here at InitiaRe, we aim to establish an accessible and dynamic platform that empowers students by promoting professional research and facilitating the exchange of research papers. This open journal caters not only to those looking to publish their work but also provides inspiration for researchers seeking fresh ideas or reliable sources of information.</p>
+                        <p className={homecss['lower-goal-text']}>InitiaRe sẽ xây dựng một Open Journal nghiên cứu mô phỏng đầu tiên dành cho các bạn học sinh có niềm đam mê, yêu thích và muốn tham gia tìm hiểu các kiến thức về khoa học.</p>
                         </div>
                     </div>
                 </div>

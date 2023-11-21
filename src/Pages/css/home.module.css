@@ -217,7 +217,7 @@
 }
 
 .upper-goal {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: white;
@@ -240,7 +240,7 @@
   top: 30vh;
   color: white;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   width: 50%;
   left: calc(50% - 50% / 2);
   text-align: justify;
@@ -248,7 +248,7 @@
 
 .join-us {
   background: url('./../assets/StockSnap_SXKQKPQXWE.jpg');
-  height: 350px;
+  height: 325px;
   background-size: 100% auto;
   background-position: top;
   
@@ -264,7 +264,7 @@
 }
 
 .join-us-main-text {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: white;
   font-weight: 600;
   text-align: center;
@@ -272,7 +272,7 @@
 }
 
 .join-us-button {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #000;
   background-color: var(--secondary);
   border-radius: 10px;

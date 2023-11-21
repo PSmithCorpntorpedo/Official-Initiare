@@ -91,7 +91,7 @@ function ConfirmUpload() {
       sCategory = 10;
       break;
     case "Culture and Arts":
-      sCategory = 11;
+      sCategory = 23;
       break;
     default:
       sCategory = 0;
@@ -133,7 +133,7 @@ function ConfirmUpload() {
         temp = "10";
         break;
       case "Culture and Arts":
-        temp = "11";
+        temp = "23";
         break;
       default:
         temp = "0";
@@ -159,7 +159,7 @@ function ConfirmUpload() {
     case "Poster":
       sPaperType = 4;
       break;
-    case "Abstract":
+    case "Research Report":
       sPaperType = 5;
       break;
     default:
