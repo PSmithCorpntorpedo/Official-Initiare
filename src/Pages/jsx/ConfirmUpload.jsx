@@ -156,7 +156,7 @@ function ConfirmUpload() {
     case "Research Proposal":
       sPaperType = 3;
       break;
-    case "Poster":
+    case "Scientific Poster":
       sPaperType = 4;
       break;
     case "Research Report":
