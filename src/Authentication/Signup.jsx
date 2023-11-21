@@ -55,6 +55,10 @@ function SignUp() {
       setPasswordCool(passwordRegex)
     }
   }
+  const [remember, setRemember] = useState(true)
+  const handleRememberCheck = () => {
+    setRemember(!remember)
+  }
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -74,9 +78,13 @@ function SignUp() {
       }),
     })
       .then(response => response.json())
-      .then(data => console.log(data.status))
-      .catch(error => console.error(error.status))
-    navigate('/')
+      .then(()=>{
+        if (remember) {
+        window.localStorage.setItem("email", state.email);
+        window.localStorage.setItem("password", state.password);
+      }})
+      .then(() => window.location.replace("/"))
+      .catch(error => console.error(error.status))   
   }
 
   return (
@@ -114,6 +122,12 @@ function SignUp() {
                 placeholder="Enter your password"
                 className={`${signupcss['password-input']} ${signupcss['input']} ${passwordCool ? signupcss['cool'] : signupcss['not-cool']}`}
                 onChange={handleChange} />
+            </div>
+            <div onClick={handleRememberCheck} className={`${signupcss['remember-me-wrap']}`}>
+              <div  className={`${signupcss['remember-me-checkbox']} ${remember ? signupcss.checked : signupcss.unchecked}`}>
+                <span><FontAwesomeIcon icon={faCheck} /></span>
+              </div>
+              <div className={`${signupcss['remember-me-text']}`}>Remember me</div>
             </div>
             <div className={signupcss['continue-wrap']}>
               <div className={signupcss['continue-button']} onClick={handleContinue}>Continue</div>
