@@ -93,12 +93,18 @@
 
 }
 
+
 .remember-me-checkbox.checked {
     background-color: var(--primary);
 }
 
 .remember-me-checkbox.checked span {
     color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .remember-me-checkbox.unchecked {
