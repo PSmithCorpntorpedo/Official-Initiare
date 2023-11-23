@@ -112,12 +112,12 @@
 
 @media (max-width: 700px) {
     .footer {
-        height: 32rem;
+        height: 29rem;
 
     }
 
     .upper-footer {
-        height: 28rem;
+        height: 25rem;
         flex-direction: column;
 
     }
