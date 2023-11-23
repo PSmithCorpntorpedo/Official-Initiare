@@ -3,6 +3,7 @@
   overflow: hidden;
   width: auto;
   height: 100%;
+  user-select: none;
 }
 
 .plane-of-existence {
