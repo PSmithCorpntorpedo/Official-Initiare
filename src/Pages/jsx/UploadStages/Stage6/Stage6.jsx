@@ -18,92 +18,139 @@ export default function Stage6JSX({ setHasSelected }) {
         criteria.
       </p>
       <div className={`${u6css[`tickboxes`]}`}>
-        {paperType === "Research Proposal" || paperType === "Research Paper" ? (
+        {paperType === "Research Proposal" && (
           <>
             <Options
-              name="Title"
-              content="Clear, concise, and reflect the main focus of the review."
+              name="Title (Tiêu đề)"
+              content="Bài báo này nghiên cứu về vấn đề?"
             />
             <Options
-              name="Abstract"
-              content=" A brief summary of the entire paper. Includes the research question, methodology, key findings, and conclusions."
+              name="Author (Tác giả)"
+              content="Liệt kê tất cả thành viên tham gia vào nghiên cứu và người hướng dẫn (corresponding author)."
             />
             <Options
-              name="Introduction"
-              content="Presents the background and context of the study. Clearly states the research problem or question. Reviews relevant literature and previous research. Outlines the objectives and goals of the study."
+              name="Abstract (Tóm tắt)"
+              content="Tóm tắt ngắn gọn nội dung"
             />
             <Options
-              name="Keywords"
-              content="Words that define the research topic, important words/concepts found in your research question or thesis."
+              name="Introduction (Giới thiệu)"
+              content="Giới thiệu về nghiên cứu và tầm quan trọng của nó. Vì sao chúng ta cần quan tâm? Đặt bối cảnh, vấn đề, câu hỏi/mục tiêu nghiên cứu và giả thuyết (nếu có).
+              "
             />
             <Options
               name="Literature Review"
-              content="Provides a comprehensive review of existing literature. Summarizes key findings from previous studies.  Identifies gaps or limitations in the literature.  Justifies the need for the current research. "
+              content="Cơ sở lý thuyết, các nghiên cứu trước đây trong chủ đề này. 
+              Xác định những vấn đề chưa được giải quyết, còn mắc phải trong nghiên cứu.
+              "
             />
             <Options
-              name="Methodology"
-              content="Describes the research design and approach.  Explains the data collection methods. Includes details about the study sample/participants.  Describes any instruments or tools used in data collection. Discusses the data analysis techniques applied."
+              name="Approach (Phương pháp)
+              "
+              content="Nêu rõ các thí nghiệm và phương pháp thu thập, phân tích dữ liệu dự đoán sẽ thực hiện."
             />
             <Options
-              name="Results"
-              content="Presents the findings of the study.  Utilizes tables, graphs, and charts to represent data, if applicable. Provides textual descriptions of the main results. "
+              name="Expected Results (Kết quả dự kiến)
+              "
+              content="Trình bày kết quả dự kiến dựa trên dữ liệu đã thu thập và phân tích từ các nghiên cứu trước."
             />
             <Options
-              name="Discussion"
-              content="Analyzes and interprets the results. Compares the findings with previous studies. Discusses any unexpected results and their implications. Explores the significance and limitations of the study."
+              name="Significance (Ý nghĩa nghiên cứu)
+              "
+              content="Việc thực hiện nghiên cứu này có ý nghĩa gì? Vì sao nó quan trọng? 
+              Những vấn đề nào sẽ được giải quyết sau khi thực hiện nghiên cứu?
+              "
             />
             <Options
-              name="Conclusion"
-              content="Summarizes the key findings. Restates the research question and the study's main contributions. Discusses the broader implications. Suggests areas for future research. 
-          "
+              name="Ethics Declaration (Tuyên bố Cam đoan)
+              "
+              content="Đảm bảo rằng nghiên cứu sẽ thực hiện theo các nguyên tắc đạo đức và luân lý (đặc biệt đối với các nghiên cứu có sử dụng động vật hoặc con người)."
             />
             <Options
-              name="References"
-              content="Lists all the sources cited in the paper. Follows a specific citation style (APA)"
+              name="References (Trích dẫn)"
+              content="Trình bày các tài liệu, bài báo, sách,... đã tham khảo theo phong cách APA."
             />
             <Options
-              name="Acknowledgement"
-              content="Acknowledge individuals, institutions, or funding sources that contributed to the research"
+              name="Research Plan (Kế hoạch nghiên cứu) - Không bắt buộc
+              "
+              content="Trình bày một kế hoạch nghiên cứu gồm các mốc thời gian cho các hoạt động gồm thu thập dữ liệu, xem xét tài liệu, thí nghiệm, chạy mô hình…"
             />
             <Options
-              name="Appendix (Optional)"
-              content="Consists of additional information that is too lengthy or detailed for the main text"
+              name="Preliminary Data (Dữ liệu ban đầu) - Bắt buộc với B1
+              "
+              content="Những dữ liệu, kết quả thu được ở các bước đầu nghiên cứu."
             />
           </>
-        ) : (
+        )} 
+        {paperType === "Research Report" && (
           <>
             <Options
-              name="Title"
-              content="Clear, concise, and reflect the main focus of the review."
+              name="Title (Tiêu đề)"
+              content="Bài báo này nghiên cứu về vấn đề?"
             />
             <Options
-              name="Abstract"
-              content=" A brief summary of the entire paper. Includes the research question, methodology, key findings, and conclusions."
+              name="Author (Tác giả)"
+              content="Liệt kê tất cả thành viên tham gia vào nghiên cứu và người hướng dẫn (corresponding author)."
             />
             <Options
-              name="Keywords"
-              content="Words that define the research topic, important words/concepts found in your research question or thesis."
+              name="Abstract (Tóm tắt)"
+              content="Tóm tắt ngắn gọn nội dung"
             />
             <Options
-              name="Introduction"
-              content="Introduce the topic of the review and its significance in the field. Clearly state the objectives and scope of the review. Present the research question or theme that the review aims to address. Provide a brief overview of the key themes or subtopics."
+              name="Introduction (Giới thiệu)"
+              content="Giới thiệu về nghiên cứu và tầm quan trọng của nó. Vì sao chúng ta cần quan tâm? Đặt bối cảnh, vấn đề, câu hỏi/mục tiêu nghiên cứu và giả thuyết (nếu có)."
             />
             <Options
-              name="Methods (optional)"
-              content="Eligibility criteria: Specify the inclusion and exclusion criteria for the review. Information sources: Specify all databases, registers, websites, organizations, reference lists and other sources searched or consulted to identify studies. Search strategy and selection process"
+              name="Literature Review (Nghiên cứu tổng quan)"
+              content="Cơ sở lý thuyết, các nghiên cứu trước đây trong chủ đề này. 
+              Xác định knowledge gap."
             />
             <Options
-              name="Results"
-              content="Study selection. Study characteristics: Cite each included study and present its characteristics. Risk of bias in studies: Present assessments of risk of bias for each included study. Results of individual studies."
+              name="Methods (Phương pháp)"
+              content="Nêu rõ các thí nghiệm và phương pháp thu thập, phân tích dữ liệu đã thực hiện."
             />
             <Options
-              name="Discussion (optional)"
-              content="Provide a general interpretation of the results in the context of other evidence. Discuss any limitations. Discuss implications of the results for practice, policy, and future research. Other information: Registration and protocol: registration information (name, number) or not registered. Support: describe sources of financial or non-financial support for the review. Competing interests"
+              name="Results (Kết quả)"
+              content="Trình bày kết quả dựa trên dữ liệu đã thu thập và phân tích.
+              Dữ liệu gốc (raw data) hoặc chi tiết về phương pháp phân tích thống kê nên được đưa vào Phụ lục."
             />
             <Options
-              name="References"
-              content="Lists all the sources cited in the paper. Follows a specific citation style (APA)"
+              name="Discussion (Thảo luận)"
+              content="Kết quả nghiên cứu có ý nghĩa gì? Vì sao nó quan trọng? 
+              Các vấn đề đã được giải quyết và chưa được giải quyết."
             />
+            <Options
+              name="Conclusion (Kết luận)"
+              content="Tóm tắt các kết luận chính của nghiên cứu.
+              Hướng cải thiện và định hướng nghiên cứu trong tương lai (optional)
+              "
+            />
+            <Options
+              name="References (Trích dẫn)"
+              content="Trình bày các tài liệu, bài báo, sách,... đã tham khảo theo style APA."
+            />
+            <Options
+              name="Acknowledgement (Lời cảm ơn)"
+              content="Tri ân các cá nhân/tổ chức đã đóng góp cho quá trình nghiên cứu
+              Cần chú ý đối tượng cảm ơn, ngôn ngữ, thứ tự cảm ơn"
+            />
+            <Options
+              name="Author Contribution (Đóng góp của tác giả)"
+              content="Mô tả ngắn gọn công lao và đóng góp cá nhân của mỗi tác giả vào nghiên cứu.
+              Có thể gồm: Ai đã thiết kế nghiên cứu? Ai đã thu thập dữ liệu? Ai đã phân tích dữ liệu? Ai đảm bảo tính chuyên môn?"
+            />
+            <Options
+              name="Ethics Declaration (Tuyên bố cam đoan)"
+              content="Đảm bảo rằng nghiên cứu được thực hiện theo các nguyên tắc đạo đức và luân lý (đặc biệt đối với các nghiên cứu có sử dụng động vật hoặc con người)."
+            />
+            <Options
+              name="Appendices (Phụ lục) - Không bắt buộc"
+              content="Báo cáo nền, dữ liệu gốc, các phép tính toán chi tiết, v.v.."
+            />
+            <Options
+              name="Supplemental Data (Dữ liệu bổ sung) - Không bắt buộc"
+              content="Cung cấp thông tin hoặc dữ liệu bổ sung."
+            />
+            
           </>
         )}
       </div>
