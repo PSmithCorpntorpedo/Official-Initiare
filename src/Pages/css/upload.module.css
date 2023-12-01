@@ -228,8 +228,8 @@
 
 @media (max-width: 600px) {
     .title-icon {
-        width: 20%;
-        font-size: 1.9em
+        width: 15%;
+        font-size: 1.6em
     }
     .step-title span {
         font-size: 1.7em;
@@ -247,7 +247,7 @@
 }
 @media (max-width: 450px) {
     .title-icon {
-        width: 30%;
+        width: 14%;
     }
     .step-title span {
         font-size: 1.4em
@@ -269,7 +269,7 @@
 
 @media (max-width: 330px) {
     .title-icon {
-        width: 40%;
+        width: 13%;
     }
     .step-title span {
         font-size: 1.2em
