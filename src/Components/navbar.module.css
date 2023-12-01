@@ -181,7 +181,7 @@ svg {
 
 .username-box-wrap.show {
     user-select: none;
-    height: 60%;
+    height: 50%;
     display: flex;
     box-sizing: border-box;
     color: black;
@@ -189,7 +189,7 @@ svg {
     border-radius: 10px;
     border: 2px solid var(--secondary);
     padding: 0 15px 0 15px;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-right: 15px;
