@@ -9,9 +9,9 @@ export default function Stage7SuccessJSX() {
       <img alt="" src="/Images/success-icon.svg" className={`${u7css["icon"]}`} />
       <div className={`${u7css["panel"]}`}>
         <div className={`${u7css["message"]}`}>
-          <h1>Success!</h1>
-          <p>You have submitted your article on InitiaRe.</p>
-          <button onClick={() => navi("/")} className={`${u7css["return-button"]}`}>Return to Homepage</button>
+          <h1>Đã thành công!</h1>
+          <p>Bạn đã nộp bài nghiên cứu của mình lên InitiaRe.</p>
+          <button onClick={() => navi("/")} className={`${u7css["return-button"]}`}>Về Homepage</button>
         </div>
       </div>
     </div>

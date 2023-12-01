@@ -227,49 +227,55 @@ function ConfirmUpload() {
       >
         <div className={`${cfucss["first-stage"]} `}>
           <div className={`${cfucss["before-you-proceed"]}`}>
-            <div className={cfucss["byp-h1"]}>Before you proceed</div>
+            <div className={cfucss["byp-h1"]}>Trước khi công bố lên InitiaRe</div>
             <div className={cfucss["byp-h2"]}>
-              Terms and Conditions for posting on InitiaRe's website:
+            TERMS AND CONDITIONS KHI ĐĂNG KÝ TÀI KHOẢN:
             </div>
             <ol type="1" className={cfucss["byp-list"]}>
-              <li className={cfucss["byp-list-element"]}>
-                Submitted research articles must have appropriate content and
-                language for an academic environment, and must not include
-                language that promotes hatred or any provocation.
+            <li className={cfucss["byp-list-element"]}>
+              InitiaRe là nền tảng được xây dựng mô phỏng một tạp chí nghiên cứu thực tế. Khi đăng tải nội dung lên InitiaRe, người dùng đồng thuận với việc công khai các sản phẩm của bản thân (Lưu ý: việc công khai không áp dụng cho Proposal và Report)
               </li>
               <li className={cfucss["byp-list-element"]}>
-                Submitted articles have to fully meet all the criteria listed in
-                the "Before Uploading" section.
+              Người dùng được phép tìm kiếm, xem, lưu, chụp ảnh màn hình, tải về và in các bài nghiên cứu trên trang web.
               </li>
               <li className={cfucss["byp-list-element"]}>
-                Prior to submission, the research article must have the consent
-                of all the authors/co-authors.
+              Người dùng được tự do khai thác thông tin, tự do trao đổi, bình luận về các nội dung trên trang web InitiaRe.
               </li>
               <li className={cfucss["byp-list-element"]}>
-                Submitted research articles must be the intellectual property of
-                the author(s) and must not be borrowed, copied, plagiarized, or
-                contain any materials copyrighted by a third party.
+              Người dùng được InitiaRe bảo mật thông tin khi đăng ký tài khoản
               </li>
               <li className={cfucss["byp-list-element"]}>
-                Once an article has been peer-reviewed or specialist-reviewed,
-                it will be made public and featured in the "Articles" section of
-                InitiaRe, which can be accessed freely by other users of the
-                InitiaRe website.
+              Người dùng cam kết không cho phép nhiều người cùng sử dụng tài khoản. InitiaRe sẽ không chịu trách nhiệm nếu có bất kì tổn hại về tài khoản gây ra bởi việc nhiều người sử dụng.
               </li>
               <li className={cfucss["byp-list-element"]}>
-                The submitter has to frequently keep track of the Google Docs
-                file and the InitiaRe website to identify the submission status
-                or suggested revisions from InitiaRe.
+              Người dùng cam kết không đăng tải lại các bài nghiên cứu đã xuất bản trên trang web InitiaRe
               </li>
               <li className={cfucss["byp-list-element"]}>
-                The submitter should be open to receiving constructive feedback
-                from InitiaRe reviewers and actively revise their article
-                accordingly.
+              Người dùng cam kết không đăng tải nội dung trong các bài nghiên cứu trên trang web mà không có trích dẫn nguồn gốc của bài tham khảo
               </li>
               <li className={cfucss["byp-list-element"]}>
-                The submitter has to respond to emails and messages from
-                InitiaRe and stay updated on the latest information regarding
-                their article.
+              Người dùng cam kết không sử dụng các nguồn tài liệu trang web với mục đích truyền thông, thương mại, kinh doanh
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Người dùng cam kết không đăng tải bài nghiên cứu thay người khác
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Người dùng tự chịu trách nhiệm về năng lực hành vi trong việc đăng ký tài khoản và sử dụng website
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Người dùng bắt buộc cung cấp đầy đủ, chính xác thông tin cá nhân khi đăng ký tài khoản ở trang web InitiaRe
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Người dùng không được phép sử dụng trang web InitiaRe với mục đích chống lại Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam; gây phương hại đến an ninh quốc gia, trật tự, an toàn xã hội; phá hoại khối đại đoàn kết toàn dân; tuyên truyền chiến tranh xâm lược, khủng bố; gây hận thù, mâu thuẫn giữa các dân tộc, sắc tộc, chủng tộc, tôn giáo; tuyên truyền, kích động bạo lực, dâm ô, đồi trụy, tội ác, tệ nạn xã hội, mê tín dị đoan, phá hoại thuần phong, mỹ tục của dân tộc
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Không được có bất kỳ hành vi nào nhằm đăng nhập trái phép hoặc tìm cách đăng nhập trái phép hoặc gây thiệt hại cho hệ thống máy chủ InitiaRe
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Người dùng hiểu rằng InitiaRe chưa được công nhận hoàn toàn là một tạp chí nghiên cứu theo <a href="https://chinhphu.vn/default.aspx?pageid=27160&docid=164963">Luật số 19/2012/QH13 của Quốc hội</a>
+              </li>
+              <li className={cfucss["byp-list-element"]}>
+              Việc nhấn vào ô “Tôi đồng ý với tất cả các điều khoản và điều kiện dành cho user mà InitiaRe đưa ra”, bạn chấp nhận và cam kết tuân theo các điều khoản trên. Mọi hành vi đi ngược với một trong những điều khoản trên đồng nghĩa với việc tài khoản của bạn vĩnh viễn bị xóa khỏi hệ thống InitiaRe
               </li>
             </ol>
             <div className={cfucss["byp-last-row"]}>

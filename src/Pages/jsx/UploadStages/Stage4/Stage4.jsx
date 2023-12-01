@@ -10,36 +10,35 @@ export default function Stage4JSX({setHasSelected}) {
   return (
     <div className={`${u4css[`panel`]}`}>
       <p className={`${u4css[`primary-question`]}`}>
-        Is there any other area of research relevant to your paper? (You can
-        choose more than one)
+          Bài báo của bạn còn gồm chủ đề nào liên quan nữa không? (Có thể chọn nhiều hơn 1)
         <br />
-        <span>Should there be none, please click "Next"</span>
+        <span>Nếu không có, hãy nhấn "Next"</span>
       </p>
       <div className={`${u4css[`choices`]}`}>
         <div className={`${u4css[`option-wrapper`]}`}>
-          <p className={`${u4css[`option-header`]}`}>Natural Sciences</p>
-          <Options name="Life Sciences" />
-          <Options name="Physical Sciences" />
-          <Options name="Earth Sciences" />
-          <Options name="Medical and Health" />
-          <Options name="Mathematics" />
-          <Options name="Formal Sciences" />
+          <p className={`${u4css[`option-header`]}`}>Natural Sciences (KHTN)</p>
+          <Options name="Life Sciences" vname="Khoa học Sự sống"/>
+          <Options name="Physical Sciences" vname = "Khoa học Vật chất"/>
+          <Options name="Earth Sciences" vname = "Khoa học Trái Đất"/>
+          <Options name="Medical and Health" vname = "Khoa học Y Khoa & Sức khoẻ"/>
+          <Options name="Mathematics" vname="Toán học"/>
+          <Options name="Formal Sciences" vname = "Công nghệ Thông tin-Khoa học Hình thức"/>
         </div>
 
         <div className={`${u4css[`option-wrapper`]}`}>
-          <p className={`${u4css[`option-header`]}`}>Social Sciences</p>
-          <Options name="Social Studies" />
-          <Options name="Economics"/>
-          <Options name="Psychology"/>
-          <Options name="Education"/>
-          <Options name="Culture and Arts"/>
+          <p className={`${u4css[`option-header`]}`}>Social Sciences (KHXH)</p>
+          <Options name="Social Studies" vname = "Khoa học xã hội"/>
+          <Options name="Economics" vname = "Kinh tế học"/>
+          <Options name="Psychology"  vname = "Tâm lý học"/>
+          <Options name="Education" vname="Giáo dục"/>
+          <Options name="Culture and Arts" vname="Văn hóa & Nghệ thuật"/>
         </div>
       </div>
     </div>
   );
 }
 
-const Options = ({ name }) => {
+const Options = ({ name, vname }) => {
   const { category } = useCategories();
   const [isChosen, setIsChosen] = useState(false);
   const { subCategory, setSubCategory } = useSubCategories();
@@ -87,7 +86,7 @@ const Options = ({ name }) => {
           category !== name ? u4css[`vacant`] : u4css[`not-vacant-label`]
         }`}
       ><div className={`${u4css[`before-secondary-label`]} ${isChosen ? u4css[`chosen-label`] : u4css[`not-chosen`]}`}>{isChosen  && <FontAwesomeIcon icon={faCheck} />} {category === name  && <FontAwesomeIcon icon={faCheck} />}</div>
-        <span>{name}</span>
+        <span>{vname}</span>
       </label>
     </div>
   );

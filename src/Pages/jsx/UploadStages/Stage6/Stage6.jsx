@@ -14,8 +14,7 @@ export default function Stage6JSX({ setHasSelected }) {
   return (
     <div className={`${u6css[`panel`]}`}>
       <p>
-        Before submitting, ensure your review paper satisfy all of the following
-        criteria.
+        Trước khi nộp, hãy đảm bảo rằng bài nghiên cứu của bạn thỏa mãn hết những nhu cầu sau đây:
       </p>
       <div className={`${u6css[`tickboxes`]}`}>
         {paperType === "Research Proposal" && (
@@ -157,7 +156,7 @@ export default function Stage6JSX({ setHasSelected }) {
       <div className={`${u6css[`user-agreement`]}`}>
         <input type="checkbox" onClick={handleAgree} className={`${u6css[`agree-checkbox`]}`} id="I-agree"/>
         <label for="I-agree">
-          <span>I have made sure that my work has included all of the things mentioned above</span>
+          <span>Tôi cam kết và chịu trách nhiệm rằng bài nghiên cứu của tôi đã gồm có những yếu tố nêu trên</span>
         </label>
       </div>
     </div>

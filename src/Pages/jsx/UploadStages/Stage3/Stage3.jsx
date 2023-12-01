@@ -11,85 +11,96 @@ export default function Stage3JSX({ setHasSelected }) {
   return (
     <div className={`${u3css[`panel`]}`}>
       <p className={`${u3css[`primary-question`]}`}>
-        What is the PRIMARY area of study of your paper?
+        Chủ đề CHÍNH của bài báo là gì?
         <br />
-        <span>(Please choose one only)</span>
+        <span>(Chỉ chọn 1)</span>
       </p>
       <div className={`${u3css[`choices`]}`}>
         <div className={`${u3css[`option-wrapper`]}`}>
-          <p className={`${u3css[`option-header`]}`}>Natural Sciences</p>
+          <p className={`${u3css[`option-header`]}`}>Natural Sciences (KHTN)</p>
           <Options
             name="Life Sciences"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname="Khoa học Sự sống"
           />
           <Options
             name="Physical Sciences"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Khoa học Vật chất"
           />
           <Options
             name="Earth Sciences"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Khoa học Trái Đất"
           />
           <Options
             name="Medical and Health"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Khoa học Y Khoa & Sức khoẻ"
           />
           <Options
             name="Mathematics"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname="Toán học"
           />
           <Options
             name="Formal Sciences"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Công nghệ Thông tin-Khoa học Hình thức"
           />
         </div>
 
         <div className={`${u3css[`option-wrapper`]}`}>
-          <p className={`${u3css[`option-header`]}`}>Social Sciences</p>
+          <p className={`${u3css[`option-header`]}`}>Social Sciences (KHXH)</p>
           <Options
             name="Social Studies"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Khoa học xã hội"
           />
           <Options
             name="Economics"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Kinh tế học"
           />
           <Options
             name="Psychology"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname = "Tâm lý học"
           />
           <Options
             name="Education"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname="Giáo dục"
           />
           <Options
             name="Culture and Arts"
             setChosenCat={HandleChoose}
             chosenCat={chosenCat}
+            vname="Văn hóa & Nghệ thuật"
           />
         </div>
       </div>
       <div>
-        <span className={`${u3css[`secondary-question`]}`}>Don't know what to choose? Click</span><span> </span>
+        <span className={`${u3css[`secondary-question`]}`}>Không biết phải chọn gì? Click vào</span><span> </span>
         <a href="https://docs.google.com/document/d/1aRNFvkblSFBSCObNsYPkuo6BKkQNW_Gm8PK60zEqhMI/edit">
-          <></><span>here</span>
+          <></><span>đây</span>
         </a>
       </div>
     </div>
   );
 }
 
-const Options = ({ name, setChosenCat, chosenCat }) => {
+const Options = ({ name, setChosenCat, chosenCat, vname }) => {
   // eslint-disable-next-line
   const { category, setCategory } = useCategories();
  // disabled eslint warning on this line because it's saying the category variable is unused
@@ -117,7 +128,7 @@ const Options = ({ name, setChosenCat, chosenCat }) => {
             chosenCat === name ? u3css[`chosen-label`] : u3css[`not-chosen`]
           }`}
         ></div>
-        <span>{name}</span>
+        <span>{vname}</span>
       </label>
     </div>
   );
