@@ -63,47 +63,49 @@ const About = () => {
             </div>
             <div className={aboutcss["answer"]}>
               <p className={aboutcss["terms-of-use-content"]}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Et
-                magnis dis parturient montes nascetur ridiculus mus mauris.
-                Ipsum dolor sit amet consectetur adipiscing elit. Etiam sit amet
-                nisl purus in mollis nunc sed id. Sagittis aliquam malesuada
-                bibendum arcu vitae elementum. Nam at lectus urna duis convallis
-                convallis. Ullamcorper a lacus vestibulum sed arcu non odio.
-                Velit aliquet sagittis id consectetur purus ut faucibus.
-                Sagittis orci a scelerisque purus semper eget duis. Et netus et
-                malesuada fames. A cras semper auctor neque. Odio aenean sed
-                adipiscing diam donec adipiscing tristique risus nec.
+              InitiaRe là nền tảng được xây dựng mô phỏng một tạp chí nghiên cứu thực tế. Khi đăng tải nội dung lên InitiaRe, người dùng đồng thuận với việc công khai các sản phẩm của bản thân (Lưu ý: việc công khai không áp dụng cho Proposal và Report)
               </p>
               <p className={aboutcss["terms-of-use-content"]}>
-                Ipsum dolor sit amet consectetur adipiscing elit pellentesque
-                habitant. Eu scelerisque felis imperdiet proin fermentum leo vel
-                orci porta. Purus viverra accumsan in nisl nisi. Sed vulputate
-                mi sit amet mauris commodo quis imperdiet. A diam maecenas sed
-                enim. Pellentesque elit ullamcorper dignissim cras tincidunt
-                lobortis feugiat. Ut tortor pretium viverra suspendisse potenti
-                nullam ac tortor vitae. Odio eu feugiat pretium nibh ipsum
-                consequat nisl. Sed ullamcorper morbi tincidunt ornare massa
-                eget. Eu turpis egestas pretium aenean. Odio pellentesque diam
-                volutpat commodo sed. Tortor vitae purus faucibus ornare
-                suspendisse. Risus nec feugiat in fermentum posuere urna nec
-                tincidunt praesent. Quam id leo in vitae turpis. Dis parturient
-                montes nascetur ridiculus mus mauris. Eget est lorem ipsum dolor
-                sit amet.
+              Người dùng được phép tìm kiếm, xem, lưu, chụp ảnh màn hình, tải về và in các bài nghiên cứu trên trang web.
               </p>
               <p className={aboutcss["terms-of-use-content"]}>
-                Malesuada fames ac turpis egestas integer eget. Leo vel orci
-                porta non. Cursus risus at ultrices mi tempus imperdiet nulla.
-                Mauris cursus mattis molestie a iaculis at erat pellentesque
-                adipiscing. Tortor id aliquet lectus proin nibh nisl
-                condimentum. Eget duis at tellus at urna condimentum mattis.
-                Sagittis purus sit amet volutpat consequat mauris. Leo urna
-                molestie at elementum eu facilisis sed odio. Nisi vitae suscipit
-                tellus mauris a. Egestas pretium aenean pharetra magna ac
-                placerat vestibulum. Massa id neque aliquam vestibulum morbi
-                blandit. Eget gravida cum sociis natoque penatibus et. Sit amet
-                nisl purus in mollis. At lectus urna duis convallis convallis
-                tellus id. Gravida in fermentum et sollicitudin ac orci.
+              Người dùng được tự do khai thác thông tin, tự do trao đổi, bình luận về các nội dung trên trang web InitiaRe.
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng được InitiaRe bảo mật thông tin khi đăng ký tài khoản
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng cam kết không cho phép nhiều người cùng sử dụng tài khoản. InitiaRe sẽ không chịu trách nhiệm nếu có bất kì tổn hại về tài khoản gây ra bởi việc nhiều người sử dụng.
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng cam kết không đăng tải lại các bài nghiên cứu đã xuất bản trên trang web InitiaRe
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng cam kết không đăng tải nội dung trong các bài nghiên cứu trên trang web mà không có trích dẫn nguồn gốc của bài tham khảo
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng cam kết không sử dụng các nguồn tài liệu trang web với mục đích truyền thông, thương mại, kinh doanh
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng cam kết không đăng tải bài nghiên cứu thay người khác
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng tự chịu trách nhiệm về năng lực hành vi trong việc đăng ký tài khoản và sử dụng website
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng bắt buộc cung cấp đầy đủ, chính xác thông tin cá nhân khi đăng ký tài khoản ở trang web InitiaRe
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng không được phép sử dụng trang web InitiaRe với mục đích chống lại Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam; gây phương hại đến an ninh quốc gia, trật tự, an toàn xã hội; phá hoại khối đại đoàn kết toàn dân; tuyên truyền chiến tranh xâm lược, khủng bố; gây hận thù, mâu thuẫn giữa các dân tộc, sắc tộc, chủng tộc, tôn giáo; tuyên truyền, kích động bạo lực, dâm ô, đồi trụy, tội ác, tệ nạn xã hội, mê tín dị đoan, phá hoại thuần phong, mỹ tục của dân tộc
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Không được có bất kỳ hành vi nào nhằm đăng nhập trái phép hoặc tìm cách đăng nhập trái phép hoặc gây thiệt hại cho hệ thống máy chủ InitiaRe
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Người dùng hiểu rằng InitiaRe chưa được công nhận hoàn toàn là một tạp chí nghiên cứu theo <a href="https://chinhphu.vn/default.aspx?pageid=27160&docid=164963">Luật số 19/2012/QH13 của Quốc hội</a>
+              </p>
+              <p className={aboutcss["terms-of-use-content"]}>
+              Việc nhấn vào ô “Tôi đồng ý với tất cả các điều khoản và điều kiện dành cho user mà InitiaRe đưa ra”, bạn chấp nhận và cam kết tuân theo các điều khoản trên. Mọi hành vi đi ngược với một trong những điều khoản trên đồng nghĩa với việc tài khoản của bạn vĩnh viễn bị xóa khỏi hệ thống InitiaRe
               </p>
             </div>
           </div>
