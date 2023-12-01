@@ -88,20 +88,20 @@
   width: 20px;
   border: 2px solid var(--primary);
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .option-header {
     font-size: 0.7em;
   }
-  label {
+  .primary-label {
     font-size: 0.7em;
   }
   .before-primary-label {
     font-size: 0.7em;
     margin-right: 5px;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
   }
 }

@@ -8,8 +8,8 @@ export default function Stage7UploadingJSX() {
       <img alt="" src="/Images/uploading-icon.svg" className={`${u7css["icon"]}`}/>
       <div className={`${u7css["panel"]}`}>
         <div className={`${u7css["message"]}`}>
-          <h1>Uploading...</h1>
-          <p>This will take a few seconds depending on your connection</p>
+          <h1>Đang Upload...</h1>
+          <p>Thời gian nộp sẽ tùy thuộc vào kết nối mạng của bạn</p>
         </div>
       </div>
     </div>

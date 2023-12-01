@@ -11,7 +11,7 @@ export default function Stage5JSX({setHasSelected}) {
   };
   return (
     <div className={`${u5css[`panel`]}`}>
-      <p>What type of paper is being submitted?</p>
+      <p>Loại bài nghiên cứu là gì?</p>
       <div className={`${u5css[`choices`]}`}>
         {/* <Options
           name="Research Paper"
@@ -27,6 +27,7 @@ export default function Stage5JSX({setHasSelected}) {
           name="Research Proposal"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
+          vname="Đề xuất nghiên cứu"
         />
         {/* <Options
           name="Scientific Poster"
@@ -37,13 +38,14 @@ export default function Stage5JSX({setHasSelected}) {
           name="Research Report"
           setChosenCat={HandleChoose}
           chosenCat={chosenCat}
+          vname="Báo cáo nghiên cứu"
         />
       </div>
     </div>
   );
 }
 
-const Options = ({ name, setChosenCat, chosenCat }) => {
+const Options = ({ name, setChosenCat, chosenCat, vname }) => {
   const { setPaperType } = usePaperType();
 
   return (
@@ -65,7 +67,7 @@ const Options = ({ name, setChosenCat, chosenCat }) => {
       />
       <label for={name + "type"} className={`${u5css[`primary-label-5`]}`}>
       <div className={`${u5css[`before-primary-label`]} ${chosenCat === name ? u5css[`chosen-label`] : u5css[`not-chosen`]}`}></div>
-        <span>{name}</span>
+        <span>{name} ({vname})</span>
       </label>
     </div>
   );
