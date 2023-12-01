@@ -1,6 +1,6 @@
 .panel {
   width: clamp(70%, 800px, 90%);
-  height: 90%;
+  height: auto;
   display: block;
   display: flex;
   padding: 3%;
