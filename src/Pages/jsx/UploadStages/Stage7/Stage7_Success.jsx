@@ -8,11 +8,12 @@ export default function Stage7SuccessJSX() {
     <div className={`${u7css["page-wrapper"]}`}>
       <img alt="" src="/Images/success-icon.svg" className={`${u7css["icon"]}`} />
       <div className={`${u7css["panel"]}`}>
-        <div className={`${u7css["message"]}`}>
+        <div className={`${u7css["message"]} ${u7css["success-message"]}`}>
           <h1>Đã thành công!</h1>
           <p>Bạn đã nộp bài nghiên cứu của mình lên InitiaRe.</p>
           <button onClick={() => navi("/")} className={`${u7css["return-button"]}`}>Về Homepage</button>
         </div>
+        
       </div>
     </div>
   );

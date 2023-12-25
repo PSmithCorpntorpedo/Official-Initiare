@@ -84,7 +84,7 @@ function SignUp() {
         window.localStorage.setItem("password", state.password);
       }})
       .then(() => window.location.replace("/"))
-      .catch(error => console.error(error.status))   
+      .catch(error => console.error("No response from the server" + error.status))   
   }
 
   return (
