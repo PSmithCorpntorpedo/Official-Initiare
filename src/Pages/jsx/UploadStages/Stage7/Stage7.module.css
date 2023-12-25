@@ -53,3 +53,24 @@
   font-weight: 700;
   line-height: normal;
 }
+.error-return-button {
+  display: flex;
+  width: 40%;
+  padding: 2%;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #F4284C;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.success-message {
+  background: linear-gradient(180deg, rgba(234, 239, 250, 0.00) 0%, rgba(43, 82, 183, 0.40) 100%);
+}
+.error-message {
+  background: linear-gradient(180deg, rgba(234, 239, 250, 0.00) 0%, #F6D6DB 100%);
+}

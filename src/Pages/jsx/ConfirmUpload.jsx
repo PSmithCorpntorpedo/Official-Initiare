@@ -13,11 +13,13 @@ import Stage5JSX from "./UploadStages/Stage5/Stage5.jsx";
 import Stage6JSX from "./UploadStages/Stage6/Stage6.jsx";
 import Stage7UploadingJSX from "./UploadStages/Stage7/Stage7_Uploading.jsx";
 import Stage7SuccessJSX from "./UploadStages/Stage7/Stage7_Success.jsx";
+import Stage7ErrorJSX from "./UploadStages/Stage7/Stage7_Error.jsx";
 
 function ConfirmUpload() {
   const navi = useNavigate();
   const [stage, setStage] = useState(1);
   const [isUploading, setIsUploading] = useState(true);
+  const [uploadError, setUploadError] = useState(false);
 
   const handleContinue = () => {
     let k = stage;
@@ -215,7 +217,9 @@ function ConfirmUpload() {
             }),
           }
         ).then(() => setIsUploading(false));
-      });
+      })
+      .catch((err) => console.log("An error has ocurred" + err))
+      .catch(() => {setUploadError(true); setIsUploading(false)});
   };
 
   return (
@@ -356,7 +360,8 @@ function ConfirmUpload() {
         />
 
         <div className={`${cfucss["seventh-stage"]} `}>
-          {isUploading ? <Stage7UploadingJSX /> : <Stage7SuccessJSX />}
+          {isUploading ? <Stage7UploadingJSX /> : (uploadError ? <Stage7ErrorJSX /> : <Stage7SuccessJSX />)}
+          
         </div>
       </div>
     </div>
