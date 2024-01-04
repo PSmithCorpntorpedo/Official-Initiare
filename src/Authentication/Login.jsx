@@ -46,7 +46,7 @@ function Login() {
       window.localStorage.setItem("password", state.password);
     }
     fetch(
-      "https://initiare-website-2603191647bb.herokuapp.com/api/v1/auth/login",
+      "https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/auth/login",
       {
         method: "POST",
         headers: {

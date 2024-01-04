@@ -1,5 +1,5 @@
 import React from "react";
-import articlescss from "../css/articles.module.css";
+import gallerycss from "../css/gallery.module.css";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,13 +12,13 @@ export default function ArticlesJSX() {
 
 function FilterBox({ categories, setCategories }) {
   return (
-    <div className={articlescss["filter-box"]}>
-      <div className={articlescss["filter-caption"]}>
-        <img src="/Images/Filter.svg" alt='logo' className={articlescss['filter-logo']} /><span>FILTER BY</span></div>
-      <div className={articlescss["filter-area"]}>
-        <div className={articlescss["fields"]}>
+    <div className={gallerycss["filter-box"]}>
+      <div className={gallerycss["filter-caption"]}>
+        <img src="/Images/Filter.svg" alt='logo' className={gallerycss['filter-logo']} /><span>FILTER BY</span></div>
+      <div className={gallerycss["filter-area"]}>
+        <div className={gallerycss["fields"]}>
           <h5>Research Area</h5>
-          <div className={articlescss["natural-sciences"]}>
+          <div className={gallerycss["natural-sciences"]}>
             <FilterItem
               name="Natural Sciences"
               style={{ fontWeight: "700", fontSize: "1em" }}
@@ -26,7 +26,7 @@ function FilterBox({ categories, setCategories }) {
               categories={categories}
               setCategories={setCategories}
             />
-            <ul className={articlescss["sublist1"]}>
+            <ul className={gallerycss["sublist1"]}>
               <FilterItem
                 name="Life Sciences"
                 c_id={"1"}
@@ -65,7 +65,7 @@ function FilterBox({ categories, setCategories }) {
               />
             </ul>
           </div>
-          <div className={articlescss["social-sciences"]}>
+          <div className={gallerycss["social-sciences"]}>
             <FilterItem
               name="Social Sciences"
               style={{ fontWeight: "700", fontSize: "1em" }}
@@ -73,7 +73,7 @@ function FilterBox({ categories, setCategories }) {
               categories={categories}
               setCategories={setCategories}
             />
-            <ul className={articlescss["sublist1"]}>
+            <ul className={gallerycss["sublist1"]}>
               <FilterItem
                 name="Social Studies"
                 c_id={"7"}
@@ -107,26 +107,26 @@ function FilterBox({ categories, setCategories }) {
             </ul>
           </div>
         </div>
-        {/* <div className={`${articlescss["header"]} ${articlescss["status"]}`}>
+        {/* <div className={`${gallerycss["header"]} ${gallerycss["status"]}`}>
           <h2>Status</h2>
-          <ul className={articlescss["sublist2"]}>
+          <ul className={gallerycss["sublist2"]}>
             <FilterItem name="Non-reviewed" />
             <FilterItem name="Peer-reviewed" />
             <FilterItem name="Specialist-reviewed" />
           </ul>
         </div>
         <div
-          className={`${articlescss["header"]} ${articlescss["date-published"]}`}
+          className={`${gallerycss["header"]} ${gallerycss["date-published"]}`}
         >
           <h2>Date Published</h2>
-          <ul className={articlescss["sublist2"]}>
+          <ul className={gallerycss["sublist2"]}>
             <FilterItem name="2023" />
             <FilterItem name="2022" />
           </ul>
         </div>
-        <div className={`${articlescss["header"]} ${articlescss["language"]}`}>
+        <div className={`${gallerycss["header"]} ${gallerycss["language"]}`}>
           <h2>Language</h2>
-          <ul className={articlescss["sublist2"]}>
+          <ul className={gallerycss["sublist2"]}>
             <FilterItem name="English" />
             <FilterItem name="Vietnamese" />
           </ul>
@@ -149,14 +149,14 @@ function FilterItem(props) {
   }
   return (
     <li
-      className={`${articlescss["no-list-style"]} ${articlescss["sub-list-items"]}`}
+      className={`${gallerycss["no-list-style"]} ${gallerycss["sub-list-items"]}`}
       style={props.style}
     >
       <label for={props.name}>
         <input
           type="checkbox"
           id={props.name}
-          className={`${articlescss[`filter-checkbox`]}`}
+          className={`${gallerycss[`filter-checkbox`]}`}
           onChange={handleChange}
           value={props.c_id}
         />
@@ -191,19 +191,19 @@ function SearchBox() {
     }
   };
   return (
-    <div className={articlescss["page-wrapper"]}>
+    <div className={gallerycss["page-wrapper"]}>
       <FilterBox categories={categories} setCategories={setCategories} />
 
-      <div className={articlescss["search-box"]}>
-        <div className={articlescss["search-bar"]}>
+      <div className={gallerycss["search-box"]}>
+        <div className={gallerycss["search-bar"]}>
           <input
             type="text"
-            className={articlescss["search-input"]}
+            className={gallerycss["search-input"]}
             placeholder="Search articles, research papers, authors and more"
             onChange={typeHandler}
           />
           <button
-            className={articlescss["search-button"]}
+            className={gallerycss["search-button"]}
             onClick={clickHandler}
           ></button>
         </div>
@@ -227,7 +227,7 @@ function Paginate({ search, items, setItems, categories }) {
   useEffect(() => {
     const getArticlesUponLoad = async () => {
       const res = await fetch(
-        `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=1&Size=12`
+        `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=1&Size=12&type_id=4`
       );
       const data = await res.json();
       const total = data.res.Total;
@@ -242,7 +242,7 @@ function Paginate({ search, items, setItems, categories }) {
 
   const fetchPageArticles = async (page) => {
     const res = await fetch(
-      `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=${page}&Size=12${
+      `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=${page}&Size=12&type_id=4${
         search !== "" ? "&title=" + search : ""
       }${categories !== "" ? "&category_ids=" + categories : ""}`
     );
@@ -256,7 +256,7 @@ function Paginate({ search, items, setItems, categories }) {
     setItems(pageServer.res.Records);
   };
   return (
-    <div className={articlescss["search-results"]}>
+    <div className={gallerycss["search-results"]}>
       <div className="row m-2">
         {items.map((item) => {
           return item.status_name === "Approved" ? (
