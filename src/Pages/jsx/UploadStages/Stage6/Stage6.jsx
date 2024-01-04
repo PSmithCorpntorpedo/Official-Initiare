@@ -17,7 +17,7 @@ export default function Stage6JSX({ setHasSelected }) {
         Trước khi nộp, hãy đảm bảo rằng bài nghiên cứu của bạn thỏa mãn hết những nhu cầu sau đây:
       </p>
       <div className={`${u6css[`tickboxes`]}`}>
-        {paperType === "Research Proposal" && (
+        {(paperType === "Research Proposal" || paperType === "Scientific Poster") && (
           <>
             <Options
               name="Title (Tiêu đề)"
