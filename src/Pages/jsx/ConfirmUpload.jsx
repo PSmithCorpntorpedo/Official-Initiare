@@ -181,7 +181,7 @@ function ConfirmUpload() {
 
   const uploadFile = async (fd) => {
     await fetch(
-      "https://initiare-website-2603191647bb.herokuapp.com/api/v1/storage/media/upload",
+      "https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/storage/media/upload",
       {
         mode: "cors",
         method: "POST",
@@ -194,7 +194,7 @@ function ConfirmUpload() {
       .then((res) => res.json())
       .then((data) => {
         fetch(
-          "https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles",
+          "https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles",
           {
             mode: "cors",
             method: "POST",

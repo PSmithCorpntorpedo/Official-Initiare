@@ -69,7 +69,7 @@ function FilterBox({ categories, setCategories }) {
             <FilterItem
               name="Social Sciences"
               style={{ fontWeight: "700", fontSize: "1em" }}
-              c_id={"7,8"}
+              c_id={"7,8,9,10,11"}
               categories={categories}
               setCategories={setCategories}
             />
@@ -81,8 +81,26 @@ function FilterBox({ categories, setCategories }) {
                 setCategories={setCategories}
               />
               <FilterItem
-                name="Humanities"
+                name="Economics"
                 c_id={"8"}
+                categories={categories}
+                setCategories={setCategories}
+              />
+              <FilterItem
+                name="Psychology"
+                c_id={"9"}
+                categories={categories}
+                setCategories={setCategories}
+              />
+              <FilterItem
+                name="Education"
+                c_id={"10"}
+                categories={categories}
+                setCategories={setCategories}
+              />
+              <FilterItem
+                name="Culture and Arts"
+                c_id={"11"}
                 categories={categories}
                 setCategories={setCategories}
               />
@@ -154,7 +172,7 @@ function SearchBox() {
   const [search, setSearch] = useState("");
   const fetchTitleAndCategories = async () => {
     const res = await fetch(
-      `https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles?Page=1&Size=12${
+      `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=1&Size=12${
         search !== "" ? "&title=" + search : ""
       }${categories !== "" ? "&category_ids=" + categories : ""}`
     );
@@ -209,7 +227,7 @@ function Paginate({ search, items, setItems, categories }) {
   useEffect(() => {
     const getArticlesUponLoad = async () => {
       const res = await fetch(
-        `https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles/approved-article?Page=1&Size=12`
+        `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=1&Size=12`
       );
       const data = await res.json();
       const total = data.res.Total;
@@ -224,7 +242,7 @@ function Paginate({ search, items, setItems, categories }) {
 
   const fetchPageArticles = async (page) => {
     const res = await fetch(
-      `https://initiare-website-2603191647bb.herokuapp.com/api/v1/articles/approved-article?Page=${page}&Size=12${
+      `https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/articles/approved-article?Page=${page}&Size=12${
         search !== "" ? "&title=" + search : ""
       }${categories !== "" ? "&category_ids=" + categories : ""}`
     );
