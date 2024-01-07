@@ -17,6 +17,13 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-  
+    <script>
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+        event.preventDefault();
+        return false;
+      }
+});
+    </script>
   </body>
 </html>
