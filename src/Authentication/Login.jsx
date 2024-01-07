@@ -7,6 +7,7 @@ import { faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const { setAuth } = useAuth();
+  const [wrong, setWrong] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/"
@@ -59,27 +60,36 @@ function Login() {
         }),
       }
     )
-      .then((response) => response.json())
+      .then((response) => response.json()) 
       .then((data) => {
-        const accessToken = data.res?.token;
-        const user = data.res?.user;
-        const em = state.email;
-        const pw = state.password
-        setAuth({ em, pw, user, accessToken });
-        setState({
-          email: '',
-          password: ''
-        })
-        navigate(from, { replace: true })
+        if(data.status === 401){
+          console.log("Invalid email or password")
+          setWrong(true);
+        }
+        else if(data.status === 500){
+          console.log("No server response")
+        } 
+        else {
+          const accessToken = data.res?.token;
+          const user = data.res?.user;
+          const em = state.email;
+          const pw = state.password
+          setAuth({ em, pw, user, accessToken });
+          setState({
+            email: '',
+            password: ''
+          })
+          navigate(from, { replace: true })}
       })
-      .catch((error) => {
-        if (!error?.cause) {
-          console.log("No Server Response");
+      .catch((err) => {
+        if (!err?.cause) {
+          console.log("");
         }
         else {
-          console.log("Bro, the server literally died, what did you do??")
+          console.log(err.cause)
         }
-      });
+      })
+      
   };
   return (
     <div className={logincss[`sign-in-wrapper`]}>
@@ -102,9 +112,10 @@ function Login() {
               type="email"
               id="login-email"
               name="email"
-              className={`${logincss[`info-box`]} ${logincss['email-box']}`}
+              className={`${logincss[`info-box`]} ${logincss['email-box']} ${wrong === true ? logincss['wrong-info'] : logincss['right-info']}`}
               placeholder="Enter your email address"
               onChange={handleChange}
+              onClick={()=> setWrong(false)}
             />
           </div>
           <div className={logincss['password-wrap']}>
@@ -117,9 +128,11 @@ function Login() {
               type="password"
               id="login-password"
               name="password"
-              className={`${logincss[`info-box`]} ${logincss['password-box']}`}
+              className={`${logincss[`info-box`]} ${logincss['password-box']} ${wrong ? logincss['wrong-info'] : null}`}
               placeholder="Enter your password"
-              onChange={handleChange} />
+              onChange={handleChange}
+              onClick={()=> setWrong(false)}
+              />
           </div>
           <div className={`${logincss['memory-foam']}`}>
             <div onClick={handleRememberCheck} className={`${logincss['remember-me-wrap']}`}>
