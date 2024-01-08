@@ -41,11 +41,7 @@ function Login() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (remember) {
-      window.localStorage.setItem("email", state.email);
-      window.localStorage.setItem("password", state.password);
-    }
+    e.preventDefault(); //fuck using enter to submit
     fetch(
       "https://production-initiare-f7a455f351a3.herokuapp.com/api/v1/auth/login",
       {
@@ -66,10 +62,12 @@ function Login() {
           console.log("Invalid email or password")
           setWrong(true);
         }
-        else if(data.status === 500){
-          console.log("No server response")
-        } 
+        else if(data.status === 500) console.log("No server response"); 
         else {
+          if (remember) {
+            window.localStorage.setItem("email", state.email);
+            window.localStorage.setItem("password", state.password);
+          }
           const accessToken = data.res?.token;
           const user = data.res?.user;
           const em = state.email;
@@ -89,7 +87,6 @@ function Login() {
           console.log(err.cause)
         }
       })
-      
   };
   return (
     <div className={logincss[`sign-in-wrapper`]}>
