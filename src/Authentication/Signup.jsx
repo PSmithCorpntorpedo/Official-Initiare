@@ -176,6 +176,7 @@ function SignUp() {
                   signupcss["input"]
                 } ${passwordCool ? signupcss["cool"] : signupcss["not-cool"]}`}
                 onChange={handleChange}
+                onClick={()=>setWrong(false)}
               />
             </div>
             <div
@@ -251,6 +252,7 @@ function SignUp() {
                 placeholder="Enter your first name"
                 className={`${signupcss["first-name-input"]} ${signupcss["input"]}`}
                 onChange={handleChange}
+                onClick={()=>setWrong(false)}
               />
             </div>
             <div
@@ -273,6 +275,7 @@ function SignUp() {
                 placeholder="Enter your last name"
                 className={`${signupcss["last-name-input"]} ${signupcss["input"]}`}
                 onChange={handleChange}
+                onClick={()=>setWrong(false)}
               />
             </div>
             <div
