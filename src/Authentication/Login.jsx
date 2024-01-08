@@ -149,6 +149,9 @@ function Login() {
               Log in
             </button>
           </div>
+          {wrong && (
+              <div className={logincss['wrong-message']}>Wrong email or password!</div>
+            )}   
         </form>
         <div className={logincss['register-wrap']}>
           <div className={logincss['reg-text']}>Don't have an account?</div>

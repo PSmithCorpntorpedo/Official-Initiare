@@ -56,6 +56,14 @@
     border: 1px solid red;
 }
 
+.wrong-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F4284C;
+    font-weight: 800;
+    margin-top: 5%;
+}
 .show-button {
     line-height: 1.5rem;
     vertical-align: middle;
