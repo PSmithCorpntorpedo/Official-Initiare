@@ -313,6 +313,11 @@ canvas {
   margin-right: 10px;
 }
 
+.date-published {
+  min-width: 70px;
+  text-align: right;
+}
+
 .filter-pop-out {
   display: none;
 }
